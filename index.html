@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LernDeutsch - German Learning Suite</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Space+Grotesk:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-background">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <div class="app-container">
+        <header class="app-header glass-panel">
+            <div class="logo">
+                <h1>Lern<span>Deutsch</span></h1>
+            </div>
+            <nav class="main-nav">
+                <button class="nav-btn active" data-view="learn">
+                    <span class="icon">📚</span> Learn
+                </button>
+                <button class="nav-btn" data-view="games">
+                    <span class="icon">🎮</span> Games
+                </button>
+                <button class="nav-btn" data-view="stats">
+                    <span class="icon">📊</span> Stats
+                </button>
+            </nav>
+        </header>
+
+        <main class="app-content">
+            <!-- Selector Bar -->
+            <section class="selection-bar glass-panel flow-row">
+                <div class="selector-group">
+                    <label>Lesson</label>
+                    <div class="custom-select-wrapper">
+                        <select id="lessonSelect">
+                            <option value="">Select Lesson...</option>
+                        </select>
+                        <span class="custom-arrow"></span>
+                    </div>
+                </div>
+                <div class="selector-group">
+                    <label>Page</label>
+                    <div class="custom-select-wrapper">
+                        <select id="pageSelect" disabled>
+                            <option value="">All Pages</option>
+                        </select>
+                        <span class="custom-arrow"></span>
+                    </div>
+                </div>
+                <div class="stats-display">
+                    <span id="wordCountBadge">0 Words</span>
+                </div>
+            </section>
+
+            <!-- View: Learn (Word List) -->
+            <section id="view-learn" class="view-section active">
+                <div class="word-grid" id="wordListContainer">
+                    <!-- Words will be injected here -->
+                    <div class="empty-state glass-panel">
+                        <h2>Willkommen!</h2>
+                        <p>Select a lesson above to start learning.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- View: Games -->
+            <section id="view-games" class="view-section hidden">
+                <div class="games-grid">
+                    <div class="game-card glass-panel" data-game="flashcards">
+                        <div class="game-icon">🎴</div>
+                        <h3>Flashcards</h3>
+                        <p>Classic spaced repetition.</p>
+                    </div>
+                    <div class="game-card glass-panel" data-game="quiz">
+                        <div class="game-icon">❓</div>
+                        <h3>Quiz</h3>
+                        <p>Multiple choice challenge.</p>
+                    </div>
+                    <div class="game-card glass-panel" data-game="memory">
+                        <div class="game-icon">🧩</div>
+                        <h3>Memory</h3>
+                        <p>Match German to Czech.</p>
+                    </div>
+                    <div class="game-card glass-panel" data-game="typing">
+                        <div class="game-icon">⌨️</div>
+                        <h3>Schreiben</h3>
+                        <p>Type the correct translation.</p>
+                    </div>
+                </div>
+
+                <div id="activeGameContainer" class="glass-panel hidden">
+                    <button class="back-btn">← Back to Games</button>
+                    <div id="gameViewport"></div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="games.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

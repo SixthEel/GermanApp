@@ -1,0 +1,4043 @@
+{
+  "lessons": [
+    {
+      "number": 5,
+      "name": "Lekce 5",
+      "pages": [
+        {
+          "number": 1,
+          "words": [
+            {
+              "german": "das Abendessen",
+              "czech": "večeře",
+              "plural": "-",
+              "example": "Zu Abend esse ich Brot mit Schinken."
+            },
+            {
+              "german": "die Apfelschorle",
+              "czech": "jablečný střik",
+              "plural": "-n",
+              "example": ""
+            },
+            {
+              "german": "das Bier",
+              "czech": "pivo",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "der Braten",
+              "czech": "pečeně",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "das Brot",
+              "czech": "chléb",
+              "plural": "-e",
+              "example": ""
+            },
+            {
+              "german": "das Brötchen",
+              "czech": "žemle, houska",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "die Butter",
+              "czech": "máslo",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "die Cola",
+              "czech": "kola",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "das Ei",
+              "czech": "vejce",
+              "plural": "-er",
+              "example": ""
+            },
+            {
+              "german": "das Eis",
+              "czech": "zmrzlina",
+              "plural": "-",
+              "example": ""
+            }
+          ]
+        },
+        {
+          "number": 2,
+          "words": [
+            {
+              "german": "der Fisch",
+              "czech": "ryba",
+              "plural": "-e",
+              "example": ""
+            },
+            {
+              "german": "das Fleisch",
+              "czech": "maso",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "die Frikadelle",
+              "czech": "karbanátek",
+              "plural": "-n",
+              "example": ""
+            },
+            {
+              "german": "das Frühstück",
+              "czech": "snídaně",
+              "plural": "-e",
+              "example": "Zum Frühstück trinke ich Tee."
+            },
+            {
+              "german": "das Gemüse",
+              "czech": "zelenina",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "der Hamburger",
+              "czech": "hamburger",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "der Honig",
+              "czech": "med",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "der/das Joghurt",
+              "czech": "jogurt",
+              "plural": "-s",
+              "example": ""
+            },
+            {
+              "german": "der Kaffee",
+              "czech": "káva",
+              "plural": "-s",
+              "example": ""
+            },
+            {
+              "german": "die Kartoffel",
+              "czech": "brambor",
+              "plural": "-n",
+              "example": ""
+            }
+          ]
+        },
+        {
+          "number": 3,
+          "words": [
+            {
+              "german": "der Käse",
+              "czech": "sýr",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "der Kuchen",
+              "czech": "koláč, moučník",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "die Marmelade",
+              "czech": "marmeláda",
+              "plural": "-n",
+              "example": ""
+            },
+            {
+              "german": "die Milch",
+              "czech": "mléko",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "das Mittagessen",
+              "czech": "oběd",
+              "plural": "-",
+              "example": "Zu Mittag esse ich Pizza."
+            },
+            {
+              "german": "das Müsli",
+              "czech": "müsli",
+              "plural": "-/-s",
+              "example": ""
+            },
+            {
+              "german": "die Nudel",
+              "czech": "nudle, těstovina",
+              "plural": "-n",
+              "example": ""
+            },
+            {
+              "german": "das Obst",
+              "czech": "ovoce",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "die Pizza",
+              "czech": "pizza",
+              "plural": "-s/Pizzen",
+              "example": ""
+            },
+            {
+              "german": "die Pommes frites/Pommes",
+              "czech": "hranolky",
+              "plural": "-",
+              "example": ""
+            }
+          ]
+        },
+        {
+          "number": 4,
+          "words": [
+            {
+              "german": "der Reis",
+              "czech": "rýže",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "der Saft",
+              "czech": "šťáva, džus",
+              "plural": "Säfte",
+              "example": ""
+            },
+            {
+              "german": "der Salat",
+              "czech": "salát",
+              "plural": "-e",
+              "example": ""
+            },
+            {
+              "german": "der Schinken",
+              "czech": "šunka",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "das Schnitzel",
+              "czech": "řízek",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "die Soße",
+              "czech": "omáčka",
+              "plural": "-n",
+              "example": ""
+            },
+            {
+              "german": "das Steak",
+              "czech": "steak",
+              "plural": "-s",
+              "example": ""
+            },
+            {
+              "german": "der Tee",
+              "czech": "čaj",
+              "plural": "-s",
+              "example": ""
+            },
+            {
+              "german": "die Torte",
+              "czech": "dort",
+              "plural": "-n",
+              "example": ""
+            },
+            {
+              "german": "das Wasser",
+              "czech": "voda",
+              "plural": "-/Wässer",
+              "example": ""
+            }
+          ]
+        },
+        {
+          "number": 5,
+          "words": [
+            {
+              "german": "die Wurst",
+              "czech": "salám, uzenina",
+              "plural": "Würste",
+              "example": ""
+            },
+            {
+              "german": "das Würstchen",
+              "czech": "párek, klobáska",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "ausgezeichnet",
+              "czech": "výborný, skvělý",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "die Banane",
+              "czech": "banán",
+              "plural": "-n",
+              "example": ""
+            },
+            {
+              "german": "bitter",
+              "czech": "hořký",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "der Chili",
+              "czech": "chilli",
+              "plural": "-s",
+              "example": ""
+            },
+            {
+              "german": "ekelhaft",
+              "czech": "hnusný, odporný",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "essen",
+              "czech": "jíst",
+              "plural": "-",
+              "example": "Zu Abend esse ich Brot mit Schinken."
+            },
+            {
+              "german": "der Essig",
+              "czech": "ocet",
+              "plural": "-e",
+              "example": ""
+            },
+            {
+              "german": "fade",
+              "czech": "mdlý, bez chuti",
+              "plural": "-",
+              "example": ""
+            }
+          ]
+        },
+        {
+          "number": 6,
+          "words": [
+            {
+              "german": "das Gericht",
+              "czech": "jídlo, pokrm",
+              "plural": "-e",
+              "example": ""
+            },
+            {
+              "german": "der Geschmack",
+              "czech": "chuť",
+              "plural": "Geschmäcke",
+              "example": ""
+            },
+            {
+              "german": "gesund",
+              "czech": "zdravý",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "die Grapefruit",
+              "czech": "grapefruit",
+              "plural": "-s",
+              "example": ""
+            },
+            {
+              "german": "kalt",
+              "czech": "chladný, studený",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "langweilig",
+              "czech": "nudný",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "lecker",
+              "czech": "chutný, lahodný",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "der Pfeffer",
+              "czech": "pepř",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "das Salz",
+              "czech": "sůl",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "salzig",
+              "czech": "slaný",
+              "plural": "-",
+              "example": ""
+            }
+          ]
+        },
+        {
+          "number": 7,
+          "words": [
+            {
+              "german": "sauer",
+              "czech": "kyselý",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "scharf",
+              "czech": "ostrý, pálivý",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "schmecken",
+              "czech": "chutnat",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "süß",
+              "czech": "sladký",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "toll",
+              "czech": "skvělý, úžasný",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "trinken",
+              "czech": "pít",
+              "plural": "-",
+              "example": "Zum Frühstück trinke ich Tee."
+            },
+            {
+              "german": "unappetitlich",
+              "czech": "nechutný, nedobrý",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "ungesund",
+              "czech": "nezdravý",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "die Zitrone",
+              "czech": "citron",
+              "plural": "-n",
+              "example": ""
+            },
+            {
+              "german": "der Zucker",
+              "czech": "cukr",
+              "plural": "-",
+              "example": ""
+            }
+          ]
+        },
+        {
+          "number": 8,
+          "words": [
+            {
+              "german": "das Besteck",
+              "czech": "příbor",
+              "plural": "-e",
+              "example": ""
+            },
+            {
+              "german": "die Gabel",
+              "czech": "vidlička",
+              "plural": "-n",
+              "example": ""
+            },
+            {
+              "german": "das Glas",
+              "czech": "sklenice",
+              "plural": "Gläser",
+              "example": ""
+            },
+            {
+              "german": "der Löffel",
+              "czech": "lžíce",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "das Messer",
+              "czech": "nůž",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "das Mineralwasser",
+              "czech": "minerální voda",
+              "plural": "Mineralwässer",
+              "example": ""
+            },
+            {
+              "german": "mögen",
+              "czech": "mít rád",
+              "plural": "-",
+              "example": "Ich mag Pommes."
+            },
+            {
+              "german": "die Serviette",
+              "czech": "ubrousek",
+              "plural": "-n",
+              "example": ""
+            },
+            {
+              "german": "die Suppe",
+              "czech": "polévka",
+              "plural": "-n",
+              "example": ""
+            },
+            {
+              "german": "der Teelöffel",
+              "czech": "(čajová) lžička",
+              "plural": "-",
+              "example": ""
+            }
+          ]
+        },
+        {
+          "number": 9,
+          "words": [
+            {
+              "german": "der Teller",
+              "czech": "talíř",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "der Wein",
+              "czech": "víno",
+              "plural": "-e",
+              "example": ""
+            },
+            {
+              "german": "der Zahnstocher",
+              "czech": "párátko",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "alkoholfrei",
+              "czech": "nealkoholický",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "bezahlen",
+              "czech": "(za)platit",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "der Caesar-Salat",
+              "czech": "Caesar salát",
+              "plural": "-e",
+              "example": ""
+            },
+            {
+              "german": "gegrillt",
+              "czech": "grilovaný",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "das Hähnchen",
+              "czech": "kuře",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "hausgemacht",
+              "czech": "domácí",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "der Kartoffelsalat",
+              "czech": "bramborový salát",
+              "plural": "-e",
+              "example": ""
+            }
+          ]
+        },
+        {
+          "number": 10,
+          "words": [
+            {
+              "german": "das Lachsfilet",
+              "czech": "filet z lososa",
+              "plural": "-s",
+              "example": ""
+            },
+            {
+              "german": "möcht-",
+              "czech": "chtít (zdvořile)",
+              "plural": "-",
+              "example": "Was möchtest du?"
+            },
+            {
+              "german": "nehmen",
+              "czech": "vzít, brát",
+              "plural": "-",
+              "example": "Ich nehme die Frikadellen."
+            },
+            {
+              "german": "die Speisekarte",
+              "czech": "jídelní lístek",
+              "plural": "-n",
+              "example": ""
+            },
+            {
+              "german": "spritzig",
+              "czech": "perlivý",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "still",
+              "czech": "neperlivý",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "der Tisch",
+              "czech": "stůl",
+              "plural": "-e",
+              "example": ""
+            },
+            {
+              "german": "vielleicht",
+              "czech": "snad, možná",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "Zusammen oder getrennt?",
+              "czech": "Dohromady nebo zvlášť?",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "der Apfel",
+              "czech": "jablko",
+              "plural": "Äpfel",
+              "example": ""
+            }
+          ]
+        },
+        {
+          "number": 11,
+          "words": [
+            {
+              "german": "der Apfelstrudel",
+              "czech": "jablečný závin",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "der Bauernsalat",
+              "czech": "(zeleninový) salát",
+              "plural": "-e",
+              "example": ""
+            },
+            {
+              "german": "die Blaubeere",
+              "czech": "borůvka",
+              "plural": "-n",
+              "example": ""
+            },
+            {
+              "german": "der Durst",
+              "czech": "žízeň",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "gemischt",
+              "czech": "míchaný",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "das Geschenk",
+              "czech": "dárek",
+              "plural": "-e",
+              "example": ""
+            },
+            {
+              "german": "das Getränk",
+              "czech": "nápoj",
+              "plural": "-e",
+              "example": ""
+            },
+            {
+              "german": "das Grillhähnchen",
+              "czech": "grilované kuře",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "das/der Gulasch",
+              "czech": "guláš",
+              "plural": "-e/-s",
+              "example": ""
+            },
+            {
+              "german": "die Gulaschsuppe",
+              "czech": "gulášová polévka",
+              "plural": "-n",
+              "example": ""
+            }
+          ]
+        },
+        {
+          "number": 12,
+          "words": [
+            {
+              "german": "der Hunger",
+              "czech": "hlad",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "kaufen",
+              "czech": "koupit, kupovat",
+              "plural": "-",
+              "example": "Kaufst du die Torte?"
+            },
+            {
+              "german": "der Knödel",
+              "czech": "knedlík",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "das Kraut",
+              "czech": "zelí",
+              "plural": "Kräuter",
+              "example": ""
+            },
+            {
+              "german": "die Lasagne",
+              "czech": "lasagne",
+              "plural": "-n",
+              "example": ""
+            },
+            {
+              "german": "die Limonade",
+              "czech": "limonáda",
+              "plural": "-n",
+              "example": ""
+            },
+            {
+              "german": "die Nachspeise",
+              "czech": "zákusek, dezert",
+              "plural": "-n",
+              "example": ""
+            },
+            {
+              "german": "der Pfannkuchen",
+              "czech": "palačinka; kobliha",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "die Platte",
+              "czech": "mísa, tác",
+              "plural": "-n",
+              "example": ""
+            },
+            {
+              "german": "das/der Radler",
+              "czech": "radler (nápoj z piva a limonády)",
+              "plural": "-",
+              "example": ""
+            }
+          ]
+        },
+        {
+          "number": 13,
+          "words": [
+            {
+              "german": "das/der Rindergulasch",
+              "czech": "hovězí guláš",
+              "plural": "-e/-s",
+              "example": ""
+            },
+            {
+              "german": "die Röstzwiebel",
+              "czech": "smažená cibule",
+              "plural": "-n",
+              "example": ""
+            },
+            {
+              "german": "die Sahne",
+              "czech": "smetana",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "die Salzkartoffeln",
+              "czech": "vařené brambory",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "der Schweinebraten/Schweinsbraten",
+              "czech": "vepřová pečeně",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "die Schweinshaxe",
+              "czech": "(pečené) vepřové koleno",
+              "plural": "-n",
+              "example": ""
+            },
+            {
+              "german": "die Spätzle",
+              "czech": "špecle",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "die Tasse",
+              "czech": "šálek",
+              "plural": "-n",
+              "example": ""
+            },
+            {
+              "german": "die Tomate",
+              "czech": "rajče",
+              "plural": "-n",
+              "example": ""
+            },
+            {
+              "german": "die Vanillesoße",
+              "czech": "vanilková omáčka",
+              "plural": "-n",
+              "example": ""
+            }
+          ]
+        },
+        {
+          "number": 14,
+          "words": [
+            {
+              "german": "vegetarisch",
+              "czech": "vegetariánský",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "die Vorspeise",
+              "czech": "předkrm",
+              "plural": "-n",
+              "example": ""
+            },
+            {
+              "german": "warm",
+              "czech": "teplý",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "die Adresse",
+              "czech": "adresa",
+              "plural": "-n",
+              "example": ""
+            },
+            {
+              "german": "das Ambiente",
+              "czech": "prostředí, atmosféra",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "der Bescheid",
+              "czech": "zpráva, informace",
+              "plural": "-e",
+              "example": "Gib mir bitte Bescheid."
+            },
+            {
+              "german": "der Blattspinat",
+              "czech": "listový špenát",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "Brat-",
+              "czech": "smažený, pečený",
+              "plural": "-",
+              "example": "Bratwurst, Bratkartoffeln"
+            },
+            {
+              "german": "der Döner",
+              "czech": "döner (kebab)",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "der Gasthof",
+              "czech": "hostinec",
+              "plural": "Gasthöfe",
+              "example": ""
+            }
+          ]
+        },
+        {
+          "number": 15,
+          "words": [
+            {
+              "german": "gemütlich",
+              "czech": "útulný, pohodový",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "international",
+              "czech": "mezinárodní",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "die Kerze",
+              "czech": "svíčka",
+              "plural": "-n",
+              "example": ""
+            },
+            {
+              "german": "die Küche",
+              "czech": "kuchyně",
+              "plural": "-n",
+              "example": ""
+            },
+            {
+              "german": "die Meeresfrüchte",
+              "czech": "plody moře",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "der Platz",
+              "czech": "místo",
+              "plural": "Plätze",
+              "example": ""
+            },
+            {
+              "german": "die Prüfung",
+              "czech": "zkouška",
+              "plural": "-en",
+              "example": ""
+            },
+            {
+              "german": "reservieren",
+              "czech": "rezervovat",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "der Ruhetag",
+              "czech": "zavírací den",
+              "plural": "-e",
+              "example": ""
+            },
+            {
+              "german": "das Rührei",
+              "czech": "míchaná vejce",
+              "plural": "-er",
+              "example": ""
+            }
+          ]
+        },
+        {
+          "number": 16,
+          "words": [
+            {
+              "german": "die Spaghetti",
+              "czech": "špagety",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "täglich",
+              "czech": "denní, denně",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "der Tipp",
+              "czech": "tip",
+              "plural": "-s",
+              "example": ""
+            },
+            {
+              "german": "die Vorsicht",
+              "czech": "opatrnost",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "das Zanderfilet",
+              "czech": "filet z candáta",
+              "plural": "-s",
+              "example": ""
+            },
+            {
+              "german": "beidseitig",
+              "czech": "z obou stran, oboustranný",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "braten",
+              "czech": "péci, smažit",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "erhitzen",
+              "czech": "zahřát, ohřát",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "kochen",
+              "czech": "vařit",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "der Kopfsalat",
+              "czech": "hlávkový salát",
+              "plural": "-e",
+              "example": ""
+            }
+          ]
+        },
+        {
+          "number": 17,
+          "words": [
+            {
+              "german": "mild",
+              "czech": "jemný",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "die Minute",
+              "czech": "minuta",
+              "plural": "-n",
+              "example": ""
+            },
+            {
+              "german": "mischen",
+              "czech": "(s)míchat",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "schneiden",
+              "czech": "(na)krájet",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "die Schüssel",
+              "czech": "mísa, miska",
+              "plural": "-n",
+              "example": ""
+            },
+            {
+              "german": "der Senf",
+              "czech": "hořčice",
+              "plural": "-e",
+              "example": ""
+            },
+            {
+              "german": "das Stück",
+              "czech": "kus, kousek",
+              "plural": "-e",
+              "example": ""
+            },
+            {
+              "german": "trocknen",
+              "czech": "(o)sušit, (u)sušit",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "waschen",
+              "czech": "(o)mýt, (u)mýt",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "würzen",
+              "czech": "(o)kořenit",
+              "plural": "-",
+              "example": ""
+            }
+          ]
+        },
+        {
+          "number": 18,
+          "words": [
+            {
+              "german": "zupfen",
+              "czech": "(na)trhat",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "am besten",
+              "czech": "nejlépe",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "das/der Biskuit",
+              "czech": "biskvit, sušenka",
+              "plural": "-s/-e",
+              "example": ""
+            },
+            {
+              "german": "das Currypulver",
+              "czech": "kari prášek",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "die Currywurst",
+              "czech": "Currywurst (klobása politá kečupem a kari)",
+              "plural": "Currywürste",
+              "example": ""
+            },
+            {
+              "german": "dazu",
+              "czech": "k tomu",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "geschnitten",
+              "czech": "nakrájený",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "das Kalbfleisch",
+              "czech": "telecí maso",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "der/das Ketchup",
+              "czech": "kečup",
+              "plural": "-s",
+              "example": ""
+            },
+            {
+              "german": "die Kirsche",
+              "czech": "třešně",
+              "plural": "-n",
+              "example": ""
+            }
+          ]
+        },
+        {
+          "number": 19,
+          "words": [
+            {
+              "german": "man",
+              "czech": "(všeobecný podmět)",
+              "plural": "-",
+              "example": "Schwarzwälder Kirschtorte macht man aus …"
+            },
+            {
+              "german": "die Schokoladenraspeln",
+              "czech": "čokoládové hobliny",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "das Trinkgeld",
+              "czech": "spropitné",
+              "plural": "-er",
+              "example": ""
+            },
+            {
+              "german": "speziell",
+              "czech": "speciální, zvláštní",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "verkaufen",
+              "czech": "prodávat",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "wunderbar",
+              "czech": "báječný, skvělý",
+              "plural": "-",
+              "example": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "name": "Lekce 6",
+      "pages": [
+        {
+          "number": 20,
+          "words": [
+            {
+              "german": "jobben",
+              "czech": "mít brigádu",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "die Pflicht",
+              "czech": "povinnost",
+              "plural": "-en",
+              "example": ""
+            },
+            {
+              "german": "am liebsten",
+              "czech": "nejraději",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "an|fangen",
+              "czech": "začít, začínat",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "an|machen",
+              "czech": "zapnout, pustit",
+              "plural": "-",
+              "example": "Sie macht die Kamera an."
+            },
+            {
+              "german": "an|rufen",
+              "czech": "(za)volat (někomu)",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "sich an|ziehen",
+              "czech": "obléknout se",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "auf|räumen",
+              "czech": "uklízet",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "auf|stehen",
+              "czech": "vstávat",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "auf|wachen",
+              "czech": "probudit se",
+              "plural": "-",
+              "example": ""
+            }
+          ]
+        },
+        {
+          "number": 21,
+          "words": [
+            {
+              "german": "aus|leeren",
+              "czech": "vysypat, vyprázdnit",
+              "plural": "-",
+              "example": "Sie leert den Mülleimer aus."
+            },
+            {
+              "german": "aus|räumen",
+              "czech": "vyklidit",
+              "plural": "-",
+              "example": "Sie räumt die Spülmaschine aus."
+            },
+            {
+              "german": "aus|sehen",
+              "czech": "vypadat",
+              "plural": "-",
+              "example": "Er sieht super aus."
+            },
+            {
+              "german": "das Bad",
+              "czech": "koupelna",
+              "plural": "Bäder",
+              "example": ""
+            },
+            {
+              "german": "das Badezimmer",
+              "czech": "koupelna",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "das Bild",
+              "czech": "obraz",
+              "plural": "-er",
+              "example": ""
+            },
+            {
+              "german": "dabei",
+              "czech": "při tom",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "drehen",
+              "czech": "natáčet",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "duschen",
+              "czech": "sprchovat se",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "ein|kaufen",
+              "czech": "nakupovat",
+              "plural": "-",
+              "example": "Sie kauft alles ein."
+            }
+          ]
+        },
+        {
+          "number": 22,
+          "words": [
+            {
+              "german": "ein|schlafen",
+              "czech": "usnout",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "das Ende",
+              "czech": "konec",
+              "plural": "-n",
+              "example": "Der Unterricht ist um 13 Uhr zu Ende."
+            },
+            {
+              "german": "endlich",
+              "czech": "konečně",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "fern|sehen",
+              "czech": "dívat se na televizi",
+              "plural": "-",
+              "example": "Er sieht oft fern."
+            },
+            {
+              "german": "fertig",
+              "czech": "hotový",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "halb",
+              "czech": "půl",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "der Horror",
+              "czech": "horor",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "Hurra!",
+              "czech": "Hurá!",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "die Kamera",
+              "czech": "kamera, fotoaparát",
+              "plural": "-s",
+              "example": ""
+            },
+            {
+              "german": "klingeln",
+              "czech": "zvonit",
+              "plural": "-",
+              "example": ""
+            }
+          ]
+        },
+        {
+          "number": 23,
+          "words": [
+            {
+              "german": "das Lieblingsfach",
+              "czech": "oblíbený předmět",
+              "plural": "Lieblingsfächer",
+              "example": ""
+            },
+            {
+              "german": "mit|nehmen",
+              "czech": "vzít s sebou",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "müde",
+              "czech": "unavený",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "der Mülleimer",
+              "czech": "odpadkový koš",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "putzen",
+              "czech": "(vy)čistit",
+              "plural": "-",
+              "example": "Sie putzt das Bad. / Ich muss noch Zähne putzen."
+            },
+            {
+              "german": "saugen",
+              "czech": "vysávat",
+              "plural": "-",
+              "example": "Sie saugt Staub."
+            },
+            {
+              "german": "schlafen",
+              "czech": "spát",
+              "plural": "-",
+              "example": "Sie geht schlafen."
+            },
+            {
+              "german": "(sich) schminken",
+              "czech": "líčit se",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "die Spülmaschine",
+              "czech": "myčka nádobí",
+              "plural": "-n",
+              "example": ""
+            },
+            {
+              "german": "der Staub",
+              "czech": "prach",
+              "plural": "-",
+              "example": ""
+            }
+          ]
+        },
+        {
+          "number": 24,
+          "words": [
+            {
+              "german": "der Unterricht",
+              "czech": "vyučování",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "das/der Viertel",
+              "czech": "čtvrt",
+              "plural": "-",
+              "example": "Es ist Viertel vor acht."
+            },
+            {
+              "german": "vloggen",
+              "czech": "natáčet vlog (videoblog)",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "(sich) vor|bereiten",
+              "czech": "připravovat (se)",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "der Wecker",
+              "czech": "budík",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "zeigen",
+              "czech": "ukázat",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "zu|bereiten",
+              "czech": "připravit (jídlo)",
+              "plural": "-",
+              "example": "Sie bereiten das Abendessen zu."
+            },
+            {
+              "german": "zurück|kommen",
+              "czech": "vrátit se",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "aus|schalten",
+              "czech": "vypnout",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "ein|schalten",
+              "czech": "zapnout",
+              "plural": "-",
+              "example": ""
+            }
+          ]
+        },
+        {
+          "number": 25,
+          "words": [
+            {
+              "german": "wen",
+              "czech": "koho",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "die Uhrzeit",
+              "czech": "(přesný) čas",
+              "plural": "-en",
+              "example": ""
+            },
+            {
+              "german": "das Bett",
+              "czech": "postel",
+              "plural": "-en",
+              "example": "ins Bett gehen"
+            },
+            {
+              "german": "der Blogger",
+              "czech": "bloger",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "entdecken",
+              "czech": "objevit, najít",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "(sich) entschuldigen",
+              "czech": "omluvit (se)",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "erzählen",
+              "czech": "vyprávět",
+              "plural": "-",
+              "example": "über + 4. p., von + 3. p."
+            },
+            {
+              "german": "kommentieren",
+              "czech": "komentovat",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "liken",
+              "czech": "likovat",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "posten",
+              "czech": "postovat (příspěvky)",
+              "plural": "-",
+              "example": ""
+            }
+          ]
+        },
+        {
+          "number": 26,
+          "words": [
+            {
+              "german": "der Trend",
+              "czech": "trend",
+              "plural": "-s",
+              "example": ""
+            },
+            {
+              "german": "verbringen",
+              "czech": "strávit (čas)",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "vergessen",
+              "czech": "zapomenout",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "weiter",
+              "czech": "dále",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "wissen",
+              "czech": "vědět",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "dienstags",
+              "czech": "každé úterý",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "donnerstags",
+              "czech": "každý čtvrtek",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "freitags",
+              "czech": "každý pátek",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "der Kanal",
+              "czech": "program, kanál",
+              "plural": "Kanäle",
+              "example": ""
+            },
+            {
+              "german": "Lieblings- (Kanal …)",
+              "czech": "oblíbený (kanál)",
+              "plural": "-",
+              "example": ""
+            }
+          ]
+        },
+        {
+          "number": 27,
+          "words": [
+            {
+              "german": "die Mitternacht",
+              "czech": "půlnoc",
+              "plural": "Mitternächte",
+              "example": "um Mitternacht"
+            },
+            {
+              "german": "mittwochs",
+              "czech": "každou středu",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "montags",
+              "czech": "každé pondělí",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "morgens",
+              "czech": "každé ráno",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "der Nachmittag",
+              "czech": "odpoledne",
+              "plural": "-e",
+              "example": "am Nachmittag"
+            },
+            {
+              "german": "nachmittags",
+              "czech": "každé odpoledne",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "samstags",
+              "czech": "každou sobotu",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "sonntags",
+              "czech": "každou neděli",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "das Training",
+              "czech": "trénink",
+              "plural": "-s",
+              "example": ""
+            },
+            {
+              "german": "der Vormittag",
+              "czech": "dopoledne",
+              "plural": "-e",
+              "example": "am Vormittag"
+            }
+          ]
+        },
+        {
+          "number": 28,
+          "words": [
+            {
+              "german": "vormittags",
+              "czech": "každé dopoledne",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "die Weltmeisterschaft",
+              "czech": "mistrovství světa",
+              "plural": "-en",
+              "example": ""
+            },
+            {
+              "german": "durch",
+              "czech": "přes, skrz",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "die Ecke",
+              "czech": "roh",
+              "plural": "-n",
+              "example": "Ich bin schon um die Ecke."
+            },
+            {
+              "german": "gegen",
+              "czech": "proti",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "lieb",
+              "czech": "milý, milovaný",
+              "plural": "-",
+              "example": "Ich hab dich lieb."
+            },
+            {
+              "german": "das Mädchen",
+              "czech": "dívka",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "ohne",
+              "czech": "bez",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "der Park",
+              "czech": "park",
+              "plural": "-s",
+              "example": ""
+            },
+            {
+              "german": "der Schatz",
+              "czech": "poklad, zlatíčko",
+              "plural": "Schätze",
+              "example": ""
+            }
+          ]
+        },
+        {
+          "number": 29,
+          "words": [
+            {
+              "german": "der Stress",
+              "czech": "stres",
+              "plural": "-e",
+              "example": "Kein Stress!"
+            },
+            {
+              "german": "die Berufsschule",
+              "czech": "učňovská škola",
+              "plural": "-n",
+              "example": ""
+            },
+            {
+              "german": "dumm",
+              "czech": "hloupý",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "die Fachschule",
+              "czech": "odborná škola",
+              "plural": "-n",
+              "example": ""
+            },
+            {
+              "german": "ab|holen",
+              "czech": "vyzvednout",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "der Kindergarten",
+              "czech": "mateřská škola",
+              "plural": "Kindergarten",
+              "example": ""
+            },
+            {
+              "german": "das Krankenhaus",
+              "czech": "nemocnice",
+              "plural": "Krankenhäuser",
+              "example": ""
+            },
+            {
+              "german": "sich treffen",
+              "czech": "setkat se",
+              "plural": "-",
+              "example": "Wir treffen uns heute."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "name": "Lekce 7",
+      "pages": [
+        {
+          "number": 30,
+          "words": [
+            {
+              "german": "arrogant",
+              "czech": "arogantní",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "besichtigen",
+              "czech": "prohlédnout si",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "doof",
+              "czech": "pitomý, blbý",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "echt",
+              "czech": "fakt, opravdu",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "einmal",
+              "czech": "jednou",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "die Freundesliste",
+              "czech": "seznam přátel",
+              "plural": "-n",
+              "example": ""
+            },
+            {
+              "german": "gefallen",
+              "czech": "líbit se (někomu)",
+              "plural": "-",
+              "example": "Das gefällt mir nicht."
+            },
+            {
+              "german": "gehören",
+              "czech": "patřit (někomu)",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "helfen",
+              "czech": "pomoci, pomáhat (někomu)",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "hilfsbereit",
+              "czech": "ochotný pomoci",
+              "plural": "-",
+              "example": ""
+            }
+          ]
+        },
+        {
+          "number": 31,
+          "words": [
+            {
+              "german": "hübsch",
+              "czech": "hezký, pěkný",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "humorvoll",
+              "czech": "vtipný",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "klicken",
+              "czech": "kliknout",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "lachen",
+              "czech": "smát se",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "laufen",
+              "czech": "běhat, běžet",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "lieben",
+              "czech": "milovat, mít rád",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "lustig",
+              "czech": "veselý, vtipný",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "die Medizin",
+              "czech": "medicína",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "originell",
+              "czech": "originální, osobitý",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "per + podst. jm.",
+              "czech": "čím (např. per E-Mail/WhatsApp)",
+              "plural": "-",
+              "example": "per E-Mail/WhatsApp"
+            }
+          ]
+        },
+        {
+          "number": 32,
+          "words": [
+            {
+              "german": "das Reisen",
+              "czech": "cestování",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "schenken",
+              "czech": "darovat",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "schicken",
+              "czech": "poslat",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "die Süßigkeit",
+              "czech": "sladkost, cukrovinka",
+              "plural": "-en",
+              "example": ""
+            },
+            {
+              "german": "sympathisch",
+              "czech": "sympatický",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "das T-Shirt",
+              "czech": "tričko",
+              "plural": "-s",
+              "example": ""
+            },
+            {
+              "german": "unzufrieden",
+              "czech": "nespokojený",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "der Wald",
+              "czech": "les",
+              "plural": "Wälder",
+              "example": ""
+            },
+            {
+              "german": "der Witz",
+              "czech": "vtip",
+              "plural": "-e",
+              "example": ""
+            },
+            {
+              "german": "das Aussehen",
+              "czech": "vzhled",
+              "plural": "-",
+              "example": ""
+            }
+          ]
+        },
+        {
+          "number": 33,
+          "words": [
+            {
+              "german": "böse",
+              "czech": "zlý",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "der Charakter",
+              "czech": "charakter",
+              "plural": "-e",
+              "example": ""
+            },
+            {
+              "german": "dick",
+              "czech": "tlustý",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "frech",
+              "czech": "drzý",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "hässlich",
+              "czech": "ošklivý",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "klein",
+              "czech": "malý",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "die Persönlichkeit",
+              "czech": "osobnost",
+              "plural": "-en",
+              "example": ""
+            },
+            {
+              "german": "schlank",
+              "czech": "štíhlý",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "verschieden",
+              "czech": "různý",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "das Problem",
+              "czech": "problém",
+              "plural": "-e",
+              "example": ""
+            }
+          ]
+        },
+        {
+          "number": 34,
+          "words": [
+            {
+              "german": "das Abonnement",
+              "czech": "předplatné",
+              "plural": "-s",
+              "example": ""
+            },
+            {
+              "german": "das Armband",
+              "czech": "náramek",
+              "plural": "Armbänder",
+              "example": ""
+            },
+            {
+              "german": "die Blume",
+              "czech": "květina",
+              "plural": "-n",
+              "example": ""
+            },
+            {
+              "german": "der Gutschein",
+              "czech": "poukaz",
+              "plural": "-e",
+              "example": ""
+            },
+            {
+              "german": "die Handyfolie",
+              "czech": "obal na mobil",
+              "plural": "-n",
+              "example": ""
+            },
+            {
+              "german": "der Kalender",
+              "czech": "kalendář",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "die Klamotte",
+              "czech": "oblečení („hadry“)",
+              "plural": "-n",
+              "example": ""
+            },
+            {
+              "german": "die Kosmetik",
+              "czech": "kosmetika",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "das Kosmetik-Set",
+              "czech": "kosmetický balíček",
+              "plural": "-s",
+              "example": ""
+            },
+            {
+              "german": "das Ladegerät",
+              "czech": "nabíječka",
+              "plural": "-e",
+              "example": ""
+            }
+          ]
+        },
+        {
+          "number": 35,
+          "words": [
+            {
+              "german": "der Lautsprecher",
+              "czech": "reproduktor",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "leer",
+              "czech": "prázdný",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "der Muttertag",
+              "czech": "Den matek",
+              "plural": "-e",
+              "example": ""
+            },
+            {
+              "german": "die Selfie-Stange",
+              "czech": "selfie tyč",
+              "plural": "-n",
+              "example": ""
+            },
+            {
+              "german": "das Ticket",
+              "czech": "vstupenka",
+              "plural": "-s",
+              "example": ""
+            },
+            {
+              "german": "das Weihnachten",
+              "czech": "Vánoce",
+              "plural": "-",
+              "example": "zu Weihnachten"
+            },
+            {
+              "german": "die Zeitschrift",
+              "czech": "časopis",
+              "plural": "-en",
+              "example": ""
+            },
+            {
+              "german": "der Fanatiker",
+              "czech": "fanatik",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "geben",
+              "czech": "dávat, dát",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "joggesamt",
+              "czech": "celkem, dohromady",
+              "plural": "-",
+              "example": ""
+            }
+          ]
+        },
+        {
+          "number": 36,
+          "words": [
+            {
+              "german": "das Prozent",
+              "czech": "procento",
+              "plural": "-e",
+              "example": ""
+            },
+            {
+              "german": "das Schuljahr",
+              "czech": "školní rok",
+              "plural": "-e",
+              "example": "am Ende des Schuljahres"
+            },
+            {
+              "german": "witzig",
+              "czech": "vtipný",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "fair",
+              "czech": "férový, spravedlivý",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "streng",
+              "czech": "přísný",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "unfair",
+              "czech": "nespravedlivý",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "unsympathisch",
+              "czech": "nesympatický",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "Argentinien",
+              "czech": "Argentina",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "das Märchen",
+              "czech": "pohádka",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "Rad fahren",
+              "czech": "jezdit na kole",
+              "plural": "-",
+              "example": ""
+            }
+          ]
+        },
+        {
+          "number": 37,
+          "words": [
+            {
+              "german": "die Sofortbildkamera",
+              "czech": "polaroid",
+              "plural": "-s",
+              "example": ""
+            },
+            {
+              "german": "die Spielkarte",
+              "czech": "hrací karta",
+              "plural": "-n",
+              "example": ""
+            },
+            {
+              "german": "das Fotografieren",
+              "czech": "fotografování",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "die Mode",
+              "czech": "móda",
+              "plural": "-n",
+              "example": ""
+            },
+            {
+              "german": "das Radfahren",
+              "czech": "jízda na kole (cyklistika)",
+              "plural": "-",
+              "example": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "name": "Lekce 8",
+      "pages": [
+        {
+          "number": 38,
+          "words": [
+            {
+              "german": "allein",
+              "czech": "sám",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "der Altbau",
+              "czech": "stará budova",
+              "plural": "Altbauten",
+              "example": ""
+            },
+            {
+              "german": "besser",
+              "czech": "lepší",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "der Blick",
+              "czech": "výhled, pohled",
+              "plural": "-e",
+              "example": ""
+            },
+            {
+              "german": "das Dachgeschoss",
+              "czech": "podkroví",
+              "plural": "-e",
+              "example": ""
+            },
+            {
+              "german": "endlich",
+              "czech": "konečně",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "das Fachwerkhaus",
+              "czech": "hrázděný dům",
+              "plural": "Fachwerkhäuser",
+              "example": ""
+            },
+            {
+              "german": "der Keller",
+              "czech": "sklep",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "die Küche",
+              "czech": "kuchyně",
+              "plural": "-n",
+              "example": ""
+            },
+            {
+              "german": "das Landhaus",
+              "czech": "venkovské stavení",
+              "plural": "Landhäuser",
+              "example": ""
+            }
+          ]
+        },
+        {
+          "number": 39,
+          "words": [
+            {
+              "german": "die Mietwohnung",
+              "czech": "nájemní byt",
+              "plural": "-en",
+              "example": ""
+            },
+            {
+              "german": "der Neubau",
+              "czech": "novostavba",
+              "plural": "-ten",
+              "example": ""
+            },
+            {
+              "german": "der Stadtrand",
+              "czech": "periferie, okraj města",
+              "plural": "Stadtränder",
+              "example": ""
+            },
+            {
+              "german": "der Swimmingpool",
+              "czech": "bazén",
+              "plural": "-s",
+              "example": ""
+            },
+            {
+              "german": "der Stock",
+              "czech": "patro, poschodí",
+              "plural": "Stockwerke",
+              "example": ""
+            },
+            {
+              "german": "wirklich",
+              "czech": "opravdu",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "der Wohnblock",
+              "czech": "obytný blok",
+              "plural": "Wohnblöcke/-s",
+              "example": ""
+            },
+            {
+              "german": "das Wohnen",
+              "czech": "bydlení",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "das Wohnhaus",
+              "czech": "obytný dům",
+              "plural": "Wohnhäuser",
+              "example": ""
+            },
+            {
+              "german": "das Wohnzimmer",
+              "czech": "obývací pokoj, obývák",
+              "plural": "-",
+              "example": ""
+            }
+          ]
+        },
+        {
+          "number": 40,
+          "words": [
+            {
+              "german": "die Wohnung",
+              "czech": "byt",
+              "plural": "-en",
+              "example": ""
+            },
+            {
+              "german": "ziemlich",
+              "czech": "poměrně, docela",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "die Zwei-Zimmer-Wohnung",
+              "czech": "dvoupokojový byt",
+              "plural": "-en",
+              "example": ""
+            },
+            {
+              "german": "ab|biegen",
+              "czech": "zahnout, odbočit",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "der Aufsatz",
+              "czech": "slohová práce",
+              "plural": "Aufsätze",
+              "example": ""
+            },
+            {
+              "german": "bisschen",
+              "czech": "málo, trochu",
+              "plural": "-",
+              "example": "ein bisschen"
+            },
+            {
+              "german": "das Bauernhaus",
+              "czech": "statek",
+              "plural": "Bauernhäuser",
+              "example": ""
+            },
+            {
+              "german": "die Brücke",
+              "czech": "most",
+              "plural": "-n",
+              "example": ""
+            },
+            {
+              "german": "chaotisch",
+              "czech": "chaotický",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "das Einfamilienhaus",
+              "czech": "rodinný dům",
+              "plural": "Einfamilienhäuser",
+              "example": ""
+            }
+          ]
+        },
+        {
+          "number": 41,
+          "words": [
+            {
+              "german": "entlang, an ... (+3. p.) entlang",
+              "czech": "podél, kolem",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "geradeaus",
+              "czech": "přímo, rovně",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "das Hochhaus",
+              "czech": "výškový dům",
+              "plural": "Hochhäuser",
+              "example": ""
+            },
+            {
+              "german": "das Holzhaus",
+              "czech": "dřevostavba",
+              "plural": "Holzhäuser",
+              "example": ""
+            },
+            {
+              "german": "die Kirche",
+              "czech": "kostel",
+              "plural": "-n",
+              "example": ""
+            },
+            {
+              "german": "malen",
+              "czech": "malovat",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "das Mehrfamilienhaus",
+              "czech": "bytový dům",
+              "plural": "Mehrfamilienhäuser",
+              "example": ""
+            },
+            {
+              "german": "die Orientierung",
+              "czech": "orientace",
+              "plural": "-en",
+              "example": ""
+            },
+            {
+              "german": "der Plattenbau",
+              "czech": "panelový dům",
+              "plural": "-ten",
+              "example": ""
+            },
+            {
+              "german": "der Platz",
+              "czech": "náměstí",
+              "plural": "Plätze",
+              "example": ""
+            }
+          ]
+        },
+        {
+          "number": 42,
+          "words": [
+            {
+              "german": "die Polizeidienststelle",
+              "czech": "policejní stanice",
+              "plural": "-n",
+              "example": ""
+            },
+            {
+              "german": "das Reihenhaus",
+              "czech": "řadový dům",
+              "plural": "Reihenhäuser",
+              "example": ""
+            },
+            {
+              "german": "die Siedlung",
+              "czech": "sídliště",
+              "plural": "-en",
+              "example": ""
+            },
+            {
+              "german": "der Stadtplan",
+              "czech": "mapa města",
+              "plural": "Stadtpläne",
+              "example": ""
+            },
+            {
+              "german": "das Tennis",
+              "czech": "tenis",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "die Villa",
+              "czech": "vila",
+              "plural": "Villen",
+              "example": ""
+            },
+            {
+              "german": "vorbei, an ... (+3. p.) vorbei",
+              "czech": "kolem",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "warten",
+              "czech": "čekat",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "der Weg",
+              "czech": "cesta",
+              "plural": "-e",
+              "example": ""
+            },
+            {
+              "german": "der Wolkenkratzer",
+              "czech": "mrakodrap",
+              "plural": "-",
+              "example": ""
+            }
+          ]
+        },
+        {
+          "number": 43,
+          "words": [
+            {
+              "german": "die Ampel",
+              "czech": "semafor",
+              "plural": "-n",
+              "example": ""
+            },
+            {
+              "german": "die Bank",
+              "czech": "banka",
+              "plural": "-en",
+              "example": ""
+            },
+            {
+              "german": "der Fluss",
+              "czech": "řeka",
+              "plural": "Flüsse",
+              "example": ""
+            },
+            {
+              "german": "die Fußgängerzone",
+              "czech": "pěší zóna",
+              "plural": "-n",
+              "example": ""
+            },
+            {
+              "german": "die Haltestelle",
+              "czech": "stanice, zastávka",
+              "plural": "-n",
+              "example": ""
+            },
+            {
+              "german": "die Kreuzung",
+              "czech": "křižovatka",
+              "plural": "-en",
+              "example": ""
+            },
+            {
+              "german": "die Linie",
+              "czech": "linka",
+              "plural": "-n",
+              "example": ""
+            },
+            {
+              "german": "das Rathaus",
+              "czech": "radnice",
+              "plural": "Rathäuser",
+              "example": ""
+            },
+            {
+              "german": "das Seniorenheim",
+              "czech": "domov důchodců",
+              "plural": "-e",
+              "example": ""
+            },
+            {
+              "german": "die Straßenbahn",
+              "czech": "tramvaj",
+              "plural": "-en",
+              "example": ""
+            }
+          ]
+        },
+        {
+          "number": 44,
+          "words": [
+            {
+              "german": "das Studentenwohnheim",
+              "czech": "koleje (vysokoškolské)",
+              "plural": "-e",
+              "example": ""
+            },
+            {
+              "german": "das Taxi",
+              "czech": "taxi",
+              "plural": "-s",
+              "example": ""
+            },
+            {
+              "german": "das Tor",
+              "czech": "brána",
+              "plural": "-e",
+              "example": ""
+            },
+            {
+              "german": "die U-Bahn",
+              "czech": "metro, podzemní dráha",
+              "plural": "-en",
+              "example": ""
+            },
+            {
+              "german": "die Unterführung",
+              "czech": "podjezd, podchod",
+              "plural": "-en",
+              "example": ""
+            },
+            {
+              "german": "das Wohnheim",
+              "czech": "domov, ubytovna, internát",
+              "plural": "-e",
+              "example": ""
+            },
+            {
+              "german": "das Appartement",
+              "czech": "apartmá",
+              "plural": "-s/-e",
+              "example": ""
+            },
+            {
+              "german": "das Arbeitszimmer",
+              "czech": "pracovna",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "der Balkon",
+              "czech": "balkon",
+              "plural": "-s/-e",
+              "example": ""
+            },
+            {
+              "german": "bequem",
+              "czech": "pohodlný",
+              "plural": "-",
+              "example": ""
+            }
+          ]
+        },
+        {
+          "number": 45,
+          "words": [
+            {
+              "german": "die Diele",
+              "czech": "předsíň, chodba",
+              "plural": "-n",
+              "example": ""
+            },
+            {
+              "german": "extra",
+              "czech": "extra, zvlášť",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "fantastisch",
+              "czech": "fantastický",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "das Kinderzimmer",
+              "czech": "dětský pokoj",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "die Kochecke",
+              "czech": "kuchyňský kout",
+              "plural": "-n",
+              "example": ""
+            },
+            {
+              "german": "das Mietshaus",
+              "czech": "nájemní dům",
+              "plural": "Mietshäuser",
+              "example": ""
+            },
+            {
+              "german": "praktisch",
+              "czech": "praktický",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "reichen",
+              "czech": "stačit",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "die Sache",
+              "czech": "věc",
+              "plural": "-n",
+              "example": ""
+            },
+            {
+              "german": "das Schlafzimmer",
+              "czech": "ložnice",
+              "plural": "-",
+              "example": ""
+            }
+          ]
+        },
+        {
+          "number": 46,
+          "words": [
+            {
+              "german": "zusammen|wohnen",
+              "czech": "bydlet spolu",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "der Abstellraum",
+              "czech": "komora, skladovací místnost",
+              "plural": "Abstellräume",
+              "example": ""
+            },
+            {
+              "german": "erforderlich",
+              "czech": "potřebný, nezbytný",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "die Essecke",
+              "czech": "jídelní kout",
+              "plural": "-n",
+              "example": ""
+            },
+            {
+              "german": "das Gästezimmer",
+              "czech": "pokoj pro hosty",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "das Grundstück",
+              "czech": "pozemek",
+              "plural": "-e",
+              "example": ""
+            },
+            {
+              "german": "die Kaltmiete",
+              "czech": "nájemné bez energií",
+              "plural": "-n",
+              "example": ""
+            },
+            {
+              "german": "die Miete",
+              "czech": "nájemné",
+              "plural": "-n",
+              "example": ""
+            },
+            {
+              "german": "der Nachbar",
+              "czech": "soused",
+              "plural": "-n",
+              "example": ""
+            },
+            {
+              "german": "der Preis",
+              "czech": "cena",
+              "plural": "-e",
+              "example": ""
+            }
+          ]
+        },
+        {
+          "number": 47,
+          "words": [
+            {
+              "german": "die Renovierung",
+              "czech": "renovace",
+              "plural": "-en",
+              "example": ""
+            },
+            {
+              "german": "der Stellplatz",
+              "czech": "(parkovací) místo",
+              "plural": "Stellplätze",
+              "example": ""
+            },
+            {
+              "german": "die Treppe",
+              "czech": "schodiště, schody",
+              "plural": "-n",
+              "example": ""
+            },
+            {
+              "german": "vermieten",
+              "czech": "pronajmout, pronajímat",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "die Wohnfläche",
+              "czech": "obytná plocha",
+              "plural": "-n",
+              "example": ""
+            },
+            {
+              "german": "der Aufzug",
+              "czech": "výtah",
+              "plural": "Aufzüge",
+              "example": ""
+            },
+            {
+              "german": "die Badewanne",
+              "czech": "vana",
+              "plural": "-n",
+              "example": ""
+            },
+            {
+              "german": "der Bücherschrank",
+              "czech": "knihovna (skříň)",
+              "plural": "Bücherschränke",
+              "example": ""
+            },
+            {
+              "german": "die Couch",
+              "czech": "gauč",
+              "plural": "-(e)s",
+              "example": ""
+            },
+            {
+              "german": "der Ehrengast",
+              "czech": "čestný host",
+              "plural": "Ehrengäste",
+              "example": ""
+            }
+          ]
+        },
+        {
+          "number": 48,
+          "words": [
+            {
+              "german": "eigentlich",
+              "czech": "vlastně",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "einfach",
+              "czech": "jednoduchý; jednoduše",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "der Esstisch",
+              "czech": "jídelní stůl",
+              "plural": "-e",
+              "example": ""
+            },
+            {
+              "german": "der Fernseher",
+              "czech": "televize",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "gar nicht",
+              "czech": "vůbec ne",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "die Hand",
+              "czech": "ruka",
+              "plural": "Hände",
+              "example": "Ich muss meine Hände waschen."
+            },
+            {
+              "german": "der Herd",
+              "czech": "sporák",
+              "plural": "-e",
+              "example": ""
+            },
+            {
+              "german": "holen",
+              "czech": "přinést",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "jung",
+              "czech": "mladý",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "das Kinderbett",
+              "czech": "dětská postýlka",
+              "plural": "-en",
+              "example": ""
+            }
+          ]
+        },
+        {
+          "number": 49,
+          "words": [
+            {
+              "german": "die Kommode",
+              "czech": "komoda",
+              "plural": "-n",
+              "example": ""
+            },
+            {
+              "german": "der Kühlschrank",
+              "czech": "chladnička, lednička",
+              "plural": "Kühlschränke",
+              "example": ""
+            },
+            {
+              "german": "die Mikrowelle",
+              "czech": "mikrovlnná trouba",
+              "plural": "-n",
+              "example": ""
+            },
+            {
+              "german": "modern",
+              "czech": "moderní",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "normalerweise",
+              "czech": "normálně, obvykle",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "die Panik",
+              "czech": "panika",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "das Paradies",
+              "czech": "ráj",
+              "plural": "-e",
+              "example": ""
+            },
+            {
+              "german": "das Regal",
+              "czech": "police",
+              "plural": "-e",
+              "example": ""
+            },
+            {
+              "german": "der Schreibtisch",
+              "czech": "psací stůl",
+              "plural": "-e",
+              "example": ""
+            },
+            {
+              "german": "der Sessel",
+              "czech": "křeslo",
+              "plural": "-",
+              "example": ""
+            }
+          ]
+        },
+        {
+          "number": 50,
+          "words": [
+            {
+              "german": "das Sofa",
+              "czech": "pohovka",
+              "plural": "-s",
+              "example": ""
+            },
+            {
+              "german": "der Teppich",
+              "czech": "koberec",
+              "plural": "-e",
+              "example": ""
+            },
+            {
+              "german": "vorher",
+              "czech": "předtím, před",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "das Waschbecken",
+              "czech": "umyvadlo",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "waschen",
+              "czech": "mýt; prát",
+              "plural": "-",
+              "example": "Ich muss meine Hände waschen."
+            },
+            {
+              "german": "die Waschmaschine",
+              "czech": "pračka",
+              "plural": "-n",
+              "example": ""
+            },
+            {
+              "german": "hängen",
+              "czech": "viset; pověsit",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "hinter",
+              "czech": "za",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "der Kleiderschrank",
+              "czech": "šatní skříň",
+              "plural": "Kleiderschränke",
+              "example": ""
+            },
+            {
+              "german": "legen",
+              "czech": "položit",
+              "plural": "-",
+              "example": ""
+            }
+          ]
+        },
+        {
+          "number": 51,
+          "words": [
+            {
+              "german": "das Poster",
+              "czech": "plakát",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "setzen",
+              "czech": "posadit",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "stellen",
+              "czech": "postavit",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "über",
+              "czech": "nad",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "unter",
+              "czech": "pod",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "zwischen",
+              "czech": "mezi",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "dunkel",
+              "czech": "tmavý",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "die Geige",
+              "czech": "housle",
+              "plural": "-n",
+              "example": ""
+            },
+            {
+              "german": "unbequem",
+              "czech": "nepohodlný",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "ungemütlich",
+              "czech": "neútulný, nepříjemný",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "werden",
+              "czech": "stát se, být (budoucí čas)",
+              "plural": "-",
+              "example": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "name": "Lekce 9",
+      "pages": [
+        {
+          "number": 52,
+          "words": [
+            {
+              "german": "der Berg",
+              "czech": "hora",
+              "plural": "-e",
+              "example": ""
+            },
+            {
+              "german": "das Bundesland",
+              "czech": "spolková země",
+              "plural": "Bundesländer",
+              "example": ""
+            },
+            {
+              "german": "geschlossen",
+              "czech": "zavřeno",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "gestern",
+              "czech": "včera",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "die Grundschule",
+              "czech": "základní škola",
+              "plural": "-n",
+              "example": ""
+            },
+            {
+              "german": "die Laune",
+              "czech": "nálada",
+              "plural": "-n",
+              "example": ""
+            },
+            {
+              "german": "morgen",
+              "czech": "zítra",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "nervös",
+              "czech": "nervózní",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "prima",
+              "czech": "prima",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "der Spaß",
+              "czech": "zábava, legrace",
+              "plural": "Späße",
+              "example": ""
+            }
+          ]
+        },
+        {
+          "number": 53,
+          "words": [
+            {
+              "german": "traurig",
+              "czech": "smutný",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "übermorgen",
+              "czech": "pozítří",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "vorgestern",
+              "czech": "předevčírem",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "virtuell",
+              "czech": "virtuálně",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "die Amtssprache",
+              "czech": "úřední jazyk",
+              "plural": "-n",
+              "example": ""
+            },
+            {
+              "german": "der größte See",
+              "czech": "největší jezero",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "der höchste Berg",
+              "czech": "nejvyšší hora",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "der längste Fluss",
+              "czech": "nejdelší řeka",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "die Einwohnerzahl",
+              "czech": "počet obyvatel",
+              "plural": "-en",
+              "example": ""
+            },
+            {
+              "german": "die Fläche",
+              "czech": "plocha",
+              "plural": "-n",
+              "example": ""
+            }
+          ]
+        },
+        {
+          "number": 54,
+          "words": [
+            {
+              "german": "grenzen",
+              "czech": "hraničit, sousedit",
+              "plural": "-",
+              "example": "+ an (+ 4. p.)"
+            },
+            {
+              "german": "die Hauptstadt",
+              "czech": "hlavní město",
+              "plural": "Hauptstädte",
+              "example": ""
+            },
+            {
+              "german": "die Internet-TLD",
+              "czech": "internetová doména nejvyššího řádu (top-level domain)",
+              "plural": "-s",
+              "example": ""
+            },
+            {
+              "german": "das Kfz = Kraftfahrzeug",
+              "czech": "automobil",
+              "plural": "-e",
+              "example": ""
+            },
+            {
+              "german": "das Kfz-Kennzeichen",
+              "czech": "SPZ, registrační značka",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "km² = Quadratkilometer",
+              "czech": "čtverečný kilometr",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "die Lage",
+              "czech": "poloha",
+              "plural": "-n",
+              "example": ""
+            },
+            {
+              "german": "das Mittelleuropa",
+              "czech": "střední Evropa",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "der Norden",
+              "czech": "sever",
+              "plural": "-",
+              "example": "im Norden"
+            },
+            {
+              "german": "der Osten",
+              "czech": "východ",
+              "plural": "-",
+              "example": "im Osten"
+            }
+          ]
+        },
+        {
+          "number": 55,
+          "words": [
+            {
+              "german": "die Telefonvorwahl",
+              "czech": "telefonní předvolba",
+              "plural": "-en",
+              "example": ""
+            },
+            {
+              "german": "der Süden",
+              "czech": "jih",
+              "plural": "-",
+              "example": "im Süden"
+            },
+            {
+              "german": "die Währung",
+              "czech": "měna",
+              "plural": "-en",
+              "example": ""
+            },
+            {
+              "german": "das Wappen",
+              "czech": "erb",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "der Westen",
+              "czech": "západ",
+              "plural": "-",
+              "example": "im Westen"
+            },
+            {
+              "german": "der Anfang",
+              "czech": "začátek",
+              "plural": "Anfänge",
+              "example": "am Anfang"
+            },
+            {
+              "german": "(sich) an|schauen",
+              "czech": "prohlédnout si",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "der Fan",
+              "czech": "fanoušek",
+              "plural": "-s",
+              "example": ""
+            },
+            {
+              "german": "früher",
+              "czech": "dříve",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "das Glück",
+              "czech": "štěstí",
+              "plural": "-",
+              "example": "zum Glück"
+            }
+          ]
+        },
+        {
+          "number": 56,
+          "words": [
+            {
+              "german": "letzter, letzte, letztes",
+              "czech": "poslední",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "passieren",
+              "czech": "stát se, přihodit se",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "das Quiz",
+              "czech": "kvíz",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "schaffen",
+              "czech": "stihnout, zvládnout",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "die Sehenswürdigkeit",
+              "czech": "pamětihodnost",
+              "plural": "-en",
+              "example": ""
+            },
+            {
+              "german": "der Taxifahrer",
+              "czech": "taxikář",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "das Angebot",
+              "czech": "nabídka",
+              "plural": "-e",
+              "example": ""
+            },
+            {
+              "german": "die Erholung",
+              "czech": "odpočinek, zotavení",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "erleben",
+              "czech": "zažít",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "die Ermäßigung",
+              "czech": "sleva",
+              "plural": "-en",
+              "example": ""
+            }
+          ]
+        },
+        {
+          "number": 57,
+          "words": [
+            {
+              "german": "der Experte",
+              "czech": "expert",
+              "plural": "-n",
+              "example": ""
+            },
+            {
+              "german": "gelten",
+              "czech": "platit",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "der Infostand",
+              "czech": "infostánek",
+              "plural": "Infostände",
+              "example": ""
+            },
+            {
+              "german": "nötig",
+              "czech": "nutný, potřebný",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "schließlich",
+              "czech": "nakonec, konečně",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "der Schlittschuh",
+              "czech": "brusle",
+              "plural": "-e",
+              "example": "Schlittschuh laufen"
+            },
+            {
+              "german": "sparen",
+              "czech": "šetřit, spořit",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "später",
+              "czech": "později",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "das Symbol",
+              "czech": "symbol",
+              "plural": "-e",
+              "example": ""
+            },
+            {
+              "german": "der Traum",
+              "czech": "sen",
+              "plural": "Träume",
+              "example": ""
+            }
+          ]
+        },
+        {
+          "number": 58,
+          "words": [
+            {
+              "german": "der Turm",
+              "czech": "věž",
+              "plural": "Türme",
+              "example": ""
+            },
+            {
+              "german": "die Voranmeldung",
+              "czech": "předběžné přihlášení",
+              "plural": "-en",
+              "example": ""
+            },
+            {
+              "german": "zuerst",
+              "czech": "nejprve",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "zuletzt",
+              "czech": "nakonec",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "berg|steigen",
+              "czech": "chodit po horách, horolezectví",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "billiger",
+              "czech": "levnější",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "der Bodensee",
+              "czech": "Bodamské jezero",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "der beste Tag",
+              "czech": "nejlepší den",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "lieber",
+              "czech": "raději",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "endlich",
+              "czech": "konečně, nakonec",
+              "plural": "-",
+              "example": ""
+            }
+          ]
+        },
+        {
+          "number": 59,
+          "words": [
+            {
+              "german": "fliegen",
+              "czech": "letět",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "das Flugzeug",
+              "czech": "letadlo",
+              "plural": "-e",
+              "example": ""
+            },
+            {
+              "german": "der Germknödel",
+              "czech": "velký kynutý knedlík s povidly",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "klappen",
+              "czech": "klapnout, vyjít, podařit se",
+              "plural": "-",
+              "example": "es klappt"
+            },
+            {
+              "german": "planen",
+              "czech": "plánovat",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "die Postkarte",
+              "czech": "pohlednice",
+              "plural": "-n",
+              "example": ""
+            },
+            {
+              "german": "verlieren",
+              "czech": "ztratit",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "verschlafen",
+              "czech": "zaspat",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "die Verspätung",
+              "czech": "zpoždění",
+              "plural": "-en",
+              "example": ""
+            },
+            {
+              "german": "aus|ruhen",
+              "czech": "odpočinout si",
+              "plural": "-",
+              "example": ""
+            }
+          ]
+        },
+        {
+          "number": 60,
+          "words": [
+            {
+              "german": "baden",
+              "czech": "koupat se",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "der Beachvolleyball",
+              "czech": "plážový volejbal",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "die Bergsicht",
+              "czech": "výhled na hory",
+              "plural": "-en",
+              "example": ""
+            },
+            {
+              "german": "das Bobfahren",
+              "czech": "jízda na bobech",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "der Campingplatz",
+              "czech": "kemp",
+              "plural": "Campingplätze",
+              "example": ""
+            },
+            {
+              "german": "das Eishockey",
+              "czech": "lední hokej",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "das Eislaufen",
+              "czech": "bruslení",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "eis|laufen",
+              "czech": "bruslit",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "die Ferien",
+              "czech": "prázdniny",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "gratis",
+              "czech": "zdarma",
+              "plural": "-",
+              "example": ""
+            }
+          ]
+        },
+        {
+          "number": 61,
+          "words": [
+            {
+              "german": "ideal",
+              "czech": "ideální",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "klettern",
+              "czech": "stoupat, lézt, šplhat na vrchol",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "Langlauf machen",
+              "czech": "jezdit na běžkách",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "der Liebhaber",
+              "czech": "milovník, nadšenec",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "die Natur",
+              "czech": "příroda",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "die Rodelbahn",
+              "czech": "sáňkařská dráha",
+              "plural": "-en",
+              "example": ""
+            },
+            {
+              "german": "rodeln",
+              "czech": "sáňkovat",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "ruhig",
+              "czech": "tichý, klidný",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "der Schneemann",
+              "czech": "sněhulák",
+              "plural": "Schneemänner",
+              "example": "einen Schneemann bauen"
+            },
+            {
+              "german": "der Ski",
+              "czech": "lyže",
+              "plural": "-",
+              "example": "Ski fahren"
+            }
+          ]
+        },
+        {
+          "number": 62,
+          "words": [
+            {
+              "german": "das Skigebiet",
+              "czech": "lyžařský areál",
+              "plural": "-e",
+              "example": ""
+            },
+            {
+              "german": "das Snowboard",
+              "czech": "snowboard",
+              "plural": "-s",
+              "example": "Snowboard fahren"
+            },
+            {
+              "german": "der Sportler",
+              "czech": "sportovec",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "der Urlaub",
+              "czech": "dovolená",
+              "plural": "-e",
+              "example": ""
+            },
+            {
+              "german": "wählen",
+              "czech": "volit",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "zelten",
+              "czech": "stanovat",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "deswegen",
+              "czech": "proto",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "die Olympiahalle",
+              "czech": "olympijská hala",
+              "plural": "-n",
+              "example": ""
+            },
+            {
+              "german": "der Olympionike",
+              "czech": "olympionik",
+              "plural": "-n",
+              "example": ""
+            },
+            {
+              "german": "der Schnee",
+              "czech": "sníh",
+              "plural": "-",
+              "example": ""
+            }
+          ]
+        },
+        {
+          "number": 63,
+          "words": [
+            {
+              "german": "die Sportart",
+              "czech": "(sportovní) disciplína",
+              "plural": "-en",
+              "example": ""
+            },
+            {
+              "german": "überall",
+              "czech": "všude",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "ungefähr",
+              "czech": "asi, přibližně",
+              "plural": "-",
+              "example": ""
+            },
+            {
+              "german": "unmodern",
+              "czech": "nemoderní",
+              "plural": "-",
+              "example": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "name": "Lekce 10",
+      "pages": [
+        {
+          "number": 64,
+          "words": []
+        }
+      ]
+    }
+  ]
+}
