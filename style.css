@@ -92,10 +92,17 @@ body {
 .app-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .app-container {
+        padding: 2rem;
+    }
 }
 
 /* Glass Panel */
@@ -113,12 +120,14 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 1rem 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
 .logo h1 {
     font-family: var(--font-heading);
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 700;
     background: linear-gradient(to right, #fff, var(--secondary));
     background-clip: text;
@@ -126,9 +135,32 @@ body {
     -webkit-text-fill-color: transparent;
 }
 
+@media (min-width: 768px) {
+    .logo h1 {
+        font-size: 2rem;
+    }
+}
+
 .logo span {
     color: var(--primary);
     -webkit-text-fill-color: var(--primary);
+}
+
+.main-nav {
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+    width: 100%;
+    padding-bottom: 0.5rem;
+    justify-content: flex-start;
+}
+
+@media (min-width: 768px) {
+    .main-nav {
+        width: auto;
+        padding-bottom: 0;
+        justify-content: flex-end;
+    }
 }
 
 .nav-btn {
@@ -136,12 +168,22 @@ body {
     border: none;
     color: var(--text-muted);
     font-family: var(--font-body);
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 600;
-    padding: 0.8rem 1.5rem;
+    padding: 0.6rem 1rem;
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s var(--transition);
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .nav-btn {
+        font-size: 1rem;
+        padding: 0.8rem 1.5rem;
+    }
 }
 
 .nav-btn .icon {
@@ -159,8 +201,27 @@ body {
 .selection-bar {
     padding: 1.5rem;
     display: flex;
-    gap: 2rem;
-    align-items: flex-end;
+    gap: 1.5rem;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+@media (min-width: 768px) {
+    .selection-bar {
+        flex-direction: row;
+        align-items: flex-end;
+        gap: 2rem;
+    }
+}
+
+.selector-group {
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .selector-group {
+        width: auto;
+    }
 }
 
 .selector-group label {
@@ -174,7 +235,13 @@ body {
 
 .custom-select-wrapper {
     position: relative;
-    width: 250px;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .custom-select-wrapper {
+        width: 250px;
+    }
 }
 
 select {
@@ -213,10 +280,21 @@ select:disabled {
 }
 
 .stats-display {
-    margin-left: auto;
+    margin-left: 0;
+    margin-top: 0.5rem;
     font-family: var(--font-heading);
     font-size: 1.2rem;
     color: var(--secondary);
+    align-self: flex-end;
+}
+
+@media (min-width: 768px) {
+    .stats-display {
+        margin-left: auto;
+        margin-top: 0;
+        align-self: flex-end;
+        /* Ensures it stays aligned at the bottom with inputs */
+    }
 }
 
 /* Views */
@@ -248,8 +326,15 @@ select:disabled {
 /* Word Grid */
 .word-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+@media (min-width: 768px) {
+    .word-grid {
+        gap: 1.5rem;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
 }
 
 .word-card {
@@ -306,8 +391,8 @@ select:disabled {
 /* Games Grid */
 .games-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
 }
 
 .game-card {
@@ -395,8 +480,10 @@ select:disabled {
 
 /* Flashcard Specifics */
 .flashcard {
-    width: 400px;
-    height: 250px;
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 1.6;
+    height: auto;
     perspective: 1000px;
     cursor: pointer;
 }
@@ -491,8 +578,14 @@ select:disabled {
 
 .quiz-options {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 1rem;
+}
+
+@media (min-width: 600px) {
+    .quiz-options {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 .quiz-btn {
@@ -525,10 +618,19 @@ select:disabled {
 /* Memory Game Styles */
 .memory-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
-    max-width: 800px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    max-width: 600px;
     margin: 0 auto;
+    width: 100%;
+}
+
+@media (min-width: 600px) {
+    .memory-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+        max-width: 800px;
+    }
 }
 
 .memory-card {
@@ -569,15 +671,23 @@ select:disabled {
 .typing-input {
     background: rgba(0, 0, 0, 0.3);
     border: 2px solid var(--glass-border);
-    padding: 1rem 1.5rem;
-    font-size: 1.5rem;
+    padding: 1rem;
+    font-size: 1.2rem;
     color: white;
     border-radius: 50px;
     width: 100%;
+    max-width: 500px;
     margin: 2rem 0;
     text-align: center;
     outline: none;
     transition: 0.3s;
+}
+
+@media (min-width: 768px) {
+    .typing-input {
+        padding: 1rem 1.5rem;
+        font-size: 1.5rem;
+    }
 }
 
 .typing-input:focus {
