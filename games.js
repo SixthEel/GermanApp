@@ -261,18 +261,20 @@ class MemoryGame {
 
     render() {
         this.container.innerHTML = `
-            <div class="memory-grid">
-                ${this.cards.map((card, index) => `
-                    <div class="memory-card hidden-card" data-index="${index}">
-                        <span>${card.text}</span>
+            <div class="memory-container">
+                <div class="memory-grid">
+                    ${this.cards.map((card, index) => `
+                        <div class="memory-card hidden-card" data-index="${index}">
+                            <span>${card.text}</span>
+                        </div>
+                    `).join('')}
+                </div>
+                <div id="match-confirmation" class="confirmation-dialog hidden">
+                    <div class="confirmation-message">Passen die Karten zusammen?</div>
+                    <div class="confirmation-buttons">
+                        <button class="game-btn secondary" id="confirm-no">No</button>
+                        <button class="game-btn" id="confirm-yes">Yes</button>
                     </div>
-                `).join('')}
-            </div>
-            <div id="match-confirmation" class="hidden" style="margin-top: 1rem; text-align: center;">
-                <p>Passen diese Karten zusammen?</p>
-                <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 0.5rem;">
-                    <button class="game-btn secondary" id="confirm-no">No</button>
-                    <button class="game-btn" id="confirm-yes">Yes</button>
                 </div>
             </div>
         `;
@@ -281,8 +283,8 @@ class MemoryGame {
             card.addEventListener('click', () => this.handleCardClick(card));
         });
 
-        // Store confirmation buttons for later use
-        this.confirmationContainer = document.getElementById('match-confirmation');
+        // Store confirmation elements for later use
+        this.confirmationDialog = document.getElementById('match-confirmation');
         this.confirmYesBtn = document.getElementById('confirm-yes');
         this.confirmNoBtn = document.getElementById('confirm-no');
 
@@ -307,14 +309,31 @@ class MemoryGame {
 
     showConfirmationDialog() {
         this.isLocked = true;
-        this.confirmationContainer.classList.remove('hidden');
+        this.confirmationDialog.classList.remove('hidden');
+        
+        // Show what cards are being compared
+        const [card1, card2] = this.flipped;
+        const index1 = parseInt(card1.dataset.index);
+        const index2 = parseInt(card2.dataset.index);
+        const data1 = this.cards[index1];
+        const data2 = this.cards[index2];
+        
+        // Update the confirmation message to show the words being compared
+        const message = this.confirmationDialog.querySelector('.confirmation-message');
+        message.innerHTML = `Do these cards match?<br>
+                            <small style="color: #b2bec3; margin-top: 0.5rem; display: block;">
+                            <strong>${data1.text}</strong> ↔ <strong>${data2.text}</strong>
+                            </small>`;
         
         // Focus the "Yes" button for accessibility
         this.confirmYesBtn.focus();
     }
 
     hideConfirmationDialog() {
-        this.confirmationContainer.classList.add('hidden');
+        this.confirmationDialog.classList.add('hidden');
+        // Reset message
+        const message = this.confirmationDialog.querySelector('.confirmation-message');
+        message.innerHTML = 'Do these cards match?';
     }
 
     handleUserConfirmation(userSaysMatch) {
