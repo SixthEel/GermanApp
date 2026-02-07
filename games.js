@@ -1,6 +1,4 @@
-/**
- * Game Logic for LernDeutsch
- */
+/*  Game Logic for LernDeutsch  */
 
 class GameManager {
     constructor() {
@@ -270,11 +268,27 @@ class MemoryGame {
                     </div>
                 `).join('')}
             </div>
+            <div id="match-confirmation" class="hidden" style="margin-top: 1rem; text-align: center;">
+                <p>Passen diese Karten zusammen?</p>
+                <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 0.5rem;">
+                    <button class="game-btn secondary" id="confirm-no">No</button>
+                    <button class="game-btn" id="confirm-yes">Yes</button>
+                </div>
+            </div>
         `;
 
         this.container.querySelectorAll('.memory-card').forEach(card => {
             card.addEventListener('click', () => this.handleCardClick(card));
         });
+
+        // Store confirmation buttons for later use
+        this.confirmationContainer = document.getElementById('match-confirmation');
+        this.confirmYesBtn = document.getElementById('confirm-yes');
+        this.confirmNoBtn = document.getElementById('confirm-no');
+
+        // Setup confirmation button handlers
+        this.confirmYesBtn.addEventListener('click', () => this.handleUserConfirmation(true));
+        this.confirmNoBtn.addEventListener('click', () => this.handleUserConfirmation(false));
     }
 
     handleCardClick(card) {
@@ -282,47 +296,72 @@ class MemoryGame {
         if (card.classList.contains('matched')) return;
         if (this.flipped.includes(card)) return;
 
-        // Reveal
+        // Reveal card
         card.classList.remove('hidden-card');
         this.flipped.push(card);
 
         if (this.flipped.length === 2) {
-            this.checkMatch();
+            this.showConfirmationDialog();
         }
     }
 
-    checkMatch() {
+    showConfirmationDialog() {
         this.isLocked = true;
-        const [c1, c2] = this.flipped;
-        const i1 = c1.dataset.index;
-        const i2 = c2.dataset.index;
-        const d1 = this.cards[i1];
-        const d2 = this.cards[i2];
+        this.confirmationContainer.classList.remove('hidden');
+        
+        // Focus the "Yes" button for accessibility
+        this.confirmYesBtn.focus();
+    }
 
-        if (d1.id === d2.id) {
-            // Match
-            c1.classList.add('matched');
-            c2.classList.add('matched');
-            this.matched.push(c1, c2);
+    hideConfirmationDialog() {
+        this.confirmationContainer.classList.add('hidden');
+    }
+
+    handleUserConfirmation(userSaysMatch) {
+        const [card1, card2] = this.flipped;
+        const index1 = parseInt(card1.dataset.index);
+        const index2 = parseInt(card2.dataset.index);
+        const data1 = this.cards[index1];
+        const data2 = this.cards[index2];
+        
+        const actualMatch = data1.id === data2.id;
+
+        if (userSaysMatch && actualMatch) {
+            // User says match and it's correct - mark as matched
+            card1.classList.add('matched');
+            card2.classList.add('matched');
+            this.matched.push(card1, card2);
             this.flipped = [];
             this.isLocked = false;
-
+            
+            // Check for victory
             if (this.matched.length === this.cards.length) {
                 setTimeout(() => alert("Victory! Well done!"), 500);
             }
-        } else {
-            // Mismatch
-            c1.classList.add('wrong');
-            c2.classList.add('wrong');
+        } else if (userSaysMatch && !actualMatch) {
+            // User says match but it's wrong - flash red and hide
+            card1.classList.add('wrong-flash');
+            card2.classList.add('wrong-flash');
+            
             setTimeout(() => {
-                c1.classList.add('hidden-card');
-                c2.classList.add('hidden-card');
-                c1.classList.remove('wrong');
-                c2.classList.remove('wrong');
+                card1.classList.remove('wrong-flash');
+                card2.classList.remove('wrong-flash');
+                card1.classList.add('hidden-card');
+                card2.classList.add('hidden-card');
                 this.flipped = [];
                 this.isLocked = false;
             }, 1000);
+        } else {
+            // User says no match - just hide the cards
+            setTimeout(() => {
+                card1.classList.add('hidden-card');
+                card2.classList.add('hidden-card');
+                this.flipped = [];
+                this.isLocked = false;
+            }, 300);
         }
+        
+        this.hideConfirmationDialog();
     }
 }
 

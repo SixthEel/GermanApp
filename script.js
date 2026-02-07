@@ -29,8 +29,9 @@ class App {
         // Configuration for database files
         this.dbFiles = [
             'database 1-4.json',
-            'database 5-10.json'
-            // Add more files here as needed, e.g. 'database 11-20.json'
+            'database 5-10.json',
+            'database 11-14.json',
+            'database 15-18.json'
         ];
 
         await this.loadData();

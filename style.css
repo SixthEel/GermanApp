@@ -1,13 +1,13 @@
 :root {
-    --primary: #6c5ce7;
-    --primary-glow: #6c5ce780;
-    --secondary: #00cec9;
-    --accent: #fd79a8;
+    --primary: #10b981;
+    --primary-glow: #10b98180;
+    --secondary: #34d399;
+    --accent: #6ee7b7;
     --dark: #0f1219;
     --light: #dfe6e9;
-    --glass-bg: rgba(255, 255, 255, 0.05);
-    --glass-border: rgba(255, 255, 255, 0.1);
-    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    --glass-bg: rgba(16, 185, 129, 0.05);
+    --glass-border: rgba(16, 185, 129, 0.2);
+    --glass-shadow: 0 8px 32px 0 rgba(16, 185, 129, 0.2);
     --text-main: #ffffff;
     --text-muted: #b2bec3;
 
@@ -524,8 +524,8 @@ select:disabled {
 }
 
 .flashcard-back {
-    background: linear-gradient(135deg, var(--secondary), #00b894);
-    color: #1e272e;
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: #ffffff;
     transform: rotateY(180deg);
 }
 
@@ -605,8 +605,8 @@ select:disabled {
 }
 
 .quiz-btn.correct {
-    background: #00b894;
-    border-color: #00b894;
+    background: #10b981;
+    border-color: #10b981;
 }
 
 .quiz-btn.wrong {
@@ -656,9 +656,9 @@ select:disabled {
 }
 
 .memory-card.matched {
-    background: rgba(0, 184, 148, 0.2);
-    border: 2px solid #00b894;
-    color: #00b894;
+    background: rgba(16, 185, 129, 0.3);
+    border: 2px solid #10b981;
+    color: #34d399;
     pointer-events: none;
 }
 
@@ -699,4 +699,20 @@ select:disabled {
     min-height: 2rem;
     font-weight: bold;
     margin-bottom: 1rem;
+}
+
+/* Add to existing CSS */
+.memory-card.wrong-flash {
+    background-color: #ff7675 !important;
+    border-color: #ff5252 !important;
+    animation: wrongFlash 0.5s ease-in-out 2;
+}
+
+@keyframes wrongFlash {
+    0%, 100% { background-color: #ff7675; }
+    50% { background-color: #ff5252; }
+}
+
+.hidden {
+    display: none !important;
 }
