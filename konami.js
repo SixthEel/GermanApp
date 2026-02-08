@@ -179,9 +179,9 @@
             left: 50%;
             transform: translate(-50%, -50%) scale(0);
             font-size: 48px;
-            color: #10b981;
+            color: #10b98100;
             font-weight: bold;
-            text-shadow: 0 0 20px rgba(16, 185, 129, 0.7);
+            text-shadow: 0 0 20px rgba(16, 185, 129, 0);
             opacity: 0;
             z-index: 10000;
             pointer-events: none;
