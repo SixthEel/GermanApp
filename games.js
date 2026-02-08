@@ -123,20 +123,6 @@ class GameManager {
             console.log("⚠️ Back button not found (might be hidden initially)");
         }
 
-        // Add a global keyboard shortcut for debugging
-        document.addEventListener('keydown', (e) => {
-            if (e.ctrlKey && e.key === 'd') {
-                console.log("=== DEBUG INFO ===");
-                console.log("GameManager state:", {
-                    words: this.words.length,
-                    activeGame: this.activeGame,
-                    containerVisible: this.container ? !this.container.classList.contains('hidden') : false,
-                    gamesGridVisible: this.gamesGrid ? !this.gamesGrid.classList.contains('hidden') : false
-                });
-                console.log("All game cards:", document.querySelectorAll('.game-card').length);
-            }
-        });
-
         console.log("✅ GameManager initialization complete\n");
     }
 
@@ -271,18 +257,6 @@ class GameManager {
                 }
                 
                 console.log("✅ Game rendered successfully:", type);
-                
-                // Add a debug button
-                const debugBtn = document.createElement('button');
-                debugBtn.textContent = 'DEBUG';
-                debugBtn.style.cssText = 'position: absolute; top: 10px; right: 10px; padding: 5px 10px; background: red; color: white; border: none; border-radius: 3px; cursor: pointer; z-index: 1000;';
-                debugBtn.onclick = () => {
-                    console.log("=== GAME DEBUG ===");
-                    console.log("Game type:", type);
-                    console.log("Words:", this.words.length);
-                    console.log("Viewport children:", this.viewport.children.length);
-                };
-                this.viewport.appendChild(debugBtn);
                 
             } catch (error) {
                 console.error("❌ Error creating game:", error);
