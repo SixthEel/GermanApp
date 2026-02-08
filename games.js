@@ -11,8 +11,8 @@ class GameManager {
     }
 
     init() {
-        game_cards = document.querySelectorAll('.game-card');
-        game_cards.forEach(card => {
+        // Game Selection
+        document.querySelectorAll('.game-card').forEach(card => {
             card.addEventListener('click', () => {
                 const gameType = card.dataset.game;
                 this.startGame(gameType);
@@ -53,18 +53,23 @@ class GameManager {
         this.viewport.innerHTML = '';
         switch (type) {
             case 'flashcards':
+                console.log("Starting Flashcard Game with " + this.words.length + " words.");
                 new FlashcardGame(this.viewport, this.words);
                 break;
             case 'quiz':
+                console.log("Starting Quiz Game with " + this.words.length + " words.");
                 new QuizGame(this.viewport, this.words);
                 break;
             case 'memory':
+                console.log("Starting Memory Game with " + this.words.length + " words.");
                 new MemoryGame(this.viewport, this.words);
                 break;
             case 'typing':
+                console.log("Starting Typing Game with " + this.words.length + " words.");
                 new TypingGame(this.viewport, this.words);
                 break;
             case 'snake':
+                console.log("Starting Snake Game with " + this.words.length + " words.");
                 new SnakeGame(this.viewport, this.words);
                 break;
         }
