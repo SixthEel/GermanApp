@@ -278,7 +278,9 @@
     function showNotification(message) {
         const notification = document.createElement('div');
         notification.textContent = message;
-        notification.style.cssText = `
+        /*
+        notification.style.cssText =
+        `
             position: fixed;
             top: 20px;
             right: 20px;
@@ -290,7 +292,9 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
             z-index: 10000;
             animation: slideIn 0.3s ease-out, slideOut 0.3s ease-in 2.7s;
-        `;
+        `
+        */
+        ;
         
         const style = document.createElement('style');
         style.textContent = `
