@@ -713,7 +713,7 @@ class SnakeGame {
                     <div>Tip: Eingabepufferung ermöglicht nacheinander ausgeführte Richtungsänderungen</div>
                 </div>
             </div>
-        `;
+        `; 
 
         // Initialize the Snake game with the current words
         this.game = new SnakeGameLogic(
