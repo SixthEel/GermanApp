@@ -488,8 +488,68 @@ class SnakeGame {
 }
 
 // Snake Game Logic (adapted from main.js)
+// NEW: Snake Game Class
+class SnakeGame {
+    constructor(container, words) {
+        this.container = container;
+        this.words = words;
+        this.game = null;
+        this.render();
+    }
+
+    render() {
+        this.container.innerHTML = `
+            <div class="snake-game-container">
+                <div class="snake-header">
+                    <div class="snake-stats">
+                        <div>Score: <span id="snakeScore">0</span></div>
+                        <div>Speed: <span id="snakeSpeed">1.0x</span></div>
+                        <div>High Score: <span id="snakeHighScore">0</span></div>
+                    </div>
+                    <div class="snake-word-display">
+                        <p class="snake-word-label">Translate this word</p>
+                        <h1 id="snakeTargetWord" class="snake-target-word">Snake Deutsch</h1>
+                    </div>
+                </div>
+
+                <div class="snake-game-area" id="snakeContainer">
+                    <div class="snake-grid-background" id="snakeGridBackground"></div>
+                    
+                    <div id="snakeOverlay" class="snake-overlay">
+                        <h2 id="snakeOverlayTitle">Ready to Learn?</h2>
+                        <p>
+                            Control the snake with arrow keys or WASD. Collect the correct Czech translation for the German word.
+                            <br/><span class="snake-warning-text">Wrong words shorten your snake by 3!</span>
+                        </p>
+                        <button id="snakeOverlayBtn" class="snake-btn">Start Game</button>
+                    </div>
+                </div>
+                
+                <div class="snake-footer">
+                    <div>Speed increases every 3 correct words</div>
+                    <div>Tip: Input buffering allows queued direction changes</div>
+                </div>
+            </div>
+        `;
+
+        // Initialize the Snake game with the current words
+        this.game = new SnakeGameLogic(
+            this.words,
+            document.getElementById('snakeContainer'),
+            document.getElementById('snakeGridBackground'),
+            document.getElementById('snakeScore'),
+            document.getElementById('snakeHighScore'),
+            document.getElementById('snakeTargetWord'),
+            document.getElementById('snakeOverlay'),
+            document.getElementById('snakeOverlayTitle'),
+            document.getElementById('snakeOverlayBtn'),
+            document.getElementById('snakeSpeed')
+        );
+    }
+}
+
 class SnakeGameLogic {
-    constructor(words, container, gridBackground, scoreEl, highScoreEl, targetWordEl, overlay, overlayTitle, overlayBtn) {
+    constructor(words, container, gridBackground, scoreEl, highScoreEl, targetWordEl, overlay, overlayTitle, overlayBtn, speedEl) {
         this.words = this.convertWordsForSnake(words);
         this.container = container;
         this.gridBackground = gridBackground;
@@ -499,9 +559,15 @@ class SnakeGameLogic {
         this.overlay = overlay;
         this.overlayTitle = overlayTitle;
         this.overlayBtn = overlayBtn;
+        this.speedEl = speedEl;
+        this.gameType = 'snake'; // Add game type identifier
 
         this.GRID_SIZE = 16;
-        this.INITIAL_SPEED = 250;
+        this.BASE_SPEED = 250; // ms per move
+        this.currentSpeed = this.BASE_SPEED;
+        this.speedMultiplier = 1.0;
+        this.wordsCollected = 0;
+        
         this.INITIAL_SNAKE = [
             { x: 8, y: 8 },
             { x: 7, y: 8 },
@@ -509,24 +575,38 @@ class SnakeGameLogic {
         ];
         this.INITIAL_DIRECTION = { x: 1, y: 0 };
 
-        this.snake = [...this.INITIAL_SNAKE];
+        // For smooth movement
+        this.snake = this.INITIAL_SNAKE.map(p => ({ 
+            x: p.x, 
+            y: p.y,
+            targetX: p.x,
+            targetY: p.y,
+            lerpProgress: 1.0
+        }));
+        
         this.direction = { ...this.INITIAL_DIRECTION };
         this.nextDirection = { ...this.INITIAL_DIRECTION };
+        this.inputBuffer = []; // Input buffering queue (max 3 inputs)
+        this.MAX_BUFFER_SIZE = 3;
+        
         this.status = 'idle';
         this.score = 0;
         this.highScore = parseInt(localStorage.getItem('snake-german-highscore') || '0', 10);
         this.targetWord = null;
         this.fieldWords = [];
         this.gameInterval = null;
+        
+        // For rendering interpolation
+        this.lastFrameTime = 0;
+        this.animationFrameId = null;
 
         this.init();
     }
 
     convertWordsForSnake(words) {
-        // Convert from {german, czech} format to {german, english} format for snake game
         return words.map(word => ({
             german: word.german,
-            english: word.czech // Using czech as "english" for the snake game
+            english: word.czech
         }));
     }
 
@@ -534,7 +614,8 @@ class SnakeGameLogic {
         this.updateUI();
         this.renderGridBackground();
         
-        window.addEventListener('keydown', (e) => this.handleKeyDown(e));
+        // Add global key listener with game type check
+        window.addEventListener('keydown', (e) => this.handleGlobalKeyDown(e));
         this.overlayBtn.addEventListener('click', () => this.startGame());
 
         // Touch support
@@ -547,31 +628,262 @@ class SnakeGameLogic {
         }, { passive: false });
     }
 
+    handleGlobalKeyDown(e) {
+        // Only process snake controls if snake game is active
+        if (this.gameType === 'snake' && this.status === 'playing') {
+            this.handleKeyInput(e);
+        } else if ((this.status === 'idle' || this.status === 'gameover') && 
+                   (e.key === 'Enter' || e.key === ' ')) {
+            // Allow start/restart with Enter/Space
+            this.startGame();
+        }
+    }
+
+    handleKeyInput(e) {
+        let newDirection = null;
+        
+        switch (e.key) {
+            case 'ArrowUp':
+            case 'w':
+            case 'W':
+                if (this.direction.y !== 1) newDirection = { x: 0, y: -1 };
+                break;
+            case 'ArrowDown':
+            case 's':
+            case 'S':
+                if (this.direction.y !== -1) newDirection = { x: 0, y: 1 };
+                break;
+            case 'ArrowLeft':
+            case 'a':
+            case 'A':
+                if (this.direction.x !== 1) newDirection = { x: -1, y: 0 };
+                break;
+            case 'ArrowRight':
+            case 'd':
+            case 'D':
+                if (this.direction.x !== -1) newDirection = { x: 1, y: 0 };
+                break;
+        }
+        
+        if (newDirection) {
+            // Add to input buffer if not full
+            if (this.inputBuffer.length < this.MAX_BUFFER_SIZE) {
+                this.inputBuffer.push(newDirection);
+            } else {
+                // Replace oldest input if buffer is full
+                this.inputBuffer.shift();
+                this.inputBuffer.push(newDirection);
+            }
+        }
+    }
+
+    processInputBuffer() {
+        if (this.inputBuffer.length > 0) {
+            const nextDir = this.inputBuffer[0];
+            
+            // Check if direction change is valid (not opposite of current direction)
+            if (this.direction.x !== -nextDir.x || this.direction.y !== -nextDir.y) {
+                this.nextDirection = nextDir;
+                this.inputBuffer.shift(); // Remove processed input
+            } else {
+                // If trying to go opposite direction, clear buffer and keep current
+                this.inputBuffer = [];
+            }
+        }
+    }
+
     startGame() {
         if (this.words.length < 5) {
             alert("Need at least 5 words for Snake game! Select a lesson with more words.");
             return;
         }
 
-        this.snake = this.INITIAL_SNAKE.map(p => ({ ...p }));
+        this.snake = this.INITIAL_SNAKE.map(p => ({ 
+            x: p.x, 
+            y: p.y,
+            targetX: p.x,
+            targetY: p.y,
+            lerpProgress: 1.0
+        }));
+        
         this.direction = { ...this.INITIAL_DIRECTION };
         this.nextDirection = { ...this.INITIAL_DIRECTION };
+        this.inputBuffer = [];
         this.score = 0;
+        this.wordsCollected = 0;
+        this.currentSpeed = this.BASE_SPEED;
+        this.speedMultiplier = 1.0;
         this.status = 'playing';
         
         this.updateUI();
-        this.generateNewRound(this.snake, this.direction);
-        this.renderGame();
+        this.generateNewRound();
         
         if (this.gameInterval) clearInterval(this.gameInterval);
-        this.gameInterval = setInterval(() => this.gameLoop(), this.INITIAL_SPEED);
+        if (this.animationFrameId) cancelAnimationFrame(this.animationFrameId);
+        
+        this.gameInterval = setInterval(() => this.gameLogicUpdate(), this.currentSpeed);
+        this.lastFrameTime = performance.now();
+        this.animate();
         
         this.overlay.classList.add('hidden');
+    }
+
+    gameLogicUpdate() {
+        if (this.status !== 'playing') return;
+
+        this.processInputBuffer();
+        this.direction = this.nextDirection;
+
+        const currentHead = this.snake[0];
+        
+        // Calculate new head position
+        const newHead = {
+            x: currentHead.targetX + this.direction.x,
+            y: currentHead.targetY + this.direction.y,
+            targetX: currentHead.targetX + this.direction.x,
+            targetY: currentHead.targetY + this.direction.y,
+            lerpProgress: 0.0
+        };
+
+        // Wall collision
+        if (
+            newHead.targetX < 0 ||
+            newHead.targetX >= this.GRID_SIZE ||
+            newHead.targetY < 0 ||
+            newHead.targetY >= this.GRID_SIZE
+        ) {
+            this.gameOver();
+            return;
+        }
+
+        // Word collision
+        const hitWordIndex = this.fieldWords.findIndex(
+            w => Math.round(w.position.x) === newHead.targetX && 
+                 Math.round(w.position.y) === newHead.targetY
+        );
+
+        let isGrowing = false;
+        let shouldShrink = false;
+
+        if (hitWordIndex !== -1) {
+            const hitWord = this.fieldWords[hitWordIndex];
+            if (hitWord.isCorrect) {
+                isGrowing = true;
+                this.score++;
+                this.wordsCollected++;
+                
+                // Increase speed every 3 words
+                if (this.wordsCollected % 3 === 0) {
+                    this.increaseSpeed();
+                }
+            } else {
+                shouldShrink = true;
+            }
+        }
+
+        // Self collision check (using target positions)
+        const ignoreTailIndex = isGrowing ? -1 : this.snake.length - 1;
+        const isSelfCollision = this.snake.some((segment, index) => {
+            if (index === ignoreTailIndex) return false;
+            return Math.round(segment.targetX) === newHead.targetX && 
+                   Math.round(segment.targetY) === newHead.targetY;
+        });
+
+        if (isSelfCollision) {
+            this.gameOver();
+            return;
+        }
+
+        // Update snake with lerp animation
+        if (isGrowing) {
+            // Add new head, keep all segments
+            this.snake.unshift(newHead);
+        } else if (shouldShrink) {
+            // Move head, then shrink by 3
+            let tempSnake = [newHead, ...this.snake];
+            
+            if (tempSnake.length <= 3) {
+                this.gameOver();
+                return;
+            }
+            
+            // Remove last 3 segments
+            this.snake = tempSnake.slice(0, tempSnake.length - 3);
+            this.fieldWords.splice(hitWordIndex, 1);
+        } else {
+            // Normal movement - update all segments
+            for (let i = this.snake.length - 1; i > 0; i--) {
+                this.snake[i].targetX = this.snake[i-1].targetX;
+                this.snake[i].targetY = this.snake[i-1].targetY;
+                this.snake[i].lerpProgress = 0.0;
+            }
+            
+            this.snake[0] = newHead;
+        }
+
+        if (isGrowing) {
+            this.generateNewRound();
+        }
+
+        this.updateUI();
+    }
+
+    increaseSpeed() {
+        // Increase speed by 15% every 3 words
+        this.speedMultiplier *= 0.85; // 15% faster = 85% of previous time
+        this.currentSpeed = Math.max(50, Math.floor(this.BASE_SPEED * this.speedMultiplier)); // Minimum 50ms
+        
+        // Update interval
+        if (this.gameInterval) {
+            clearInterval(this.gameInterval);
+            this.gameInterval = setInterval(() => this.gameLogicUpdate(), this.currentSpeed);
+        }
+        
+        // Visual feedback
+        this.showSpeedUpEffect();
+    }
+
+    showSpeedUpEffect() {
+        const effect = document.createElement('div');
+        effect.textContent = '⚡ SPEED UP!';
+        effect.style.cssText = `
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+            font-weight: bold;
+            color: #fbbf24;
+            text-shadow: 0 0 10px rgba(251, 191, 36, 0.8);
+            opacity: 0;
+            z-index: 40;
+            pointer-events: none;
+            animation: speedUpAnim 1s ease-out;
+        `;
+        
+        // Add animation CSS
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes speedUpAnim {
+                0% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
+                50% { opacity: 1; transform: translate(-50%, -50%) scale(1.2); }
+                100% { opacity: 0; transform: translate(-50%, -50%) scale(1); }
+            }
+        `;
+        
+        document.head.appendChild(style);
+        this.container.appendChild(effect);
+        
+        setTimeout(() => {
+            effect.remove();
+            style.remove();
+        }, 1000);
     }
 
     gameOver() {
         this.status = 'gameover';
         clearInterval(this.gameInterval);
+        if (this.animationFrameId) cancelAnimationFrame(this.animationFrameId);
         
         if (this.score > this.highScore) {
             this.highScore = this.score;
@@ -584,86 +896,7 @@ class SnakeGameLogic {
         this.overlay.classList.remove('hidden');
     }
 
-    gameLoop() {
-        if (this.status !== 'playing') return;
-
-        const currentHead = this.snake[0];
-        const currentDir = this.nextDirection;
-        
-        this.direction = currentDir;
-
-        const newHead = { x: currentHead.x + currentDir.x, y: currentHead.y + currentDir.y };
-
-        // Wall collision
-        if (
-            newHead.x < 0 ||
-            newHead.x >= this.GRID_SIZE ||
-            newHead.y < 0 ||
-            newHead.y >= this.GRID_SIZE
-        ) {
-            this.gameOver();
-            return;
-        }
-
-        // Word collision
-        const hitWordIndex = this.fieldWords.findIndex(
-            w => w.position.x === newHead.x && w.position.y === newHead.y
-        );
-
-        let isGrowing = false;
-        let shouldShrink = false;
-
-        if (hitWordIndex !== -1) {
-            const hitWord = this.fieldWords[hitWordIndex];
-            if (hitWord.isCorrect) {
-                isGrowing = true;
-                this.score++;
-            } else {
-                shouldShrink = true;
-            }
-        }
-
-        // Self collision
-        const ignoreTailIndex = isGrowing ? -1 : this.snake.length - 1;
-        const isSelfCollision = this.snake.some((segment, index) => {
-            if (index === ignoreTailIndex) return false;
-            return segment.x === newHead.x && segment.y === newHead.y;
-        });
-
-        if (isSelfCollision) {
-            this.gameOver();
-            return;
-        }
-
-        // Update snake
-        let newSnake = [];
-        if (isGrowing) {
-            newSnake = [newHead, ...this.snake];
-        } else if (shouldShrink) {
-            let tempSnake = [newHead, ...this.snake.slice(0, -1)];
-            
-            if (tempSnake.length <= 3) {
-                this.gameOver();
-                return;
-            }
-            newSnake = tempSnake.slice(0, tempSnake.length - 3);
-            
-            this.fieldWords.splice(hitWordIndex, 1);
-        } else {
-            newSnake = [newHead, ...this.snake.slice(0, -1)];
-        }
-
-        this.snake = newSnake;
-        
-        if (isGrowing) {
-            this.generateNewRound(this.snake, this.direction);
-        }
-
-        this.updateUI();
-        this.renderGame();
-    }
-
-    generateNewRound(currentSnake, currentDir) {
+    generateNewRound() {
         // Pick a new word
         const randomPair = this.words[Math.floor(Math.random() * this.words.length)];
         this.targetWord = randomPair;
@@ -677,7 +910,7 @@ class SnakeGameLogic {
             }
         }
 
-        // Determine spawn locations
+        // Get all possible positions
         const allPositions = [];
         for (let y = 0; y < this.GRID_SIZE; y++) {
             for (let x = 0; x < this.GRID_SIZE; x++) {
@@ -685,26 +918,31 @@ class SnakeGameLogic {
             }
         }
 
-        // Exclusion zones
-        const snakeSet = new Set(currentSnake.map(p => `${p.x},${p.y}`));
-        const head = currentSnake[0];
-        const safetySet = new Set();
+        // Exclude snake positions and safety zone
+        const snakePositions = new Set(this.snake.map(s => 
+            `${Math.round(s.targetX)},${Math.round(s.targetY)}`
+        ));
         
+        const head = this.snake[0];
+        const safetyZone = new Set();
+        
+        // Front 3 cells in current direction
         for (let i = 1; i <= 3; i++) {
-            safetySet.add(`${head.x + currentDir.x * i},${head.y + currentDir.y * i}`);
+            safetyZone.add(`${head.targetX + this.direction.x * i},${head.targetY + this.direction.y * i}`);
         }
-
-        const side1 = { x: head.x - currentDir.y, y: head.y + currentDir.x };
-        const side2 = { x: head.x + currentDir.y, y: head.y - currentDir.x };
-        safetySet.add(`${side1.x},${side1.y}`);
-        safetySet.add(`${side2.x},${side2.y}`);
+        
+        // Cells to the sides
+        const side1 = { x: head.targetX - this.direction.y, y: head.targetY + this.direction.x };
+        const side2 = { x: head.targetX + this.direction.y, y: head.targetY - this.direction.x };
+        safetyZone.add(`${side1.x},${side1.y}`);
+        safetyZone.add(`${side2.x},${side2.y}`);
 
         const validPositions = allPositions.filter(p => {
             const key = `${p.x},${p.y}`;
-            return !snakeSet.has(key) && !safetySet.has(key);
+            return !snakePositions.has(key) && !safetyZone.has(key);
         });
 
-        // Shuffle
+        // Shuffle valid positions
         for (let i = validPositions.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
             [validPositions[i], validPositions[j]] = [validPositions[j], validPositions[i]];
@@ -734,6 +972,7 @@ class SnakeGameLogic {
     updateUI() {
         if (this.scoreEl) this.scoreEl.innerText = this.score;
         if (this.highScoreEl) this.highScoreEl.innerText = this.highScore;
+        if (this.speedEl) this.speedEl.innerText = `${(1/this.speedMultiplier).toFixed(1)}x`;
         
         if (this.targetWordEl) {
             if (this.status === 'playing' && this.targetWord) {
@@ -756,19 +995,62 @@ class SnakeGameLogic {
         }
     }
 
+    animate() {
+        this.animationFrameId = requestAnimationFrame((timestamp) => {
+            const deltaTime = timestamp - this.lastFrameTime;
+            this.lastFrameTime = timestamp;
+            
+            // Update lerp progress for all segments
+            const lerpSpeed = 0.2; // Adjust this for smoother/faster interpolation
+            this.snake.forEach(segment => {
+                if (segment.lerpProgress < 1.0) {
+                    segment.lerpProgress = Math.min(1.0, segment.lerpProgress + lerpSpeed * (deltaTime / 16.67));
+                    
+                    // Linear interpolation
+                    segment.x = segment.x + (segment.targetX - segment.x) * 0.2;
+                    segment.y = segment.y + (segment.targetY - segment.y) * 0.2;
+                } else {
+                    segment.x = segment.targetX;
+                    segment.y = segment.targetY;
+                }
+            });
+            
+            this.renderGame();
+            this.animate();
+        });
+    }
+
     renderGame() {
         const dynamicElements = this.container.querySelectorAll('.snake-segment, .snake-word-item');
         dynamicElements.forEach(el => el.remove());
 
-        // Render Snake
+        // Render Snake with smooth positioning
         this.snake.forEach((segment, index) => {
             const isHead = index === 0;
             const el = document.createElement('div');
             el.className = `snake-segment ${isHead ? 'snake-head' : (index % 2 === 0 ? 'snake-body-even' : 'snake-body-odd')}`;
-            el.style.left = `${(segment.x / this.GRID_SIZE) * 100}%`;
-            el.style.top = `${(segment.y / this.GRID_SIZE) * 100}%`;
+            
+            // Use interpolated positions
+            const xPercent = (segment.x / this.GRID_SIZE) * 100;
+            const yPercent = (segment.y / this.GRID_SIZE) * 100;
+            
+            el.style.left = `${xPercent}%`;
+            el.style.top = `${yPercent}%`;
             el.style.width = `${100 / this.GRID_SIZE}%`;
             el.style.height = `${100 / this.GRID_SIZE}%`;
+            
+            // Apply rotation for smoother turns (optional visual enhancement)
+            if (index > 0 && index < this.snake.length - 1) {
+                const prev = this.snake[index - 1];
+                const next = this.snake[index + 1];
+                const dx = next.targetX - prev.targetX;
+                const dy = next.targetY - prev.targetY;
+                
+                if (dx !== 0 || dy !== 0) {
+                    const angle = Math.atan2(dy, dx) * (180 / Math.PI);
+                    el.style.transform = `scale(0.95) rotate(${angle}deg)`;
+                }
+            }
             
             if (isHead) {
                 const eye1 = document.createElement('div');
@@ -776,18 +1058,20 @@ class SnakeGameLogic {
                 const eye2 = document.createElement('div');
                 eye2.className = 'snake-eye';
                 
-                if (this.direction.x === 1) {
-                    eye1.style.right = '4px'; eye1.style.top = '4px';
-                    eye2.style.right = '4px'; eye2.style.bottom = '4px';
-                } else if (this.direction.x === -1) {
-                    eye1.style.left = '4px'; eye1.style.top = '4px';
-                    eye2.style.left = '4px'; eye2.style.bottom = '4px';
-                } else if (this.direction.y === 1) {
-                    eye1.style.right = '4px'; eye1.style.bottom = '4px';
-                    eye2.style.left = '4px'; eye2.style.bottom = '4px';
-                } else {
-                    eye1.style.right = '4px'; eye1.style.top = '4px';
-                    eye2.style.left = '4px'; eye2.style.top = '4px';
+                // Position eyes based on direction
+                const eyeOffset = 25; // percentage from center
+                if (this.direction.x === 1) { // Right
+                    eye1.style.right = '15%'; eye1.style.top = '20%';
+                    eye2.style.right = '15%'; eye2.style.bottom = '20%';
+                } else if (this.direction.x === -1) { // Left
+                    eye1.style.left = '15%'; eye1.style.top = '20%';
+                    eye2.style.left = '15%'; eye2.style.bottom = '20%';
+                } else if (this.direction.y === 1) { // Down
+                    eye1.style.right = '20%'; eye1.style.bottom = '15%';
+                    eye2.style.left = '20%'; eye2.style.bottom = '15%';
+                } else { // Up
+                    eye1.style.right = '20%'; eye1.style.top = '15%';
+                    eye2.style.left = '20%'; eye2.style.top = '15%';
                 }
                 
                 el.appendChild(eye1);
@@ -809,45 +1093,14 @@ class SnakeGameLogic {
             const tag = document.createElement('div');
             tag.className = 'snake-word-tag';
             tag.innerText = word.text;
+            tag.style.opacity = word.isCorrect ? '1' : '0.8';
+            tag.style.backgroundColor = word.isCorrect ? 
+                'rgba(34, 197, 94, 0.9)' : // Green for correct
+                'rgba(239, 68, 68, 0.9)';   // Red for wrong
             
             el.appendChild(tag);
             this.container.appendChild(el);
         });
-    }
-
-    handleKeyDown(e) {
-        // only handle if snake game is selected
-        if (this.gameType === 'snake')
-        {
-            if (this.status !== 'playing') {
-                if ((this.status === 'idle' || this.status === 'gameover') && (e.key === 'Enter' || e.key === ' ')) {
-                    this.startGame();
-                }
-                return;
-            }
-        }
-        switch (e.key) {
-            case 'ArrowUp':
-            case 'w':
-            case 'W':
-                if (this.direction.y !== 1) this.nextDirection = { x: 0, y: -1 };
-                break;
-            case 'ArrowDown':
-            case 's':
-            case 'S':
-                if (this.direction.y !== -1) this.nextDirection = { x: 0, y: 1 };
-                break;
-            case 'ArrowLeft':
-            case 'a':
-            case 'A':
-                if (this.direction.x !== 1) this.nextDirection = { x: -1, y: 0 };
-                break;
-            case 'ArrowRight':
-            case 'd':
-            case 'D':
-                if (this.direction.x !== -1) this.nextDirection = { x: 1, y: 0 };
-                break;
-        }
     }
 
     handleTouchStart(e) {
@@ -866,27 +1119,35 @@ class SnakeGameLogic {
             
             const dx = touchEndX - this.touchStartX;
             const dy = touchEndY - this.touchStartY;
+            const absDx = Math.abs(dx);
+            const absDy = Math.abs(dy);
             
-            if (Math.abs(dx) > Math.abs(dy)) {
-                if (Math.abs(dx) > 30) {
-                    if (dx > 0) {
-                        if (this.direction.x !== -1) this.nextDirection = { x: 1, y: 0 };
-                    } else {
-                        if (this.direction.x !== 1) this.nextDirection = { x: -1, y: 0 };
-                    }
+            // Swipe threshold
+            if (Math.max(absDx, absDy) < 30) return;
+            
+            let newDirection = null;
+            
+            if (absDx > absDy) {
+                // Horizontal swipe
+                if (dx > 0 && this.direction.x !== -1) {
+                    newDirection = { x: 1, y: 0 }; // Right
+                } else if (dx < 0 && this.direction.x !== 1) {
+                    newDirection = { x: -1, y: 0 }; // Left
                 }
             } else {
-                if (Math.abs(dy) > 30) {
-                    if (dy > 0) {
-                        if (this.direction.y !== -1) this.nextDirection = { x: 0, y: 1 };
-                    } else {
-                        if (this.direction.y !== 1) this.nextDirection = { x: 0, y: -1 };
-                    }
+                // Vertical swipe
+                if (dy > 0 && this.direction.y !== -1) {
+                    newDirection = { x: 0, y: 1 }; // Down
+                } else if (dy < 0 && this.direction.y !== 1) {
+                    newDirection = { x: 0, y: -1 }; // Up
                 }
+            }
+            
+            if (newDirection) {
+                this.inputBuffer.push(newDirection);
             }
         }
     }
 }
-
 // Attach to window
 window.GameManager = new GameManager();

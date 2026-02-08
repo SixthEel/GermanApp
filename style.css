@@ -709,7 +709,6 @@ select:disabled {
     margin-bottom: 1rem;
 }
 
-/* Add to existing CSS */
 .memory-card.wrong-flash {
     background-color: #ff7675 !important;
     border-color: #ff5252 !important;
@@ -936,4 +935,49 @@ select:disabled {
     font-size: 0.75rem;
     color: var(--text-muted);
     text-align: center;
+}
+/* Snake speed display */
+.snake-stats {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.snake-stats div {
+    flex: 1;
+    min-width: 100px;
+    text-align: center;
+}
+
+.snake-stats span {
+    color: white;
+    font-weight: bold;
+    font-size: 1.125rem;
+    display: block;
+    margin-top: 0.25rem;
+}
+
+/* Speed indicator color */
+.snake-stats div:nth-child(2) span {
+    color: #fbbf24; /* Yellow for speed */
+    text-shadow: 0 0 5px rgba(251, 191, 36, 0.5);
+}
+
+/* Snake footer updates */
+.snake-footer {
+    margin-top: 1rem;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-align: center;
+    line-height: 1.4;
+}
+
+.snake-footer div {
+    margin-bottom: 0.25rem;
 }
