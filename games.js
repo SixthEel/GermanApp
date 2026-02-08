@@ -816,13 +816,16 @@ class SnakeGameLogic {
     }
 
     handleKeyDown(e) {
-        if (this.status !== 'playing') {
-            if ((this.status === 'idle' || this.status === 'gameover') && (e.key === 'Enter' || e.key === ' ')) {
-                this.startGame();
+        // only handle if snake game is selected
+        if (this.gameType === 'snake')
+        {
+            if (this.status !== 'playing') {
+                if ((this.status === 'idle' || this.status === 'gameover') && (e.key === 'Enter' || e.key === ' ')) {
+                    this.startGame();
+                }
+                return;
             }
-            return;
         }
-        
         switch (e.key) {
             case 'ArrowUp':
             case 'w':

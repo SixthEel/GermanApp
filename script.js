@@ -1,7 +1,3 @@
-/**
- * Main Application Script for LernDeutsch
- */
-
 class App {
     constructor() {
         this.data = null;
