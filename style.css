@@ -720,7 +720,6 @@ select:disabled {
     50% { background-color: #ff5252; }
 }
 
-/* SNAKE GAME STYLES */
 .snake-game-container {
     width: 100%;
     max-width: 600px;

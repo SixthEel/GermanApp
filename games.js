@@ -1277,9 +1277,7 @@ class SnakeGameLogic {
             tag.className = 'snake-word-tag';
             tag.innerText = word.text;
             tag.style.opacity = word.isCorrect ? '1' : '0.8';
-            tag.style.backgroundColor = word.isCorrect ? 
-                'rgba(34, 197, 94, 0.9)' : // Green for correct
-                'rgba(239, 68, 68, 0.9)';   // Red for wrong
+            tag.style.backgroundColor = getComputedStyle(document.documentElement).getPropertyValue('--secondary').trim();
             
             el.appendChild(tag);
             this.container.appendChild(el);
