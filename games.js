@@ -1,5 +1,3 @@
-/*  Game Logic for LernDeutsch  */
-
 class GameManager {
     constructor() {
         this.words = [];
@@ -13,8 +11,8 @@ class GameManager {
     }
 
     init() {
-        // Game Selection
-        document.querySelectorAll('.game-card').forEach(card => {
+        game_cards = document.querySelectorAll('.game-card');
+        game_cards.forEach(card => {
             card.addEventListener('click', () => {
                 const gameType = card.dataset.game;
                 this.startGame(gameType);
