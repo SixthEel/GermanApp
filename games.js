@@ -1,5 +1,3 @@
-/*  Game Logic for LernDeutsch  */
-
 class GameManager {
     constructor() {
         this.words = [];
