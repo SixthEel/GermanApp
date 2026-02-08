@@ -685,12 +685,12 @@ class SnakeGame {
             <div class="snake-game-container">
                 <div class="snake-header">
                     <div class="snake-stats">
-                        <div>Score: <span id="snakeScore">0</span></div>
-                        <div>Speed: <span id="snakeSpeed">1.0x</span></div>
-                        <div>High Score: <span id="snakeHighScore">0</span></div>
+                        <div>Punktzahl: <span id="snakeScore">0</span></div>
+                        <div>Geschwindigkeit: <span id="snakeSpeed">1.0x</span></div>
+                        <div>Höchste Punktzahl: <span id="snakeHighScore">0</span></div>
                     </div>
                     <div class="snake-word-display">
-                        <p class="snake-word-label">Translate this word</p>
+                        <p class="snake-word-label">Übersetzen Sie dieses Werk</p>
                         <h1 id="snakeTargetWord" class="snake-target-word">Snake Deutsch</h1>
                     </div>
                 </div>
@@ -699,18 +699,18 @@ class SnakeGame {
                     <div class="snake-grid-background" id="snakeGridBackground"></div>
                     
                     <div id="snakeOverlay" class="snake-overlay">
-                        <h2 id="snakeOverlayTitle">Ready to Learn?</h2>
+                        <h2 id="snakeOverlayTitle">Bereit zu lernen?</h2>
                         <p>
-                            Control the snake with arrow keys or WASD. Collect the correct Czech translation for the German word.
-                            <br/><span class="snake-warning-text">Wrong words shorten your snake by 3!</span>
+                            Steuere die Schlange mit den Pfeiltasten oder WASD. Sammle die richtige tschechische Übersetzung für das deutsche Wort.
+                            <br/><span class="snake-warning-text">Falsche Wörter kürzen deine Schlange um 3!</span>
                         </p>
-                        <button id="snakeOverlayBtn" class="snake-btn">Start Game</button>
+                        <button id="snakeOverlayBtn" class="snake-btn">Spiel starten</button>
                     </div>
                 </div>
                 
                 <div class="snake-footer">
-                    <div>Speed increases every 3 correct words</div>
-                    <div>Tip: Input buffering allows queued direction changes</div>
+                    <div>Die Geschwindigkeit erhöht sich alle 3 richtigen Wörter.</div>
+                    <div>Tip: Eingabepufferung ermöglicht nacheinander ausgeführte Richtungsänderungen</div>
                 </div>
             </div>
         `;
@@ -1012,8 +1012,8 @@ class SnakeGameLogic {
     }
 
     increaseSpeed() {
-        // Increase speed by 15% every 3 words
-        this.speedMultiplier *= 0.85; // 15% faster = 85% of previous time
+        // Increase speed by 5% every 3 words
+        this.speedMultiplier *= 0.95; // X % faster = 100-X % of previous time
         this.currentSpeed = Math.max(50, Math.floor(this.BASE_SPEED * this.speedMultiplier)); // Minimum 50ms
         
         // Update interval
