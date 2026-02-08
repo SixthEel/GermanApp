@@ -168,10 +168,10 @@
     function showKeyFeedback(key) {
         // Create a subtle visual feedback
         const feedback = document.createElement('div');
-        feedback.textContent = key === 'ArrowUp' ? '↑' : 
-                              key === 'ArrowDown' ? '↓' : 
-                              key === 'ArrowLeft' ? '←' : 
-                              key === 'ArrowRight' ? '→' : 
+        feedback.textContent = key === 'ArrowUp' ? '' : 
+                              key === 'ArrowDown' ? '' : 
+                              key === 'ArrowLeft' ? '' : 
+                              key === 'ArrowRight' ? '' : 
                               key.toUpperCase();
         feedback.style.cssText = `
             position: fixed;
@@ -206,7 +206,7 @@
 
     function showResetFeedback() {
         const feedback = document.createElement('div');
-        feedback.textContent = '❌';
+        feedback.textContent = '';
         feedback.style.cssText = `
             position: fixed;
             top: 50%;
@@ -236,7 +236,7 @@
     function showSuccessAnimation() {
         // Create celebration effect
         const celebration = document.createElement('div');
-        celebration.innerHTML = '🎉';
+        celebration.innerHTML = '';
         celebration.style.cssText = `
             position: fixed;
             top: 0;
