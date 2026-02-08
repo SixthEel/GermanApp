@@ -1,5 +1,9 @@
+console.log("🔧 games.js loading...");
+
 class GameManager {
     constructor() {
+        console.log("🔧 GameManager constructor called");
+        
         this.words = [];
         this.activeGame = null;
         this.container = document.getElementById('activeGameContainer');
@@ -7,74 +11,335 @@ class GameManager {
         this.gamesGrid = document.querySelector('.games-grid');
         this.backBtn = document.querySelector('.back-btn');
 
+        console.log("🔧 DOM elements found:", {
+            container: this.container ? `Found (id: ${this.container.id})` : "NOT FOUND",
+            viewport: this.viewport ? `Found (id: ${this.viewport.id})` : "NOT FOUND",
+            gamesGrid: this.gamesGrid ? `Found (class: .games-grid)` : "NOT FOUND",
+            backBtn: this.backBtn ? "Found" : "NOT FOUND"
+        });
+
+        // Check for game cards right now
+        const initialCards = document.querySelectorAll('.game-card');
+        console.log(`🔧 Initial game cards found in constructor: ${initialCards.length}`);
+
         this.init();
     }
 
     init() {
-        // Game Selection
-        document.querySelectorAll('.game-card').forEach(card => {
-            card.addEventListener('click', () => {
-                const gameType = card.dataset.game;
-                this.startGame(gameType);
+        console.log("🔧 GameManager.init() called");
+        
+        // FIRST: Check what's actually in the DOM
+        console.log("=== DOM CHECK ===");
+        console.log("🔍 Looking for .games-grid:", document.querySelector('.games-grid'));
+        console.log("🔍 Looking for #view-games:", document.getElementById('view-games'));
+        console.log("🔍 Looking for all .game-card:", document.querySelectorAll('.game-card').length);
+        
+        const allCards = document.querySelectorAll('.game-card');
+        allCards.forEach((card, i) => {
+            console.log(`🔍 Card ${i}:`, {
+                dataset: card.dataset,
+                className: card.className,
+                parent: card.parentElement ? card.parentElement.className : 'no parent',
+                html: card.outerHTML.substring(0, 150)
+            });
+        });
+        
+        // Check if games grid is hidden
+        if (this.gamesGrid) {
+            console.log("🔍 Games grid classes:", this.gamesGrid.className);
+            console.log("🔍 Games grid computed display:", window.getComputedStyle(this.gamesGrid).display);
+            console.log("🔍 Games grid parent:", this.gamesGrid.parentElement);
+        }
+
+        // METHOD 1: Direct binding - most reliable
+        console.log("\n🔧 Setting up DIRECT event binding...");
+        const gameCards = document.querySelectorAll('.game-card');
+        console.log(`🔧 Found ${gameCards.length} game cards for direct binding`);
+        
+        gameCards.forEach((card, index) => {
+            console.log(`🔧 Binding card ${index}: ${card.dataset.game}`);
+            
+            // Remove any previous listeners
+            const newCard = card.cloneNode(true);
+            card.parentNode.replaceChild(newCard, card);
+            
+            // Add click listener to the new element
+            newCard.addEventListener('click', (e) => {
+                console.log(`🎯 DIRECT CLICK on card ${index}: ${newCard.dataset.game}`);
+                console.log("🎯 Event target:", e.target);
+                console.log("🎯 Current target:", e.currentTarget);
+                e.stopPropagation();
+                this.startGame(newCard.dataset.game);
+            });
+            
+            // Also add visual feedback for debugging
+            newCard.style.cursor = 'pointer';
+            newCard.style.transition = 'all 0.2s';
+            newCard.addEventListener('mousedown', () => {
+                newCard.style.transform = 'scale(0.95)';
+            });
+            newCard.addEventListener('mouseup', () => {
+                newCard.style.transform = 'scale(1)';
+            });
+            newCard.addEventListener('mouseleave', () => {
+                newCard.style.transform = 'scale(1)';
             });
         });
 
+        // METHOD 2: Event delegation as backup
+        console.log("\n🔧 Setting up EVENT DELEGATION as backup...");
+        if (this.gamesGrid) {
+            // Remove any existing listener first
+            this.gamesGrid.removeEventListener('click', this.handleGridClick);
+            
+            this.handleGridClick = (e) => {
+                console.log("🎯 GRID CLICK event fired");
+                console.log("🎯 Click target:", e.target);
+                console.log("🎯 Target class:", e.target.className);
+                
+                const gameCard = e.target.closest('.game-card');
+                if (gameCard) {
+                    console.log("🎯 Found game card via closest:", gameCard.dataset.game);
+                    e.stopPropagation();
+                    e.preventDefault();
+                    this.startGame(gameCard.dataset.game);
+                }
+            };
+            
+            this.gamesGrid.addEventListener('click', this.handleGridClick);
+            console.log("✅ Event delegation listener added to games grid");
+        }
+
         // Back Button
-        this.backBtn.addEventListener('click', () => {
-            this.stopGame();
+        if (this.backBtn) {
+            console.log("🔧 Setting up back button listener");
+            this.backBtn.removeEventListener('click', this.handleBackClick);
+            this.handleBackClick = () => {
+                console.log("🔙 Back button clicked");
+                this.stopGame();
+            };
+            this.backBtn.addEventListener('click', this.handleBackClick);
+        } else {
+            console.log("⚠️ Back button not found (might be hidden initially)");
+        }
+
+        // Add a global keyboard shortcut for debugging
+        document.addEventListener('keydown', (e) => {
+            if (e.ctrlKey && e.key === 'd') {
+                console.log("=== DEBUG INFO ===");
+                console.log("GameManager state:", {
+                    words: this.words.length,
+                    activeGame: this.activeGame,
+                    containerVisible: this.container ? !this.container.classList.contains('hidden') : false,
+                    gamesGridVisible: this.gamesGrid ? !this.gamesGrid.classList.contains('hidden') : false
+                });
+                console.log("All game cards:", document.querySelectorAll('.game-card').length);
+            }
         });
+
+        console.log("✅ GameManager initialization complete\n");
     }
 
     setWords(words) {
+        console.log("📝 GameManager.setWords() called with", words.length, "words");
         this.words = words;
-        console.log("GameManager received " + words.length + " words.");
+        
+        if (words.length > 0) {
+            console.log("📝 First 3 words:", words.slice(0, 3).map(w => `${w.german} → ${w.czech}`));
+        } else {
+            console.log("📝 No words available");
+        }
     }
 
     startGame(type) {
-        if (this.words.length < 4 && type !== 'flashcards' && type !== 'snake') {
-            alert("Not enough words for this game! Please select a lesson with more words.");
+        console.log(`\n🎮🎮🎮 START GAME: ${type} 🎮🎮🎮`);
+        console.log("🎮 Current words available:", this.words.length);
+        
+        // Check if we have enough words for the selected game
+        const minWordsRequired = {
+            'flashcards': 1,
+            'quiz': 4,
+            'memory': 4,
+            'typing': 1,
+            'snake': 5
+        };
+
+        const requiredWords = minWordsRequired[type] || 1;
+        
+        console.log(`🎮 Required words for ${type}: ${requiredWords}, Have: ${this.words.length}`);
+        
+        if (this.words.length < requiredWords) {
+            const alertMsg = `Need at least ${requiredWords} words for this game! Please select a lesson with more words.`;
+            console.warn("❌ " + alertMsg);
+            alert(alertMsg);
             return;
         }
 
-        this.gamesGrid.classList.add('hidden');
-        this.container.classList.remove('hidden');
+        console.log("🎮 Hiding games grid, showing game container");
+        
+        // Hide games grid
+        if (this.gamesGrid) {
+            console.log("🎮 Before - gamesGrid hidden:", this.gamesGrid.classList.contains('hidden'));
+            this.gamesGrid.classList.add('hidden');
+            console.log("🎮 After - gamesGrid hidden:", this.gamesGrid.classList.contains('hidden'));
+        }
+        
+        // Show game container
+        if (this.container) {
+            console.log("🎮 Before - container hidden:", this.container.classList.contains('hidden'));
+            this.container.classList.remove('hidden');
+            console.log("🎮 After - container hidden:", this.container.classList.contains('hidden'));
+        } else {
+            console.error("❌ Game container not found!");
+        }
+        
         this.activeGame = type;
+        console.log("🎮 Setting activeGame to:", type);
         this.renderGame(type);
     }
 
     stopGame() {
+        console.log("\n🔄🔄🔄 STOP GAME 🔄🔄🔄");
+        console.log("🔄 Current activeGame:", this.activeGame);
+        
         this.activeGame = null;
-        this.container.classList.add('hidden');
-        this.gamesGrid.classList.remove('hidden');
-        this.viewport.innerHTML = '';
+        
+        if (this.container) {
+            console.log("🔄 Hiding game container");
+            this.container.classList.add('hidden');
+        }
+        
+        if (this.gamesGrid) {
+            console.log("🔄 Showing games grid");
+            this.gamesGrid.classList.remove('hidden');
+        }
+        
+        if (this.viewport) {
+            console.log("🔄 Clearing game viewport");
+            this.viewport.innerHTML = '';
+        }
     }
 
     renderGame(type) {
-        this.viewport.innerHTML = '';
-        switch (type) {
-            case 'flashcards':
-                console.log("Starting Flashcard Game with " + this.words.length + " words.");
-                new FlashcardGame(this.viewport, this.words);
-                break;
-            case 'quiz':
-                console.log("Starting Quiz Game with " + this.words.length + " words.");
-                new QuizGame(this.viewport, this.words);
-                break;
-            case 'memory':
-                console.log("Starting Memory Game with " + this.words.length + " words.");
-                new MemoryGame(this.viewport, this.words);
-                break;
-            case 'typing':
-                console.log("Starting Typing Game with " + this.words.length + " words.");
-                new TypingGame(this.viewport, this.words);
-                break;
-            case 'snake':
-                console.log("Starting Snake Game with " + this.words.length + " words.");
-                new SnakeGame(this.viewport, this.words);
-                break;
+        console.log(`\n🎲🎲🎲 RENDER GAME: ${type} 🎲🎲🎲`);
+        
+        if (!this.viewport) {
+            console.error("❌ Cannot render game: viewport not found!");
+            return;
         }
+        
+        console.log("🎲 Clearing viewport...");
+        this.viewport.innerHTML = '<div style="color: white; padding: 20px;">Loading game...</div>';
+        
+        // Small delay to ensure DOM is updated
+        setTimeout(() => {
+            console.log("🎲 Creating game instance for:", type);
+            
+            try {
+                switch (type) {
+                    case 'flashcards':
+                        console.log("🎲 Creating FlashcardGame");
+                        new FlashcardGame(this.viewport, this.words);
+                        break;
+                    case 'quiz':
+                        console.log("🎲 Creating QuizGame");
+                        new QuizGame(this.viewport, this.words);
+                        break;
+                    case 'memory':
+                        console.log("🎲 Creating MemoryGame");
+                        new MemoryGame(this.viewport, this.words);
+                        break;
+                    case 'typing':
+                        console.log("🎲 Creating TypingGame");
+                        new TypingGame(this.viewport, this.words);
+                        break;
+                    case 'snake':
+                        console.log("🎲 Creating SnakeGame");
+                        new SnakeGame(this.viewport, this.words);
+                        break;
+                    default:
+                        console.error("❌ Unknown game type:", type);
+                        this.viewport.innerHTML = `
+                            <div style="color: white; padding: 2rem; text-align: center;">
+                                <h2>Unknown Game Type</h2>
+                                <p>Game type "${type}" is not implemented.</p>
+                                <button onclick="window.GameManager.stopGame()" style="margin-top: 1rem; padding: 10px 20px; background: #10b981; border: none; border-radius: 5px; color: white; cursor: pointer;">
+                                    Back to Games
+                                </button>
+                            </div>
+                        `;
+                }
+                
+                console.log("✅ Game rendered successfully:", type);
+                
+                // Add a debug button
+                const debugBtn = document.createElement('button');
+                debugBtn.textContent = 'DEBUG';
+                debugBtn.style.cssText = 'position: absolute; top: 10px; right: 10px; padding: 5px 10px; background: red; color: white; border: none; border-radius: 3px; cursor: pointer; z-index: 1000;';
+                debugBtn.onclick = () => {
+                    console.log("=== GAME DEBUG ===");
+                    console.log("Game type:", type);
+                    console.log("Words:", this.words.length);
+                    console.log("Viewport children:", this.viewport.children.length);
+                };
+                this.viewport.appendChild(debugBtn);
+                
+            } catch (error) {
+                console.error("❌ Error creating game:", error);
+                this.viewport.innerHTML = `
+                    <div style="color: white; padding: 2rem; text-align: center;">
+                        <h2>Error Loading Game</h2>
+                        <p>${error.message}</p>
+                        <button onclick="window.GameManager.stopGame()" style="margin-top: 1rem; padding: 10px 20px; background: #10b981; border: none; border-radius: 5px; color: white; cursor: pointer;">
+                            Back to Games
+                        </button>
+                    </div>
+                `;
+            }
+        }, 50);
     }
 }
+
+console.log("✅ GameManager class defined");
+
+// Force re-initialization if there's an issue with timing
+function initializeGameManager() {
+    console.log("🔄 Force initializing GameManager...");
+    
+    // Remove existing instance
+    if (window.GameManager) {
+        console.log("🔄 Removing existing GameManager");
+        delete window.GameManager;
+    }
+    
+    // Create new instance
+    window.GameManager = new GameManager();
+    
+    // Test click on first card
+    setTimeout(() => {
+        const firstCard = document.querySelector('.game-card');
+        if (firstCard) {
+            console.log("🔄 Test: First card found, dataset:", firstCard.dataset);
+        }
+    }, 1000);
+}
+
+// Initialize when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+        console.log("📱 DOM fully loaded, initializing GameManager...");
+        window.GameManager = new GameManager();
+        
+        // Expose reinitialization function
+        window.reinitGames = initializeGameManager;
+    });
+} else {
+    console.log("📱 DOM already loaded, initializing GameManager now...");
+    window.GameManager = new GameManager();
+    window.reinitGames = initializeGameManager;
+}
+
+console.log("✅ games.js loaded completely");
 
 class FlashcardGame {
     constructor(container, words) {
@@ -433,65 +698,6 @@ class TypingGame {
     }
 }
 
-// NEW: Snake Game Class
-class SnakeGame {
-    constructor(container, words) {
-        this.container = container;
-        this.words = words;
-        this.game = null;
-        this.render();
-    }
-
-    render() {
-        this.container.innerHTML = `
-            <div class="snake-game-container">
-                <div class="snake-header">
-                    <div class="snake-stats">
-                        <div>Score: <span id="snakeScore">0</span></div>
-                        <div>High Score: <span id="snakeHighScore">0</span></div>
-                    </div>
-                    <div class="snake-word-display">
-                        <p class="snake-word-label">Translate this word</p>
-                        <h1 id="snakeTargetWord" class="snake-target-word">Snake Deutsch</h1>
-                    </div>
-                </div>
-
-                <div class="snake-game-area" id="snakeContainer">
-                    <div class="snake-grid-background" id="snakeGridBackground"></div>
-                    
-                    <div id="snakeOverlay" class="snake-overlay">
-                        <h2 id="snakeOverlayTitle">Ready to Learn?</h2>
-                        <p>
-                            Control the snake with arrow keys. Collect the correct Czech translation for the German word.
-                            <br/><span class="snake-warning-text">Wrong words shorten your snake!</span>
-                        </p>
-                        <button id="snakeOverlayBtn" class="snake-btn">Start Game</button>
-                    </div>
-                </div>
-                
-                <div class="snake-footer">
-                    Tip: Green segments are safe. Red head is dangerous.
-                </div>
-            </div>
-        `;
-
-        // Initialize the Snake game with the current words
-        this.game = new SnakeGameLogic(
-            this.words,
-            document.getElementById('snakeContainer'),
-            document.getElementById('snakeGridBackground'),
-            document.getElementById('snakeScore'),
-            document.getElementById('snakeHighScore'),
-            document.getElementById('snakeTargetWord'),
-            document.getElementById('snakeOverlay'),
-            document.getElementById('snakeOverlayTitle'),
-            document.getElementById('snakeOverlayBtn')
-        );
-    }
-}
-
-// Snake Game Logic (adapted from main.js)
-// NEW: Snake Game Class
 class SnakeGame {
     constructor(container, words) {
         this.container = container;
