@@ -213,6 +213,9 @@ body {
     gap: 1.5rem;
     align-items: flex-start;
     flex-direction: column;
+    /* FIX Z-INDEX HERE */
+    position: relative;
+    z-index: 50;
 }
 
 @media (min-width: 768px) {
@@ -463,20 +466,47 @@ select:disabled {
     flex-direction: column;
 }
 
+/* === GAME CONTROLS HEADER (Back + Restart) === */
+.game-header-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
 .back-btn {
-    align-self: flex-start;
     background: none;
     border: 1px solid var(--text-muted);
     color: var(--text-muted);
     padding: 0.5rem 1rem;
     border-radius: 20px;
     cursor: pointer;
-    margin-bottom: 2rem;
+    font-family: var(--font-body);
+    transition: 0.3s;
 }
 
 .back-btn:hover {
     background: white;
     color: black;
+}
+
+.restart-btn {
+    background: none;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: var(--font-body);
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.restart-btn:hover {
+    background: var(--primary);
+    color: white;
+    box-shadow: 0 0 15px var(--primary-glow);
 }
 
 #gameViewport {
@@ -748,12 +778,28 @@ select:disabled {
     color: var(--text-muted);
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.snake-stats div {
+    flex: 1;
+    min-width: 100px;
+    text-align: center;
 }
 
 .snake-stats span {
     color: white;
     font-weight: bold;
     font-size: 1.125rem;
+    display: block;
+    margin-top: 0.25rem;
+}
+
+/* Speed indicator color */
+.snake-stats div:nth-child(2) span {
+    color: #fbbf24; /* Yellow for speed */
+    text-shadow: 0 0 5px rgba(251, 191, 36, 0.5);
 }
 
 .snake-word-display {
@@ -934,49 +980,279 @@ select:disabled {
     font-size: 0.75rem;
     color: var(--text-muted);
     text-align: center;
-}
-/* Snake speed display */
-.snake-stats {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    font-size: 0.875rem;
-    color: var(--text-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
-
-.snake-stats div {
-    flex: 1;
-    min-width: 100px;
-    text-align: center;
-}
-
-.snake-stats span {
-    color: white;
-    font-weight: bold;
-    font-size: 1.125rem;
-    display: block;
-    margin-top: 0.25rem;
-}
-
-/* Speed indicator color */
-.snake-stats div:nth-child(2) span {
-    color: #fbbf24; /* Yellow for speed */
-    text-shadow: 0 0 5px rgba(251, 191, 36, 0.5);
-}
-
-/* Snake footer updates */
-.snake-footer {
-    margin-top: 1rem;
-    font-size: 0.75rem;
-    color: var(--text-muted);
-    text-align: center;
     line-height: 1.4;
 }
 
 .snake-footer div {
     margin-bottom: 0.25rem;
+}
+
+/* --- MULTISELECT STYLES --- */
+.multiselect {
+    width: 250px;
+    position: relative;
+}
+
+.selectBox {
+    position: relative;
+    cursor: pointer;
+}
+
+.selectBox select {
+    width: 100%;
+    font-weight: bold;
+    color: var(--text-main);
+}
+
+.overSelect {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.checkboxes {
+    display: none;
+    border: 1px solid var(--glass-border);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #1c1917; /* Tmavé pozadí pro seznam */
+    /* Z-INDEX FIX: Musí být hodně vysoký, aby byl nad hrami */
+    z-index: 1000;
+    max-height: 200px;
+    overflow-y: auto;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.checkboxes label {
+    display: block;
+    padding: 8px 12px;
+    margin: 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    cursor: pointer;
+    transition: 0.2s;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    text-transform: none; /* Reset uppercase from parent label */
+}
+
+.checkboxes label:hover {
+    background-color: var(--primary-glow);
+    color: white;
+}
+
+.checkboxes input {
+    margin-right: 10px;
+    transform: scale(1.2);
+    accent-color: var(--primary);
+}
+
+/* Zobrazit checkboxy když je aktivní třída */
+.multiselect.active .checkboxes {
+    display: block;
+}
+
+/* --- TOGGLE SWITCH --- */
+.toggle-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.mode-toggle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(0,0,0,0.2);
+    padding: 5px 10px;
+    border-radius: 20px;
+    border: 1px solid var(--glass-border);
+}
+
+.mode-label {
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: var(--text-muted);
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+}
+
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #2d3436;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: var(--primary);
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px var(--primary);
+}
+
+input:checked + .slider:before {
+    transform: translateX(20px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/* --- SENTENCE BUILDER GAME --- */
+.sentence-container {
+    text-align: center;
+    max-width: 700px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.sentence-prompt {
+    font-size: 1.5rem;
+    color: var(--secondary);
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sentence-area {
+    background: rgba(0, 0, 0, 0.3);
+    border: 2px dashed var(--glass-border);
+    border-radius: 12px;
+    min-height: 80px;
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.sentence-area.correct-flash {
+    border-color: var(--primary);
+    background: rgba(16, 185, 129, 0.1);
+}
+
+.sentence-area.wrong-flash {
+    border-color: #ef4444;
+    background: rgba(239, 68, 68, 0.1);
+}
+
+.word-bank {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    justify-content: center;
+}
+
+.sentence-word {
+    background: #1e272e;
+    border: 1px solid var(--glass-border);
+    color: white;
+    padding: 0.8rem 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    user-select: none;
+    transition: all 0.2s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.sentence-word:hover {
+    transform: translateY(-2px);
+    border-color: var(--secondary);
+    background: #2d3436;
+}
+
+/* Když je slovo už použité ve větě (zmizí z banky) */
+.sentence-word.used {
+    opacity: 0.3;
+    pointer-events: none;
+    transform: scale(0.9);
+}
+
+/* Slovo uvnitř věty (lze ho vrátit zpět) */
+.sentence-area .sentence-word {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #0f1219;
+    font-weight: bold;
+}
+
+/* --- TTS SPEAKER ICON --- */
+.speaker-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: 0.2s;
+    margin-left: 10px;
+}
+
+.speaker-btn:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+@keyframes popIn {
+    from { transform: scale(0.5); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+/* --- SNAKE HITBOX MARKER --- */
+.snake-grid-marker {
+    position: absolute;
+    box-sizing: border-box;
+    /* Jemný rámeček a podbarvení */
+    border: 1px dashed rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+    z-index: 9; /* Pod textem (10), ale nad mřížkou */
+    pointer-events: none;
+    animation: pulse-marker 2s infinite;
+}
+
+@keyframes pulse-marker {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
 }

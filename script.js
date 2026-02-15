@@ -1,20 +1,26 @@
 class App {
     constructor() {
         this.data = null;
-        this.currentLesson = null;
-        this.currentPage = null;
         this.currentWords = [];
+        this.selectedLessons = new Set();
+        this.selectedPages = new Set();   
+        this.isReverseMode = false;
 
         // DOM Elements
-        this.lessonSelect = document.getElementById('lessonSelect');
-        this.pageSelect = document.getElementById('pageSelect');
+        this.checkboxesLessons = document.getElementById('checkboxes-lessons');
+        this.checkboxesPages = document.getElementById('checkboxes-pages');
+        this.lessonMultiselect = document.getElementById('lessonMultiselect');
+        this.pageMultiselect = document.getElementById('pageMultiselect');
+        
+        this.reverseModeToggle = document.getElementById('reverseModeToggle');
+        
         this.wordListContainer = document.getElementById('wordListContainer');
         this.wordCountBadge = document.getElementById('wordCountBadge');
         this.navButtons = document.querySelectorAll('.nav-btn');
         this.views = {
             learn: document.getElementById('view-learn'),
             games: document.getElementById('view-games'),
-            stats: null // TODO
+            stats: null
         };
 
         this.init();
@@ -22,7 +28,6 @@ class App {
 
     async init() {
         console.log("App initializing...");
-        // Configuration for database files
         this.dbFiles = [
             'database 1-4.json',
             'database 5-10.json',
@@ -32,85 +37,141 @@ class App {
 
         await this.loadData();
         this.setupEventListeners();
+        this.setupMultiselectUI();
     }
 
     async loadData() {
         try {
+            if (typeof DB_DATA !== 'undefined') {
+                this.processData([DB_DATA]);
+                return;
+            }
+
             const promises = this.dbFiles.map(file => fetch(file).then(res => {
                 if (!res.ok) throw new Error(`Failed to load ${file}`);
                 return res.json();
             }).catch(err => {
                 console.warn(err);
-                return null; // Return null on failure to allow partial loading
+                return null; 
             }));
 
             const results = await Promise.all(promises);
+            this.processData(results);
 
-            // Merge results
-            const validData = results.filter(data => data && data.lessons);
-            if (validData.length === 0) {
-                throw new Error("No valid database files loaded.");
-            }
-
-            // Combine lessons
-            let allLessons = [];
-            validData.forEach(d => {
-                allLessons = allLessons.concat(d.lessons);
-            });
-
-            // Sort by lesson number
-            allLessons.sort((a, b) => (a.number || 0) - (b.number || 0));
-
-            this.data = { lessons: allLessons };
-            console.log("Joined Data:", this.data);
-
-            this.populateLessonSelect();
         } catch (error) {
             console.error("Failed to load databases:", error);
             this.wordListContainer.innerHTML = `
                 <div class="empty-state glass-panel">
-                    <h2 style="color: #ff7675">Error Loading Data</h2>
-                    <p>Could not load database files.</p>
-                    <pre>${error.message}</pre>
+                    <h2 style="color: #ff7675">Fehler beim Laden</h2>
+                    <p>Datenbank konnte nicht geladen werden.</p>
                 </div>
             `;
         }
     }
 
-    populateLessonSelect() {
+    processData(results) {
+        const validData = results.filter(data => data && data.lessons);
+        let allLessons = [];
+        validData.forEach(d => { allLessons = allLessons.concat(d.lessons); });
+        allLessons.sort((a, b) => (a.number || 0) - (b.number || 0));
+
+        this.data = { lessons: allLessons };
+        this.populateLessonCheckboxes();
+    }
+
+    populateLessonCheckboxes() {
         if (!this.data || !this.data.lessons) return;
 
-        this.lessonSelect.innerHTML = '<option value="">Select Lesson...</option>';
+        this.checkboxesLessons.innerHTML = '';
+        
+        // "Alles auswählen"
+        const selectAllLabel = document.createElement('label');
+        selectAllLabel.innerHTML = `<input type="checkbox" id="selectAllLessons" /> <strong>Alles auswählen</strong>`;
+        this.checkboxesLessons.appendChild(selectAllLabel);
 
         this.data.lessons.forEach((lesson) => {
-            const option = document.createElement('option');
-            // User requested to use the lesson number in the json
-            // Since we merged and renumbered, lesson.number is the key.
-            option.value = lesson.number;
-            option.textContent = `Lesson ${lesson.number}`;
-            this.lessonSelect.appendChild(option);
+            const label = document.createElement('label');
+            const name = lesson.name ? ` - ${lesson.name}` : '';
+            // Jen číslo a jméno
+            label.innerHTML = `<input type="checkbox" value="${lesson.number}" class="lesson-cb" /> ${lesson.number}${name}`;
+            this.checkboxesLessons.appendChild(label);
         });
     }
 
-    populatePageSelect(lessonNumber) {
-        this.pageSelect.innerHTML = '<option value="">All Pages</option>';
-        this.pageSelect.disabled = false;
+    populatePageCheckboxes() {
+        this.checkboxesPages.innerHTML = '';
+        this.selectedPages.clear();
 
-        // Find lesson by number
-        const lesson = this.data.lessons.find(l => l.number == lessonNumber);
+        let availablePages = [];
+        
+        this.selectedLessons.forEach(lessonNum => {
+            const lesson = this.data.lessons.find(l => l.number == lessonNum);
+            if (lesson && lesson.pages) {
+                lesson.pages.forEach(p => {
+                    availablePages.push({
+                        lessonNum: lesson.number,
+                        pageNum: p.number,
+                        id: `${lesson.number}-${p.number}`
+                    });
+                });
+            }
+        });
 
-        if (!lesson || !lesson.pages) return;
+        if (availablePages.length === 0) {
+            this.checkboxesPages.innerHTML = '<label>Wähle zuerst eine Lektion...</label>';
+            return;
+        }
 
-        lesson.pages.forEach((page, index) => {
-            const option = document.createElement('option');
-            option.value = index;
-            option.textContent = `Page ${page.number}`; // Assuming page has a number property
-            this.pageSelect.appendChild(option);
+        const selectAllLabel = document.createElement('label');
+        selectAllLabel.innerHTML = `<input type="checkbox" id="selectAllPages" checked /> <strong>Alle Seiten</strong>`;
+        this.checkboxesPages.appendChild(selectAllLabel);
+
+        availablePages.forEach(p => {
+            const label = document.createElement('label');
+            label.innerHTML = `<input type="checkbox" value="${p.id}" class="page-cb" checked /> Seite ${p.pageNum} <span style="opacity:0.5; font-size:0.8em">(L${p.lessonNum})</span>`;
+            this.checkboxesPages.appendChild(label);
+            this.selectedPages.add(p.id);
+        });
+
+        this.updateCurrentWords();
+    }
+
+    setupMultiselectUI() {
+        let expandedLessons = false;
+        this.lessonMultiselect.querySelector('.selectBox').addEventListener('click', () => {
+            if (!expandedLessons) {
+                this.lessonMultiselect.classList.add('active');
+                expandedLessons = true;
+            } else {
+                this.lessonMultiselect.classList.remove('active');
+                expandedLessons = false;
+            }
+        });
+
+        let expandedPages = false;
+        this.pageMultiselect.querySelector('.selectBox').addEventListener('click', () => {
+            if (!expandedPages) {
+                this.pageMultiselect.classList.add('active');
+                expandedPages = true;
+            } else {
+                this.pageMultiselect.classList.remove('active');
+                expandedPages = false;
+            }
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!this.lessonMultiselect.contains(e.target)) {
+                this.lessonMultiselect.classList.remove('active');
+                expandedLessons = false;
+            }
+            if (!this.pageMultiselect.contains(e.target)) {
+                this.pageMultiselect.classList.remove('active');
+                expandedPages = false;
+            }
         });
     }
 
     setupEventListeners() {
-        // Navigation
         this.navButtons.forEach(btn => {
             btn.addEventListener('click', () => {
                 const viewName = btn.dataset.view;
@@ -118,47 +179,64 @@ class App {
             });
         });
 
-        // Lesson Selection
-        this.lessonSelect.addEventListener('change', (e) => {
-            const lessonNum = e.target.value;
-            if (lessonNum !== "") {
-                this.currentLesson = this.data.lessons.find(l => l.number == lessonNum);
-                this.populatePageSelect(lessonNum);
-                this.currentPage = null; // Reset page
+        this.checkboxesLessons.addEventListener('change', (e) => {
+            if (e.target.id === 'selectAllLessons') {
+                const allCbs = this.checkboxesLessons.querySelectorAll('.lesson-cb');
+                allCbs.forEach(cb => {
+                    cb.checked = e.target.checked;
+                    const val = parseInt(cb.value);
+                    if (e.target.checked) this.selectedLessons.add(val);
+                    else this.selectedLessons.delete(val);
+                });
+            } else if (e.target.classList.contains('lesson-cb')) {
+                const val = parseInt(e.target.value);
+                if (e.target.checked) this.selectedLessons.add(val);
+                else this.selectedLessons.delete(val);
+                
+                const all = this.checkboxesLessons.querySelectorAll('.lesson-cb');
+                const checked = this.checkboxesLessons.querySelectorAll('.lesson-cb:checked');
+                document.getElementById('selectAllLessons').checked = (all.length === checked.length);
+            }
+            this.populatePageCheckboxes();
+        });
+
+        this.checkboxesPages.addEventListener('change', (e) => {
+            if (e.target.id === 'selectAllPages') {
+                const allCbs = this.checkboxesPages.querySelectorAll('.page-cb');
+                allCbs.forEach(cb => {
+                    cb.checked = e.target.checked;
+                    if (e.target.checked) this.selectedPages.add(cb.value);
+                    else this.selectedPages.delete(cb.value);
+                });
+            } else if (e.target.classList.contains('page-cb')) {
+                if (e.target.checked) this.selectedPages.add(e.target.value);
+                else this.selectedPages.delete(e.target.value);
+
+                const all = this.checkboxesPages.querySelectorAll('.page-cb');
+                const checked = this.checkboxesPages.querySelectorAll('.page-cb:checked');
+                document.getElementById('selectAllPages').checked = (all.length === checked.length);
+                
                 this.updateCurrentWords();
-            } else {
-                this.currentLesson = null;
-                this.pageSelect.disabled = true;
-                this.pageSelect.innerHTML = '<option value="">All Pages</option>';
-                this.currentWords = [];
-                this.renderWords();
             }
         });
 
-        // Page Selection
-        this.pageSelect.addEventListener('change', (e) => {
-            const index = e.target.value;
-            if (index !== "" && this.currentLesson) {
-                this.currentPage = this.currentLesson.pages[index];
-            } else {
-                this.currentPage = null; // All pages
+        this.reverseModeToggle.addEventListener('change', (e) => {
+            this.isReverseMode = e.target.checked;
+            if (window.GameManager) {
+                window.GameManager.setOptions({ reverse: this.isReverseMode });
             }
-            this.updateCurrentWords();
         });
     }
 
     switchView(viewName) {
-        // Update Nav
         this.navButtons.forEach(btn => {
             if (btn.dataset.view === viewName) btn.classList.add('active');
             else btn.classList.remove('active');
         });
 
-        // Update Views
         Object.keys(this.views).forEach(key => {
             const view = this.views[key];
             if (!view) return;
-
             if (key === viewName) {
                 view.classList.remove('hidden');
                 view.classList.add('active');
@@ -170,26 +248,33 @@ class App {
     }
 
     updateCurrentWords() {
-        if (!this.currentLesson) {
-            this.currentWords = [];
-        } else if (this.currentPage) {
-            this.currentWords = this.currentPage.words || [];
-        } else {
-            // Aggregate all words from the lesson
-            this.currentWords = this.currentLesson.pages.flatMap(p => p.words || []);
+        this.currentWords = [];
+        
+        if (this.selectedLessons.size > 0 && this.selectedPages.size > 0) {
+            this.selectedLessons.forEach(lessonNum => {
+                const lesson = this.data.lessons.find(l => l.number == lessonNum);
+                if (lesson && lesson.pages) {
+                    lesson.pages.forEach(p => {
+                        const pageId = `${lesson.number}-${p.number}`;
+                        if (this.selectedPages.has(pageId)) {
+                            this.currentWords = this.currentWords.concat(p.words || []);
+                        }
+                    });
+                }
+            });
         }
 
         this.updateStats();
         this.renderWords();
 
-        // Notify Games if they are implemented
         if (window.GameManager) {
             window.GameManager.setWords(this.currentWords);
+            window.GameManager.setOptions({ reverse: this.isReverseMode });
         }
     }
 
     updateStats() {
-        this.wordCountBadge.textContent = `${this.currentWords.length} Words`;
+        this.wordCountBadge.textContent = `${this.currentWords.length} Wörter`;
     }
 
     renderWords() {
@@ -198,15 +283,14 @@ class App {
         if (this.currentWords.length === 0) {
             this.wordListContainer.innerHTML = `
                 <div class="empty-state glass-panel">
-                    <h2>Select a Lesson</h2>
-                    <p>Choose a lesson and page to view vocabulary.</p>
+                    <h2>Wähle Lektionen</h2>
+                    <p>Markiere Lektionen und Seiten im Menü oben.</p>
                 </div>
             `;
             return;
         }
 
         this.currentWords.forEach(word => {
-            // Check for required fields to avoid empty cards
             const german = word.german || "???";
             const czech = word.czech || "???";
             const example = word.example || "";
@@ -225,7 +309,6 @@ class App {
     }
 }
 
-// Initialize App
 document.addEventListener('DOMContentLoaded', () => {
     window.app = new App();
 });
