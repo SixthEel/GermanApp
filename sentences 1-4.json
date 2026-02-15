@@ -1,0 +1,343 @@
+{
+  "lessons": [
+    {
+      "number": 1,
+      "name": "Lekce 1",
+      "pages": [
+        {
+          "number": 1,
+          "sentences": [
+            { "german": "Hallo, wie heißt du?", "czech": "Ahoj, jak se jmenuješ?" },
+            { "german": "Guten Tag, ich bin Jens.", "czech": "Dobrý den, já jsem Jens." },
+            { "german": "Wer bist du?", "czech": "Kdo jsi?" },
+            { "german": "Ich heiße Anna und das ist Jens.", "czech": "Jmenuji se Anna a to je Jens." },
+            { "german": "Guten Morgen! Wie heißt ihr?", "czech": "Dobré ráno! Jak se jmenujete vy?" },
+            { "german": "Das ist das Spiel.", "czech": "To je ta hra." },
+            { "german": "Ja, ich heiße Lukas.", "czech": "Ano, jmenuji se Lukáš." },
+            { "german": "Nein, ich bin Jan.", "czech": "Ne, já jsem Jan." },
+            { "german": "Guten Abend, wer ist da?", "czech": "Dobrý večer, kdo je tam?" },
+            { "german": "Freut mich, Jens.", "czech": "Těší mě, Jensi." }
+          ]
+        },
+        {
+          "number": 2,
+          "sentences": [
+            { "german": "Ich wohne in Prag.", "czech": "Bydlím v Praze." },
+            { "german": "Wo wohnst du?", "czech": "Kde bydlíš?" },
+            { "german": "Er ist zwölf Jahre alt.", "czech": "Je mu dvanáct let." },
+            { "german": "Sie wohnt in Berlin.", "czech": "Ona bydlí v Berlíně." },
+            { "german": "Wir sind zwanzig Jahre alt.", "czech": "Je nám dvacet let." },
+            { "german": "Ich bin fünfzehn und er ist sechzehn.", "czech": "Je mi patnáct a jemu je šestnáct." },
+            { "german": "Der Monat ist gut.", "czech": "Ten měsíc je dobrý." },
+            { "german": "Sie heißt Jana und wohnt in Prag.", "czech": "Jmenuje se Jana a bydlí v Praze." },
+            { "german": "Eins und zwei ist drei.", "czech": "Jedna a dvě jsou tři." },
+            { "german": "Wie alt bist du?", "czech": "Kolik ti je let?" }
+          ]
+        },
+        {
+          "number": 3,
+          "sentences": [
+            { "german": "Ich höre gern Musik.", "czech": "Rád poslouchám hudbu." },
+            { "german": "Er surft immer im Internet.", "czech": "On surfuje pořád na internetu." },
+            { "german": "Mein Hobby ist Fußball.", "czech": "Můj koníček je fotbal." },
+            { "german": "Sie kommt aus Prag.", "czech": "Ona pochází z Prahy." },
+            { "german": "Wir chatten gern.", "czech": "Rádi chatujeme." },
+            { "german": "Meine beste Freundin heißt Jana.", "czech": "Moje nejlepší kamarádka se jmenuje Jana." },
+            { "german": "Spielst du Klavier?", "czech": "Hraješ na klavír?" },
+            { "german": "Ich habe kein Handy.", "czech": "Nemám žádný mobil." },
+            { "german": "Er ist ein Fußball Fan.", "czech": "On je fanoušek fotbalu." },
+            { "german": "Das ist mein Hobby.", "czech": "To je můj koníček." }
+          ]
+        },
+        {
+          "number": 4,
+          "sentences": [
+            { "german": "Ich spiele Gitarre und Flöte.", "czech": "Hraju na kytaru a flétnu." },
+            { "german": "Wir machen gern Sport.", "czech": "Rádi sportujeme." },
+            { "german": "Das ist nicht weit von Prag.", "czech": "To není daleko od Prahy." },
+            { "german": "Sie tanzt sehr gern.", "czech": "Ona velmi ráda tančí." },
+            { "german": "Hast du ein Instrument?", "czech": "Máš nějaký nástroj?" },
+            { "german": "Ich lerne jetzt Deutsch.", "czech": "Teď se učím německy." },
+            { "german": "Er schreibt eine E-Mail.", "czech": "On píše e-mail." },
+            { "german": "Mein Vorname ist Lukas.", "czech": "Mé křestní jméno je Lukáš." },
+            { "german": "Das ist richtig.", "czech": "To je správně." },
+            { "german": "Bis bald in der Schule.", "czech": "Brzy na shledanou ve škole." }
+          ]
+        },
+        {
+          "number": 5,
+          "sentences": [
+            { "german": "Auf Wiedersehen, Herr Müller!", "czech": "Na shledanou, pane Müllere!" },
+            { "german": "Tschüs und mach's gut!", "czech": "Ahoj a měj se hezky!" },
+            { "german": "Das Museum ist schön.", "czech": "To muzeum je hezké." },
+            { "german": "Guten Tag, Frau Klein.", "czech": "Dobrý den, paní Kleinová." },
+            { "german": "Wir gehen heute ins Museum.", "czech": "Dnes jdeme do muzea." },
+            { "german": "Einen schönen Tag noch!", "czech": "Hezký zbytek dne!" },
+            { "german": "Servus, wie geht es?", "czech": "Ahoj, jak se daří?" },
+            { "german": "Bis zum nächsten Mal!", "czech": "Do příštího setkání!" },
+            { "german": "Sie ist eine schöne Frau.", "czech": "Ona je krásná žena." },
+            { "german": "Das ist Herr Novak.", "czech": "To je pan Novák." }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "name": "Lekce 2",
+      "pages": [
+        {
+          "number": 8,
+          "sentences": [
+            { "german": "Er arbeitet als Trainer.", "czech": "On pracuje jako trenér." },
+            { "german": "Ich spreche Deutsch und Englisch.", "czech": "Mluvím německy a anglicky." },
+            { "german": "Sie fährt gern Auto.", "czech": "Ona ráda řídí auto." },
+            { "german": "Wir fahren nach Frankreich.", "czech": "Jedeme do Francie." },
+            { "german": "Das Kind liest ein Buch.", "czech": "To dítě čte knihu." },
+            { "german": "Sie ist eine gute Schauspielerin.", "czech": "Ona je dobrá herečka." },
+            { "german": "Er besucht das Gymnasium in Prag.", "czech": "Navštěvuje gymnázium v Praze." },
+            { "german": "Ich brauche eine Nummer.", "czech": "Potřebuji číslo." },
+            { "german": "Das ist für dich.", "czech": "To je pro tebe." },
+            { "german": "Er ist ein Fußballspieler dort.", "czech": "On je tam fotbalista." }
+          ]
+        },
+        {
+          "number": 9,
+          "sentences": [
+            { "german": "Er gewinnt oft eine Goldmedaille.", "czech": "On často vyhrává zlatou medaili." },
+            { "german": "Ich lebe in Österreich.", "czech": "Žiji v Rakousku." },
+            { "german": "Meine Muttersprache ist Tschechisch.", "czech": "Můj mateřský jazyk je čeština." },
+            { "german": "Sie spricht Spanisch und Griechisch.", "czech": "Ona mluví španělsky a řecky." },
+            { "german": "Wir besuchen heute das Gymnasium.", "czech": "Dnes navštívíme gymnázium." },
+            { "german": "Sie ist eine gute Sportlerin.", "czech": "Ona je dobrá sportovkyně." },
+            { "german": "Was bist du von Beruf?", "czech": "Čím jsi povoláním?" },
+            { "german": "Ich komme aus Deutschland.", "czech": "Pocházím z Německa." },
+            { "german": "England liegt in Großbritannien.", "czech": "Anglie leží ve Velké Británii." },
+            { "german": "Die Flagge ist rot und blau.", "czech": "Ta vlajka je červená a modrá." }
+          ]
+        },
+        {
+          "number": 10,
+          "sentences": [
+            { "german": "Wir fahren nach Italien.", "czech": "Jedeme do Itálie." },
+            { "german": "Er spricht ein wenig Italienisch.", "czech": "Mluví trochu italsky." },
+            { "german": "Tschechien ist ein schönes Land.", "czech": "Česko je krásná země." },
+            { "german": "Meine Lehrerin kommt aus Polen.", "czech": "Moje učitelka pochází z Polska." },
+            { "german": "Ich lerne Russisch und Spanisch.", "czech": "Učím se rusky a španělsky." },
+            { "german": "Sie arbeitet als Verkäuferin.", "czech": "Ona pracuje jako prodavačka." },
+            { "german": "Der Student wohnt in der Schweiz.", "czech": "Ten student bydlí ve Švýcarsku." },
+            { "german": "Ist Ungarisch schwer?", "czech": "Je maďarština těžká?" },
+            { "german": "Das ist super!", "czech": "To je super!" },
+            { "german": "Ich spreche nur ein wenig Deutsch.", "czech": "Mluvím jen trochu německy." }
+          ]
+        },
+        {
+          "number": 11,
+          "sentences": [
+            { "german": "Ich bin Tscheche.", "czech": "Já jsem Čech." },
+            { "german": "Bist du Engländerin?", "czech": "Jsi Angličanka?" },
+            { "german": "Er ist Franzose und wohnt in Paris.", "czech": "On je Francouz a bydlí v Paříži." },
+            { "german": "Hundert und tausend sind Zahlen.", "czech": "Sto a tisíc jsou čísla." },
+            { "german": "Afrika ist groß.", "czech": "Afrika je velká." },
+            { "german": "Ich habe viel Arbeit.", "czech": "Mám hodně práce." },
+            { "german": "Sie kommt aus Asien.", "czech": "Pochází z Asie." },
+            { "german": "Er ist Österreicher.", "czech": "On je Rakušan." },
+            { "german": "Meine Nationalität ist deutsch.", "czech": "Moje národnost je německá." },
+            { "german": "Ich kenne das Wort nicht.", "czech": "To slovo neznám." }
+          ]
+        },
+        {
+          "number": 12,
+          "sentences": [
+            { "german": "Wie geht es dir heute?", "czech": "Jak se dnes máš?" },
+            { "german": "Danke, es geht mir gut.", "czech": "Díky, mám se dobře." },
+            { "german": "Das Semester beginnt morgen.", "czech": "Semestr začíná zítra." },
+            { "german": "Er kommt aus den USA.", "czech": "On pochází z USA." },
+            { "german": "Wir haben viel Zeit.", "czech": "Máme hodně času." },
+            { "german": "Wie viel kostet das?", "czech": "Kolik to stojí?" },
+            { "german": "Leute aus der ganzen Welt.", "czech": "Lidé z celého světa." },
+            { "german": "Tschechien liegt in Europa.", "czech": "Česko leží v Evropě." },
+            { "german": "Das ist genau richtig.", "czech": "To je přesně správně." },
+            { "german": "Ich spreche nur Deutsch.", "czech": "Mluvím jen německy." }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "name": "Lekce 3",
+      "pages": [
+        {
+          "number": 15,
+          "sentences": [
+            { "german": "Ich habe einen Bruder.", "czech": "Mám bratra." },
+            { "german": "Meine Familie ist groß.", "czech": "Moje rodina je velká." },
+            { "german": "Wir feiern eine Geburtstagsparty.", "czech": "Slavíme narozeninovou oslavu." },
+            { "german": "Das ist mein Cousin Lukas.", "czech": "To je můj bratranec Lukáš." },
+            { "german": "Hast du Geschwister?", "czech": "Máš sourozence?" },
+            { "german": "Ich bin ein Einzelkind.", "czech": "Jsem jedináček." },
+            { "german": "Wir haben ein Haus und einen Garten.", "czech": "Máme dům a zahradu." },
+            { "german": "Der Hund gehört zur Familie.", "czech": "Ten pes patří k rodině." },
+            { "german": "Meine Eltern sind geschieden.", "czech": "Moji rodiče jsou rozvedení." },
+            { "german": "Wo sind deine Eltern?", "czech": "Kde jsou tvoji rodiče?" }
+          ]
+        },
+        {
+          "number": 16,
+          "sentences": [
+            { "german": "Mein Hund ist hier.", "czech": "Můj pes je tady." },
+            { "german": "Wir haben eine neue Katze.", "czech": "Máme novou kočku." },
+            { "german": "Meine Oma und mein Opa wohnen in Prag.", "czech": "Moje babička a můj dědeček bydlí v Praze." },
+            { "german": "Ich sehe meine Tante oft.", "czech": "Vídám svou tetu často." },
+            { "german": "Das ist ihre Schwester.", "czech": "To je její sestra." },
+            { "german": "Mein Onkel hat einen neuen Job.", "czech": "Můj strýc má novou práci." },
+            { "german": "Wir sind eine Patchworkfamilie.", "czech": "Jsme patchworková rodina." },
+            { "german": "Ich bin kein Einzelkind mehr.", "czech": "Už nejsem jedináček." },
+            { "german": "Er ist natürlich mein Vater.", "czech": "On je samozřejmě můj otec." },
+            { "german": "Sie spricht Persisch.", "czech": "Ona mluví persky." }
+          ]
+        },
+        {
+          "number": 17,
+          "sentences": [
+            { "german": "Mein Vater ist Lehrer.", "czech": "Můj otec je učitel." },
+            { "german": "Wir wohnen alle zusammen.", "czech": "Bydlíme všichni spolu." },
+            { "german": "Ich habe einen Zwilling.", "czech": "Mám dvojče." },
+            { "german": "Wie heißt deine Mutter?", "czech": "Jak se jmenuje tvoje matka?" },
+            { "german": "Unsere Feier beginnt morgen.", "czech": "Naše oslava začíná zítra." },
+            { "german": "Wir laden dich ein.", "czech": "Zveme tě." },
+            { "german": "Das ist ihr Bruder.", "czech": "To je její bratr." },
+            { "german": "Wir grillen im Garten.", "czech": "Grilujeme na zahradě." },
+            { "german": "Die Party dauert lange.", "czech": "Party trvá dlouho." },
+            { "german": "Ich verstehe dich sehr gut.", "czech": "Rozumím ti velmi dobře." }
+          ]
+        },
+        {
+          "number": 18,
+          "sentences": [
+            { "german": "Wir haben eine gute Idee.", "czech": "Máme dobrý nápad." },
+            { "german": "Die Party ist zu Hause.", "czech": "Party je doma." },
+            { "german": "Papa backt einen Kuchen.", "czech": "Táta peče koláč." },
+            { "german": "Hast du ein Kaninchen?", "czech": "Máš králíka?" },
+            { "german": "Das Wetter ist schrecklich.", "czech": "Počasí je hrozné." },
+            { "german": "Wir gehen ins Restaurant.", "czech": "Jdeme do restaurace." },
+            { "german": "Mein Hamster ist klein.", "czech": "Můj křeček je malý." },
+            { "german": "Die Katze und der Hund spielen.", "czech": "Kočka a pes si hrají." },
+            { "german": "Wir singen auf der Party.", "czech": "Zpíváme na party." },
+            { "german": "Das stimmt nicht.", "czech": "To není pravda." }
+          ]
+        },
+        {
+          "number": 19,
+          "sentences": [
+            { "german": "Wir machen einen Ausflug.", "czech": "Děláme výlet." },
+            { "german": "Es gibt viele Tiere im Zoo.", "czech": "V zoo je mnoho zvířat." },
+            { "german": "Ich fahre nach Prag.", "czech": "Jedu do Prahy." },
+            { "german": "Nächste Woche besuchen wir die Burg.", "czech": "Příští týden navštívíme hrad." },
+            { "german": "Wir gehen gern shoppen.", "czech": "Rádi chodíme nakupovat." },
+            { "german": "Das Schwimmbad ist cool.", "czech": "To koupaliště je super." },
+            { "german": "Wir wandern nächste Woche.", "czech": "Příští týden jdeme na túru." },
+            { "german": "Gibt es hier ein Schloss?", "czech": "Je tady zámek?" },
+            { "german": "Das Sportevent ist in Berlin.", "czech": "Sportovní akce je v Berlíně." },
+            { "german": "Ich liebe den Vergnügungspark.", "czech": "Miluju ten zábavní park." }
+          ]
+        },
+        {
+          "number": 20,
+          "sentences": [
+            { "german": "Was machst du am Wochenende?", "czech": "Co děláš o víkendu?" },
+            { "german": "Wir fahren an den See.", "czech": "Jedeme k jezeru." },
+            { "german": "Das Einkaufszentrum ist groß.", "czech": "Nákupní centrum je velké." },
+            { "german": "Sie fährt Inliner im Park.", "czech": "Ona jezdí na bruslích v parku." },
+            { "german": "Wir haben ein Wochenendhaus.", "czech": "Máme chatu." },
+            { "german": "Der Zoobesuch war super.", "czech": "Návštěva zoo byla super." },
+            { "german": "Fahrt ihr dieses Wochenende weg?", "czech": "Jedete tento víkend pryč?" },
+            { "german": "Ich gehe gern ins Einkaufszentrum.", "czech": "Rád chodím do nákupního centra." },
+            { "german": "Das Wetter am Wochenende ist gut.", "czech": "Počasí o víkendu je dobré." },
+            { "german": "Der See ist schön.", "czech": "Jezero je krásné." }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "name": "Lekce 4",
+      "pages": [
+        {
+          "number": 22,
+          "sentences": [
+            { "german": "Mein Klassenzimmer ist groß.", "czech": "Moje třída je velká." },
+            { "german": "Der Computer ist modern.", "czech": "Ten počítač je moderní." },
+            { "german": "Die Farbe ist grün.", "czech": "Ta barva je zelená." },
+            { "german": "Links ist die Pinnwand.", "czech": "Nalevo je nástěnka." },
+            { "german": "Der Schrank ist braun.", "czech": "Ta skříň je hnědá." },
+            { "german": "Meine Mitschüler sind nett.", "czech": "Moji spolužáci jsou milí." },
+            { "german": "Rechts steht eine Bank.", "czech": "Napravo stojí lavice." },
+            { "german": "Ich habe keine Schulsachen.", "czech": "Nemám žádné školní potřeby." },
+            { "german": "Der Stundenplan ist gut.", "czech": "Ten rozvrh hodin je dobrý." },
+            { "german": "Ist das blau oder lila?", "czech": "Je to modré nebo fialové?" }
+          ]
+        },
+        {
+          "number": 23,
+          "sentences": [
+            { "german": "Das Whiteboard ist weiß.", "czech": "Ta tabule je bílá." },
+            { "german": "Ich habe keine Ahnung.", "czech": "Nemám ponětí." },
+            { "german": "Wir bestellen Bücher im E-Shop.", "czech": "Objednáváme knihy v e-shopu." },
+            { "german": "Wo ist mein Bleistift?", "czech": "Kde je moje tužka?" },
+            { "german": "Der Stuhl ist schwarz.", "czech": "Ta židle je černá." },
+            { "german": "Jeder Schüler hat ein Heft.", "czech": "Každý žák má sešit." },
+            { "german": "Auf der Liste steht ein Lineal.", "czech": "Na seznamu je pravítko." },
+            { "german": "Ich denke, das ist alles.", "czech": "Myslím, že to je vše." },
+            { "german": "Der Kuli schreibt blau.", "czech": "Ta propiska píše modře." },
+            { "german": "Hast du einen Buntstift?", "czech": "Máš pastelku?" }
+          ]
+        },
+        {
+          "number": 24,
+          "sentences": [
+            { "german": "Ich habe eine Schere in der Schultasche.", "czech": "Mám nůžky ve školní tašce." },
+            { "german": "Wir haben am Freitag frei.", "czech": "V pátek máme volno." },
+            { "german": "Ich suche meinen Radiergummi.", "czech": "Hledám svou gumu." },
+            { "german": "Die Hausaufgabe ist schwer.", "czech": "Domácí úkol je těžký." },
+            { "german": "Am Dienstag haben wir Geschichte.", "czech": "V úterý máme dějepis." },
+            { "german": "Gehen wir ins Café?", "czech": "Jdeme do kavárny?" },
+            { "german": "Ich brauche einen neuen Ordner.", "czech": "Potřebuji nový pořadač." },
+            { "german": "Endlich ist Freitag.", "czech": "Konečně je pátek." },
+            { "german": "Biologie und Chemie sind am Donnerstag.", "czech": "Biologie a chemie jsou ve čtvrtek." },
+            { "german": "Mein Zirkel ist weg.", "czech": "Moje kružítko je pryč." }
+          ]
+        },
+        {
+          "number": 25,
+          "sentences": [
+            { "german": "Am Montag haben wir Mathe.", "czech": "V pondělí máme matiku." },
+            { "german": "Ich will Informatik lernen.", "czech": "Chci se učit informatiku." },
+            { "german": "Wir müssen Vokabeln lernen.", "czech": "Musíme se učit slovíčka." },
+            { "german": "Der Test ist am Mittwoch.", "czech": "Test je ve středu." },
+            { "german": "Um acht Uhr beginnt die Schule.", "czech": "V osm hodin začíná škola." },
+            { "german": "Ich habe keine Zeit.", "czech": "Nemám čas." },
+            { "german": "Das ist schade.", "czech": "To je škoda." },
+            { "german": "Kannst du mir helfen?", "czech": "Můžeš mi pomoct?" },
+            { "german": "Ich muss ein Referat schreiben.", "czech": "Musím napsat referát." },
+            { "german": "Sport ist mein Wahlpflichtfach.", "czech": "Tělocvik je můj volitelný předmět." }
+          ]
+        },
+        {
+          "number": 26,
+          "sentences": [
+            { "german": "Wie geht's dir heute?", "czech": "Jak se ti dnes daří?" },
+            { "german": "Es geht mir so lala.", "czech": "Jde to jakž takž." },
+            { "german": "Ich darf nicht in den Club.", "czech": "Nesmím do klubu." },
+            { "german": "Du sollst zu Hause bleiben.", "czech": "Máš zůstat doma." },
+            { "german": "Das ist mein Kumpel.", "czech": "To je můj kámoš." },
+            { "german": "Wir gehen in den Tanzkurs.", "czech": "Jdeme do tanečních." },
+            { "german": "Mathe ist sehr schwierig.", "czech": "Matika je velmi těžká." },
+            { "german": "Ich muss Mama helfen.", "czech": "Musím pomáhat mámě." },
+            { "german": "Der Junge ist mein Bruder.", "czech": "Ten kluk je můj bratr." },
+            { "german": "Es geht mir schlecht.", "czech": "Mám se špatně." }
+          ]
+        }
+      ]
+    }
+  ]
+}
