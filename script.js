@@ -1,7 +1,11 @@
 class App {
     constructor() {
-        this.data = null;
+        this.data = null;          // Store merged word data
+        this.sentenceData = null;  // Store merged sentence data
+        
         this.currentWords = [];
+        this.currentSentences = []; // NEW: Store current sentences
+        
         this.selectedLessons = new Set();
         this.selectedPages = new Set();   
         this.isReverseMode = false;
@@ -28,11 +32,19 @@ class App {
 
     async init() {
         console.log("App initializing...");
-        this.dbFiles = [
+        this.dbFilesWords = [
             'database 1-4.json',
             'database 5-10.json',
             'database 11-14.json',
             'database 15-18.json'
+        ];
+        
+        // NEW: Load sentence databases
+        this.dbFilesSentences = [
+            'sentences 1-4.json',
+            'sentences 5-10.json',
+            'sentences 11-14.json',
+            'sentences 15-18.json'
         ];
 
         await this.loadData();
@@ -42,12 +54,8 @@ class App {
 
     async loadData() {
         try {
-            if (typeof DB_DATA !== 'undefined') {
-                this.processData([DB_DATA]);
-                return;
-            }
-
-            const promises = this.dbFiles.map(file => fetch(file).then(res => {
+            // 1. Load Words
+            const wordPromises = this.dbFilesWords.map(file => fetch(file).then(res => {
                 if (!res.ok) throw new Error(`Failed to load ${file}`);
                 return res.json();
             }).catch(err => {
@@ -55,8 +63,19 @@ class App {
                 return null; 
             }));
 
-            const results = await Promise.all(promises);
-            this.processData(results);
+            // 2. Load Sentences
+            const sentencePromises = this.dbFilesSentences.map(file => fetch(file).then(res => {
+                if (!res.ok) throw new Error(`Failed to load ${file}`);
+                return res.json();
+            }).catch(err => {
+                console.warn(err);
+                return null;
+            }));
+
+            const wordResults = await Promise.all(wordPromises);
+            const sentenceResults = await Promise.all(sentencePromises);
+
+            this.processData(wordResults, sentenceResults);
 
         } catch (error) {
             console.error("Failed to load databases:", error);
@@ -69,13 +88,21 @@ class App {
         }
     }
 
-    processData(results) {
-        const validData = results.filter(data => data && data.lessons);
-        let allLessons = [];
-        validData.forEach(d => { allLessons = allLessons.concat(d.lessons); });
-        allLessons.sort((a, b) => (a.number || 0) - (b.number || 0));
+    processData(wordResults, sentenceResults) {
+        // --- Process Words ---
+        const validWordData = wordResults.filter(data => data && data.lessons);
+        let allWordLessons = [];
+        validWordData.forEach(d => { allWordLessons = allWordLessons.concat(d.lessons); });
+        allWordLessons.sort((a, b) => (a.number || 0) - (b.number || 0));
+        this.data = { lessons: allWordLessons };
 
-        this.data = { lessons: allLessons };
+        // --- Process Sentences ---
+        const validSentenceData = sentenceResults.filter(data => data && data.lessons);
+        let allSentenceLessons = [];
+        validSentenceData.forEach(d => { allSentenceLessons = allSentenceLessons.concat(d.lessons); });
+        allSentenceLessons.sort((a, b) => (a.number || 0) - (b.number || 0));
+        this.sentenceData = { lessons: allSentenceLessons };
+
         this.populateLessonCheckboxes();
     }
 
@@ -104,6 +131,7 @@ class App {
 
         let availablePages = [];
         
+        // Use word data to determine available pages structure
         this.selectedLessons.forEach(lessonNum => {
             const lesson = this.data.lessons.find(l => l.number == lessonNum);
             if (lesson && lesson.pages) {
@@ -133,7 +161,7 @@ class App {
             this.selectedPages.add(p.id);
         });
 
-        this.updateCurrentWords();
+        this.updateCurrentContent();
     }
 
     setupMultiselectUI() {
@@ -216,7 +244,7 @@ class App {
                 const checked = this.checkboxesPages.querySelectorAll('.page-cb:checked');
                 document.getElementById('selectAllPages').checked = (all.length === checked.length);
                 
-                this.updateCurrentWords();
+                this.updateCurrentContent();
             }
         });
 
@@ -247,19 +275,34 @@ class App {
         });
     }
 
-    updateCurrentWords() {
+    updateCurrentContent() {
         this.currentWords = [];
+        this.currentSentences = [];
         
         if (this.selectedLessons.size > 0 && this.selectedPages.size > 0) {
             this.selectedLessons.forEach(lessonNum => {
-                const lesson = this.data.lessons.find(l => l.number == lessonNum);
-                if (lesson && lesson.pages) {
-                    lesson.pages.forEach(p => {
-                        const pageId = `${lesson.number}-${p.number}`;
-                        if (this.selectedPages.has(pageId)) {
+                const pageIdPrefix = `${lessonNum}-`;
+
+                // 1. Collect Words
+                const wordLesson = this.data.lessons.find(l => l.number == lessonNum);
+                if (wordLesson && wordLesson.pages) {
+                    wordLesson.pages.forEach(p => {
+                        if (this.selectedPages.has(`${pageIdPrefix}${p.number}`)) {
                             this.currentWords = this.currentWords.concat(p.words || []);
                         }
                     });
+                }
+
+                // 2. Collect Sentences (NEW)
+                if (this.sentenceData && this.sentenceData.lessons) {
+                    const sentenceLesson = this.sentenceData.lessons.find(l => l.number == lessonNum);
+                    if (sentenceLesson && sentenceLesson.pages) {
+                        sentenceLesson.pages.forEach(p => {
+                            if (this.selectedPages.has(`${pageIdPrefix}${p.number}`)) {
+                                this.currentSentences = this.currentSentences.concat(p.sentences || []);
+                            }
+                        });
+                    }
                 }
             });
         }
@@ -268,7 +311,9 @@ class App {
         this.renderWords();
 
         if (window.GameManager) {
+            // Pass both data sets to GameManager
             window.GameManager.setWords(this.currentWords);
+            window.GameManager.setSentences(this.currentSentences);
             window.GameManager.setOptions({ reverse: this.isReverseMode });
         }
     }

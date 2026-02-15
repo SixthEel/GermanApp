@@ -869,7 +869,6 @@ class GameManager {
         this.backBtn = document.querySelector('#activeGameContainer .back-btn');
         this.restartBtn = document.querySelector('.restart-btn');
         this.words = [];
-        this.sentences = []; // NEW: Store sentences separately
         this.activeGame = null;
         this.currentGameId = null;
         this.options = { reverse: false };
@@ -887,13 +886,9 @@ class GameManager {
 
     setWords(words) {
         this.words = words || [];
-        console.log("GameManager received words:", this.words.length);
-    }
-
-    // NEW: Method to set sentences specifically
-    setSentences(sentences) {
-        this.sentences = sentences || [];
-        console.log("GameManager received sentences:", this.sentences.length);
+        // Note: For 'sentences', we assume this.words will eventually contain
+        // sentence objects from the database you provide next.
+        console.log("GameManager received data items:", this.words.length);
     }
 
     setOptions(options) {
@@ -901,17 +896,9 @@ class GameManager {
     }
 
     openGame(gameId) {
-        // Validation logic depends on game type
-        if (gameId === 'sentences') {
-            if (this.sentences.length === 0) {
-                alert("Keine Sätze für die ausgewählte Lektion gefunden!");
-                return;
-            }
-        } else {
-            if (this.words.length === 0) {
-                alert("Wähle zuerst eine Lektion und Seiten im Bereich 'Lernen' aus!");
-                return;
-            }
+        if (this.words.length === 0) {
+            alert("Wähle zuerst eine Lektion und Seiten im Bereich 'Lernen' aus!");
+            return;
         }
 
         this.currentGameId = gameId; 
@@ -942,8 +929,9 @@ class GameManager {
         } else if (gameId === 'sentences') {
             const ui = this._createSentenceUI();
             this.gameViewport.appendChild(ui.container);
-            // Pass this.sentences instead of this.words
-            this.activeGame = new SentenceGameLogic(this.sentences, ui.container, ui.promptEl, ui.areaEl, ui.bankEl, ui.checkBtn, ui.feedbackEl);
+            // We pass this.words. If the user loaded words, we hope they loaded sentences
+            // or that the array contains objects compatible with { german: "", czech: "" }
+            this.activeGame = new SentenceGameLogic(this.words, ui.container, ui.promptEl, ui.areaEl, ui.bankEl, ui.checkBtn, ui.feedbackEl);
         }
     }
 
