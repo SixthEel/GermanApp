@@ -1,23 +1,20 @@
-// YouTube Background Player with Key Combinations - Ad-Free Version
+// Local Audio Player with Key Combinations
 (function() {
     'use strict';
 
-    // Database of codes and YouTube video IDs
-    const videoDatabase = [
-        { code: "thatguy[ArrowUp][ArrowDown]", videoId: "dQw4w9WgXcQ" },
-        { code: "play[Tab][ArrowLeft][ArrowRight]", videoId: "9bZkp7q19f0" },
-        { code: "secret123", videoId: "kJQP7kiw5Fk" },
-        { code: "chill[ArrowDown][ArrowDown][Space]", videoId: "5qap5aO4i9A" },
-        // Add more codes and video IDs here
+    // Database of codes and local audio filenames
+    const audioDatabase = [
+        { code: "9mmgobang", audioFile: "Memphis- 9MM Goes Bang! Extended (Lyrics).webm" },
+        // Add more codes and audio files here
     ];
 
     // Current input tracking
     let currentInput = '';
     let inputTimer = null;
     
-    // Create hidden iframe container
-    const playerContainer = document.createElement('div');
-    playerContainer.style.cssText = `
+    // Create hidden audio container
+    const audioContainer = document.createElement('div');
+    audioContainer.style.cssText = `
         position: fixed;
         top: -9999px;
         left: -9999px;
@@ -27,19 +24,19 @@
         pointer-events: none;
         z-index: -9999;
     `;
-    playerContainer.id = 'hidden-youtube-player-container';
+    audioContainer.id = 'local-audio-player-container';
     
     // Add container to body when DOM is ready
     if (document.body) {
-        document.body.appendChild(playerContainer);
+        document.body.appendChild(audioContainer);
     } else {
         document.addEventListener('DOMContentLoaded', () => {
-            document.body.appendChild(playerContainer);
+            document.body.appendChild(audioContainer);
         });
     }
 
-    // Current playing iframe
-    let currentPlayer = null;
+    // Current playing audio element
+    let currentAudio = null;
 
     // Key mapping for special keys
     const specialKeys = {
@@ -63,164 +60,49 @@
         'Meta': '[Meta]'
     };
 
-    // Function to suppress console errors (optional)
-    function suppressConsoleErrors() {
-        const originalError = console.error;
-        console.error = function(...args) {
-            // Filter out CORS and ad-related errors
-            if (args[0] && typeof args[0] === 'string' && 
-                (args[0].includes('CORS') || 
-                 args[0].includes('pagead') || 
-                 args[0].includes('interaction'))) {
-                return; // Suppress these errors
-            }
-            originalError.apply(console, args);
-        };
-    }
-
-    // Uncomment the line below if you want to suppress console errors
-    // suppressConsoleErrors();
-
-    // Function to play YouTube video with maximum ad skipping
-    function playYouTubeVideo(videoId) {
-        // Remove existing player if any
-        if (currentPlayer) {
-            currentPlayer.remove();
+    // Function to play local audio
+    function playLocalAudio(audioFile) {
+        // Remove existing audio if any
+        if (currentAudio) {
+            currentAudio.pause();
+            currentAudio.remove();
+            currentAudio = null;
         }
 
-        // Create new iframe
-        currentPlayer = document.createElement('iframe');
-        currentPlayer.style.cssText = `
-            width: 560px;
-            height: 315px;
-            border: none;
-        `;
+        // Create new audio element
+        currentAudio = document.createElement('audio');
         
-        // Use direct video URL with parameters to skip ads
-        // This combination has been tested to minimize ads
-        const params = new URLSearchParams({
-            autoplay: '1',
-            mute: '1',
-            enablejsapi: '1',
-            modestbranding: '1',
-            rel: '0',
-            fs: '0',
-            iv_load_policy: '3',
-            controls: '0',
-            disablekb: '1',
-            playsinline: '1',
-            loop: '0',
-            cc_load_policy: '0',
-            color: 'white',
-            widget_referrer: window.location.origin
-        });
-        
-        // Try using the regular youtube.com domain instead of nocookie
-        // to avoid CORS issues with ads
-        currentPlayer.src = `https://www.youtube.com/embed/${videoId}?${params.toString()}`;
-        currentPlayer.allow = 'autoplay; encrypted-media; fullscreen';
-        currentPlayer.allowFullscreen = false;
+        // Set audio source
+        currentAudio.src = audioFile;
+        currentAudio.controls = false;
+        currentAudio.loop = false;
         
         // Add to container
-        playerContainer.appendChild(currentPlayer);
+        audioContainer.appendChild(currentAudio);
         
-        // Multiple attempts to ensure video plays and skip ads
-        const playAttempts = [1000, 2000, 3000];
-        
-        playAttempts.forEach(delay => {
-            setTimeout(() => {
-                if (currentPlayer && currentPlayer.contentWindow) {
-                    try {
-                        // Send multiple commands to the player
-                        const commands = [
-                            '{"event":"command","func":"playVideo","args":""}',
-                            '{"event":"listening","func":"playVideo","args":""}',
-                            '{"event":"command","func":"seekTo","args":[0,true]}',
-                            '{"event":"command","func":"mute","args":""}'
-                        ];
-                        
-                        commands.forEach(cmd => {
-                            currentPlayer.contentWindow.postMessage(cmd, '*');
-                        });
-                    } catch (e) {
-                        // Silently fail - errors here are expected
-                    }
-                }
-            }, delay);
+        // Play audio
+        currentAudio.play().catch(error => {
+            console.error('Error playing audio:', error);
         });
         
-        console.log(`Playing video: ${videoId}`);
+        console.log(`Playing local audio: ${audioFile}`);
     }
 
-    // Alternative method using the YouTube Player API approach
-    function playYouTubeVideoWithAPI(videoId) {
-        if (currentPlayer) {
-            currentPlayer.remove();
-        }
-
-        // Create a div for the player
-        const playerDiv = document.createElement('div');
-        playerDiv.id = 'youtube-player-' + Date.now();
-        playerDiv.style.cssText = `
-            width: 560px;
-            height: 315px;
-        `;
-        
-        playerContainer.appendChild(playerDiv);
-        
-        // Load the YouTube IFrame Player API
-        const tag = document.createElement('script');
-        tag.src = 'https://www.youtube.com/iframe_api';
-        const firstScriptTag = document.getElementsByTagName('script')[0];
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-        
-        // Create player when API is ready
-        window.onYouTubeIframeAPIReady = function() {
-            new YT.Player(playerDiv.id, {
-                videoId: videoId,
-                playerVars: {
-                    'autoplay': 1,
-                    'mute': 1,
-                    'modestbranding': 1,
-                    'rel': 0,
-                    'controls': 0,
-                    'disablekb': 1,
-                    'playsinline': 1,
-                    'iv_load_policy': 3
-                },
-                events: {
-                    'onReady': (event) => {
-                        event.target.playVideo();
-                        event.target.mute();
-                    },
-                    'onStateChange': (event) => {
-                        // If video ends, we could loop or do something else
-                        if (event.data === YT.PlayerState.ENDED) {
-                            console.log('Video ended');
-                        }
-                    }
-                }
-            });
-            
-            // Store reference to player
-            currentPlayer = document.getElementById(playerDiv.id);
-        };
-    }
-
-    // Function to stop current video
-    function stopCurrentVideo() {
-        if (currentPlayer) {
-            currentPlayer.remove();
-            currentPlayer = null;
-            console.log('Video stopped');
+    // Function to stop current audio
+    function stopCurrentAudio() {
+        if (currentAudio) {
+            currentAudio.pause();
+            currentAudio.remove();
+            currentAudio = null;
+            console.log('Audio stopped');
         }
     }
 
     // Function to check if input matches any code
     function checkForMatch(input) {
-        for (const entry of videoDatabase) {
+        for (const entry of audioDatabase) {
             if (input.endsWith(entry.code)) {
-                playYouTubeVideo(entry.videoId);
+                playLocalAudio(entry.audioFile);
                 return true;
             }
         }
@@ -266,6 +148,9 @@
         if (currentInput.length > 100) {
             currentInput = currentInput.slice(-50);
         }
+
+        // Debug logging
+        console.log('Current input:', currentInput);
     });
 
     // Add stop command - press Escape 3 times quickly
@@ -281,7 +166,7 @@
             }
             
             if (escapeCount >= 3) {
-                stopCurrentVideo();
+                stopCurrentAudio();
                 escapeCount = 0;
             }
             
@@ -291,18 +176,52 @@
         }
     });
 
+    // Add volume control (optional)
+    document.addEventListener('keydown', (event) => {
+        // Ctrl + Up Arrow to increase volume
+        if (event.ctrlKey && event.key === 'ArrowUp' && currentAudio) {
+            event.preventDefault();
+            if (currentAudio.volume < 1) {
+                currentAudio.volume = Math.min(1, currentAudio.volume + 0.1);
+                console.log(`Volume: ${Math.round(currentAudio.volume * 100)}%`);
+            }
+        }
+        
+        // Ctrl + Down Arrow to decrease volume
+        if (event.ctrlKey && event.key === 'ArrowDown' && currentAudio) {
+            event.preventDefault();
+            if (currentAudio.volume > 0) {
+                currentAudio.volume = Math.max(0, currentAudio.volume - 0.1);
+                console.log(`Volume: ${Math.round(currentAudio.volume * 100)}%`);
+            }
+        }
+        
+        // Ctrl + Space to pause/play
+        if (event.ctrlKey && event.key === ' ') {
+            event.preventDefault();
+            if (currentAudio) {
+                if (currentAudio.paused) {
+                    currentAudio.play();
+                    console.log('Play');
+                } else {
+                    currentAudio.pause();
+                    console.log('Pause');
+                }
+            }
+        }
+    });
+
     // Expose functions globally
-    window.youtubePlayer = {
-        play: playYouTubeVideo,
-        playWithAPI: playYouTubeVideoWithAPI,
-        stop: stopCurrentVideo,
+    window.localAudioPlayer = {
+        play: playLocalAudio,
+        stop: stopCurrentAudio,
         getCurrentInput: () => currentInput,
         clearInput: () => { currentInput = ''; },
-        getDatabase: () => videoDatabase
+        getDatabase: () => audioDatabase,
+        getCurrentAudio: () => currentAudio
     };
 
-    console.log('YouTube Background Player loaded. Press key combinations to play videos. Press Escape 3 times to stop.');
-    
-    // Optional: Add a message about ad skipping
-    console.log('Ad skipping enabled - videos should play directly without ads');
+    console.log('Local Audio Player loaded. Press key combinations to play local MP3 files. Press Escape 3 times to stop.');
+    console.log('Make sure your MP3 files are in the same directory as your HTML file!');
+    console.log('Controls: Ctrl+Up = Volume Up, Ctrl+Down = Volume Down, Ctrl+Space = Play/Pause');
 })();
