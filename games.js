@@ -1,17 +1,16 @@
 /* =========================================
-   GLOBAL HELPER: TEXT TO SPEECH (ROBUST)
+   GLOBAL HELPER: TEXT TO SPEECH (STRICT GERMAN)
    ========================================= */
 let germanVoice = null;
 
-// Function to load voices (browsers load them asynchronously)
 function loadVoices() {
     const voices = window.speechSynthesis.getVoices();
-    // Try to find a specific German voice
+    // Prioritize Germany German, then any German
     germanVoice = voices.find(v => v.lang === 'de-DE') || 
                   voices.find(v => v.lang.startsWith('de'));
 }
 
-// Trigger load immediately and on change
+// Load voices immediately and update when they change (browser specific)
 if (window.speechSynthesis) {
     loadVoices();
     if (window.speechSynthesis.onvoiceschanged !== undefined) {
@@ -21,11 +20,12 @@ if (window.speechSynthesis) {
 
 function speakGerman(text) {
     if (!text || !window.speechSynthesis) return;
-    
-    // Ensure voices are loaded if called early
+
+    // Try to load again if not found yet (sometimes needed on mobile)
     if (!germanVoice) loadVoices();
 
-    // If we still don't have a German voice, DO NOT speak (prevents Czech accent)
+    // STRICT MODE: If no German voice is found, do NOT speak.
+    // This prevents the Czech voice from reading German text.
     if (!germanVoice) {
         console.warn("Keine deutsche Stimme gefunden. Sprachausgabe deaktiviert.");
         return; 
@@ -759,7 +759,7 @@ class TypingGameLogic {
 }
 
 /* =========================================
-   6. SENTENCE BUILDER LOGIC (FIXED)
+   6. SENTENCE BUILDER LOGIC
    ========================================= */
 class SentenceGameLogic {
     constructor(sentences, container, promptEl, areaEl, bankEl, checkBtn, feedbackEl) {
@@ -876,7 +876,7 @@ class SentenceGameLogic {
 }
 
 /* =========================================
-   7. GAME MANAGER (UPDATED)
+   7. GAME MANAGER
    ========================================= */
 class GameManager {
     constructor() {
