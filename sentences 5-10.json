@@ -1,0 +1,1150 @@
+{
+  "lessons": [
+    {
+      "number": 5,
+      "name": "Lekce 5",
+      "pages": [
+        {
+          "number": 1,
+          "sentences": [
+            { "german": "Das Abendessen ist fertig.", "czech": "Večeře je hotová." },
+            { "german": "Ich trinke gern Apfelschorle.", "czech": "Rád piju jablečný střik." },
+            { "german": "Ein Bier, bitte.", "czech": "Jedno pivo, prosím." },
+            { "german": "Wir essen Brot mit Butter.", "czech": "Jíme chleba s máslem." },
+            { "german": "Möchtest du ein Ei?", "czech": "Chtěl bys vejce?" },
+            { "german": "Das Eis ist kalt.", "czech": "Ta zmrzlina je studená." },
+            { "german": "Ich nehme ein Brötchen.", "czech": "Vezmu si housku." },
+            { "german": "Trinkst du Cola?", "czech": "Piješ kolu?" },
+            { "german": "Der Braten schmeckt gut.", "czech": "Ta pečeně chutná dobře." },
+            { "german": "Zu Abend esse ich Brot.", "czech": "K večeři jím chléb." }
+          ]
+        },
+        {
+          "number": 2,
+          "sentences": [
+            { "german": "Ich esse gern Fisch.", "czech": "Rád jím rybu." },
+            { "german": "Magst du Fleisch?", "czech": "Máš rád maso?" },
+            { "german": "Zum Frühstück trinke ich Kaffee.", "czech": "Ke snídani piju kávu." },
+            { "german": "Gemüse ist gesund.", "czech": "Zelenina je zdravá." },
+            { "german": "Ich möchte einen Hamburger.", "czech": "Chtěl bych hamburger." },
+            { "german": "Der Honig ist süß.", "czech": "Ten med je sladký." },
+            { "german": "Joghurt mit Obst ist lecker.", "czech": "Jogurt s ovocem je chutný." },
+            { "german": "Wo sind die Kartoffeln?", "czech": "Kde jsou brambory?" },
+            { "german": "Wir essen Frikadellen.", "czech": "Jíme karbanátky." },
+            { "german": "Kaffee mit Milch, bitte.", "czech": "Kávu s mlékem, prosím." }
+          ]
+        },
+        {
+          "number": 3,
+          "sentences": [
+            { "german": "Käse schmeckt gut.", "czech": "Sýr chutná dobře." },
+            { "german": "Ich backe einen Kuchen.", "czech": "Peču koláč." },
+            { "german": "Brot mit Marmelade.", "czech": "Chléb s marmeládou." },
+            { "german": "Trinkst du Milch?", "czech": "Piješ mléko?" },
+            { "german": "Was essen wir zu Mittag?", "czech": "Co jíme k obědu?" },
+            { "german": "Müsli ist mein Frühstück.", "czech": "Müsli je moje snídaně." },
+            { "german": "Ich liebe Nudeln.", "czech": "Miluju těstoviny." },
+            { "german": "Obst ist gesund.", "czech": "Ovoce je zdravé." },
+            { "german": "Wir bestellen eine Pizza.", "czech": "Objednáme si pizzu." },
+            { "german": "Pommes mit Ketchup.", "czech": "Hranolky s kečupem." }
+          ]
+        },
+        {
+          "number": 4,
+          "sentences": [
+            { "german": "Ich nehme Reis mit Fleisch.", "czech": "Vezmu si rýži s masem." },
+            { "german": "Ein Glas Saft, bitte.", "czech": "Sklenici džusu, prosím." },
+            { "german": "Der Salat ist frisch.", "czech": "Ten salát je čerstvý." },
+            { "german": "Ich mag Schinken.", "czech": "Mám rád šunku." },
+            { "german": "Das Schnitzel ist groß.", "czech": "Ten řízek je velký." },
+            { "german": "Hast du Soße?", "czech": "Máš omáčku?" },
+            { "german": "Ich esse gern Steak.", "czech": "Rád jím steak." },
+            { "german": "Trinkst du Tee?", "czech": "Piješ čaj?" },
+            { "german": "Die Torte ist süß.", "czech": "Ten dort je sladký." },
+            { "german": "Wir trinken Wasser.", "czech": "Pijeme vodu." }
+          ]
+        },
+        {
+          "number": 5,
+          "sentences": [
+            { "german": "Die Wurst ist lecker.", "czech": "Ten salám je chutný." },
+            { "german": "Ich esse zwei Würstchen.", "czech": "Jím dva párky." },
+            { "german": "Das Essen ist ausgezeichnet.", "czech": "Jídlo je výborné." },
+            { "german": "Die Banane ist gelb.", "czech": "Ten banán je žlutý." },
+            { "german": "Der Kaffee ist bitter.", "czech": "Ta káva je hořká." },
+            { "german": "Chili ist scharf.", "czech": "Chilli je pálivé." },
+            { "german": "Das ist ekelhaft!", "czech": "To je odporné!" },
+            { "german": "Wir essen jetzt.", "czech": "Teď jíme." },
+            { "german": "Salat mit Öl und Essig.", "czech": "Salát s olejem a octem." },
+            { "german": "Die Suppe schmeckt fade.", "czech": "Ta polévka chutná mdle." }
+          ]
+        },
+        {
+          "number": 6,
+          "sentences": [
+            { "german": "Das Gericht ist fertig.", "czech": "Pokrm je hotový." },
+            { "german": "Der Geschmack ist gut.", "czech": "Chuť je dobrá." },
+            { "german": "Obst und Gemüse sind gesund.", "czech": "Ovoce a zelenina jsou zdravé." },
+            { "german": "Ich mag Grapefruit nicht.", "czech": "Nemám rád grapefruit." },
+            { "german": "Der Tee ist schon kalt.", "czech": "Ten čaj je už studený." },
+            { "german": "Das ist langweilig.", "czech": "To je nudné." },
+            { "german": "Die Pizza ist lecker.", "czech": "Ta pizza je chutná." },
+            { "german": "Salz und Pfeffer, bitte.", "czech": "Sůl a pepř, prosím." },
+            { "german": "Die Pommes sind salzig.", "czech": "Ty hranolky jsou slané." },
+            { "german": "Das ist sehr gesund.", "czech": "To je velmi zdravé." }
+          ]
+        },
+        {
+          "number": 7,
+          "sentences": [
+            { "german": "Die Zitrone ist sauer.", "czech": "Citron je kyselý." },
+            { "german": "Die Soße ist scharf.", "czech": "Ta omáčka je ostrá." },
+            { "german": "Schmeckt es dir?", "czech": "Chutná ti to?" },
+            { "german": "Der Kuchen ist sehr süß.", "czech": "Ten koláč je velmi sladký." },
+            { "german": "Das Essen ist toll.", "czech": "Jídlo je skvělé." },
+            { "german": "Was trinken wir?", "czech": "Co budeme pít?" },
+            { "german": "Das sieht unappetitlich aus.", "czech": "To vypadá nechutně." },
+            { "german": "Zucker ist ungesund.", "czech": "Cukr je nezdravý." },
+            { "german": "Ich brauche eine Zitrone.", "czech": "Potřebuji citron." },
+            { "german": "Nimmst du Zucker?", "czech": "Bereš si cukr?" }
+          ]
+        },
+        {
+          "number": 8,
+          "sentences": [
+            { "german": "Wo ist das Besteck?", "czech": "Kde je příbor?" },
+            { "german": "Ich brauche eine Gabel.", "czech": "Potřebuji vidličku." },
+            { "german": "Ein Glas Wasser, bitte.", "czech": "Sklenici vody, prosím." },
+            { "german": "Hier ist dein Löffel.", "czech": "Tady je tvá lžíce." },
+            { "german": "Das Messer ist scharf.", "czech": "Ten nůž je ostrý." },
+            { "german": "Ich trinke Mineralwasser.", "czech": "Piju minerálku." },
+            { "german": "Ich mag Pizza.", "czech": "Mám rád pizzu." },
+            { "german": "Hast du eine Serviette?", "czech": "Máš ubrousek?" },
+            { "german": "Die Suppe ist heiß.", "czech": "Ta polévka je horká." },
+            { "german": "Ein Teelöffel Zucker.", "czech": "Jedna čajová lžička cukru." }
+          ]
+        },
+        {
+          "number": 9,
+          "sentences": [
+            { "german": "Der Teller ist leer.", "czech": "Talíř je prázdný." },
+            { "german": "Wir trinken Wein.", "czech": "Pijeme víno." },
+            { "german": "Hast du einen Zahnstocher?", "czech": "Máš párátko?" },
+            { "german": "Das Bier ist alkoholfrei.", "czech": "To pivo je nealkoholické." },
+            { "german": "Wir möchten bezahlen.", "czech": "Chtěli bychom zaplatit." },
+            { "german": "Ich nehme den Caesar-Salat.", "czech": "Vezmu si Caesar salát." },
+            { "german": "Das Fleisch ist gegrillt.", "czech": "To maso je grilované." },
+            { "german": "Hähnchen mit Reis.", "czech": "Kuře s rýží." },
+            { "german": "Der Kuchen ist hausgemacht.", "czech": "Ten koláč je domácí." },
+            { "german": "Ich esse Kartoffelsalat.", "czech": "Jím bramborový salát." }
+          ]
+        },
+        {
+          "number": 10,
+          "sentences": [
+            { "german": "Ich esse Lachsfilet.", "czech": "Jím filet z lososa." },
+            { "german": "Was möchtest du trinken?", "czech": "Co bys chtěl pít?" },
+            { "german": "Ich nehme das Steak.", "czech": "Vezmu si ten steak." },
+            { "german": "Die Speisekarte, bitte.", "czech": "Jídelní lístek, prosím." },
+            { "german": "Wasser, spritzig oder still?", "czech": "Vodu, perlivou nebo neperlivou?" },
+            { "german": "Ein Wasser, still bitte.", "czech": "Jednu vodu, neperlivou prosím." },
+            { "german": "Der Tisch ist reserviert.", "czech": "Stůl je rezervovaný." },
+            { "german": "Vielleicht nehme ich Pizza.", "czech": "Možná si vezmu pizzu." },
+            { "german": "Zahlen bitte, zusammen.", "czech": "Platit prosím, dohromady." },
+            { "german": "Der Apfel ist rot.", "czech": "To jablko je červené." }
+          ]
+        },
+        {
+          "number": 11,
+          "sentences": [
+            { "german": "Ich möchte Apfelstrudel.", "czech": "Chtěl bych jablečný závin." },
+            { "german": "Ein Bauernsalat ist gesund.", "czech": "Selský salát je zdravý." },
+            { "german": "Ich mag Blaubeeren.", "czech": "Mám rád borůvky." },
+            { "german": "Ich habe Durst.", "czech": "Mám žízeň." },
+            { "german": "Ein gemischter Salat, bitte.", "czech": "Jeden míchaný salát, prosím." },
+            { "german": "Das ist ein Geschenk.", "czech": "To je dárek." },
+            { "german": "Welches Getränk möchtest du?", "czech": "Jaký nápoj bys chtěl?" },
+            { "german": "Wir essen Grillhähnchen.", "czech": "Jíme grilované kuře." },
+            { "german": "Gulasch mit Knödeln.", "czech": "Guláš s knedlíky." },
+            { "german": "Die Gulaschsuppe ist scharf.", "czech": "Ta gulášová polévka je pálivá." }
+          ]
+        },
+        {
+          "number": 12,
+          "sentences": [
+            { "german": "Ich habe Hunger.", "czech": "Mám hlad." },
+            { "german": "Wir kaufen Brot.", "czech": "Kupujeme chleba." },
+            { "german": "Ich mag Knödel.", "czech": "Mám rád knedlíky." },
+            { "german": "Fleisch mit Kraut.", "czech": "Maso se zelím." },
+            { "german": "Die Lasagne ist lecker.", "czech": "Ty lasagne jsou chutné." },
+            { "german": "Eine Limonade, bitte.", "czech": "Jednu limonádu, prosím." },
+            { "german": "Was gibt es als Nachspeise?", "czech": "Co je jako zákusek?" },
+            { "german": "Ich esse Pfannkuchen.", "czech": "Jím palačinky." },
+            { "german": "Eine Platte für zwei Personen.", "czech": "Mísa pro dvě osoby." },
+            { "german": "Ich trinke ein Radler.", "czech": "Piju radler." }
+          ]
+        },
+        {
+          "number": 13,
+          "sentences": [
+            { "german": "Rindergulasch ist mein Lieblingsessen.", "czech": "Hovězí guláš je mé oblíbené jídlo." },
+            { "german": "Käsespätzle mit Röstzwiebeln.", "czech": "Sýrové špecle se smaženou cibulí." },
+            { "german": "Kuchen mit Sahne.", "czech": "Koláč se šlehačkou." },
+            { "german": "Ich nehme Salzkartoffeln.", "czech": "Vezmu si vařené brambory." },
+            { "german": "Schweinebraten mit Knödeln.", "czech": "Vepřová pečeně s knedlíky." },
+            { "german": "Die Schweinshaxe ist groß.", "czech": "To vepřové koleno je velké." },
+            { "german": "Spätzle kommen aus Deutschland.", "czech": "Špecle pochází z Německa." },
+            { "german": "Eine Tasse Tee, bitte.", "czech": "Šálek čaje, prosím." },
+            { "german": "Tomatensalat schmeckt gut.", "czech": "Rajčatový salát chutná dobře." },
+            { "german": "Apfelstrudel mit Vanillesoße.", "czech": "Jablečný závin s vanilkovou omáčkou." }
+          ]
+        },
+        {
+          "number": 14,
+          "sentences": [
+            { "german": "Ist das Essen vegetarisch?", "czech": "Je to jídlo vegetariánské?" },
+            { "german": "Als Vorspeise nehme ich Suppe.", "czech": "Jako předkrm si vezmu polévku." },
+            { "german": "Das Essen ist warm.", "czech": "To jídlo je teplé." },
+            { "german": "Wie ist deine Adresse?", "czech": "Jaká je tvá adresa?" },
+            { "german": "Das Ambiente ist schön.", "czech": "Ta atmosféra je pěkná." },
+            { "german": "Gib mir Bescheid.", "czech": "Dej mi vědět." },
+            { "german": "Ich mag Blattspinat.", "czech": "Mám rád listový špenát." },
+            { "german": "Ich esse Bratwurst.", "czech": "Jím klobásu." },
+            { "german": "Ein Döner kostet fünf Euro.", "czech": "Döner stojí pět eur." },
+            { "german": "Wir essen im Gasthof.", "czech": "Jíme v hostinci." }
+          ]
+        },
+        {
+          "number": 15,
+          "sentences": [
+            { "german": "Das Restaurant ist gemütlich.", "czech": "Ta restaurace je útulná." },
+            { "german": "Die Küche ist international.", "czech": "Kuchyně je mezinárodní." },
+            { "german": "Eine Kerze steht auf dem Tisch.", "czech": "Na stole stojí svíčka." },
+            { "german": "Die Küche ist sauber.", "czech": "Kuchyně je čistá." },
+            { "german": "Ich esse keine Meeresfrüchte.", "czech": "Nejím plody moře." },
+            { "german": "Ist hier noch ein Platz frei?", "czech": "Je tady ještě volné místo?" },
+            { "german": "Ich habe eine Prüfung.", "czech": "Mám zkoušku." },
+            { "german": "Wir müssen einen Tisch reservieren.", "czech": "Musíme zarezervovat stůl." },
+            { "german": "Heute ist Ruhetag.", "czech": "Dnes je zavírací den." },
+            { "german": "Zum Frühstück esse ich Rührei.", "czech": "Ke snídani jím míchaná vajíčka." }
+          ]
+        },
+        {
+          "number": 16,
+          "sentences": [
+            { "german": "Ich koche Spaghetti.", "czech": "Vařím špagety." },
+            { "german": "Ich koche täglich.", "czech": "Vařím denně." },
+            { "german": "Das ist ein guter Tipp.", "czech": "To je dobrý tip." },
+            { "german": "Vorsicht, heiß!", "czech": "Pozor, horké!" },
+            { "german": "Ich nehme das Zanderfilet.", "czech": "Vezmu si filet z candáta." },
+            { "german": "Brate das Fleisch beidseitig.", "czech": "Opeč maso z obou stran." },
+            { "german": "Wir braten Fisch.", "czech": "Smažíme rybu." },
+            { "german": "Erhitzen Sie das Öl.", "czech": "Rozpalte olej." },
+            { "german": "Wir kochen eine Suppe.", "czech": "Vaříme polévku." },
+            { "german": "Kopfsalat ist gesund.", "czech": "Hlávkový salát je zdravý." }
+          ]
+        },
+        {
+          "number": 17,
+          "sentences": [
+            { "german": "Der Geschmack ist mild.", "czech": "Chuť je jemná." },
+            { "german": "Warte eine Minute.", "czech": "Počkej minutu." },
+            { "german": "Mischen Sie alles.", "czech": "Všechno smíchejte." },
+            { "german": "Schneide das Brot.", "czech": "Nakrájej ten chleba." },
+            { "german": "Die Schüssel ist voll.", "czech": "Ta mísa je plná." },
+            { "german": "Ich möchte Senf dazu.", "czech": "Chtěl bych k tomu hořčici." },
+            { "german": "Ein Stück Kuchen, bitte.", "czech": "Jeden kousek koláče, prosím." },
+            { "german": "Trocknen Sie das Fleisch.", "czech": "Osušte maso." },
+            { "german": "Waschen Sie das Gemüse.", "czech": "Omyjte zeleninu." },
+            { "german": "Würzen Sie mit Salz und Pfeffer.", "czech": "Okořeňte solí a pepřem." }
+          ]
+        },
+        {
+          "number": 18,
+          "sentences": [
+            { "german": "Zupfen Sie den Salat.", "czech": "Natrhejte salát." },
+            { "german": "Am besten schmeckt es warm.", "czech": "Nejlépe to chutná teplé." },
+            { "german": "Ich esse gern Biskuit.", "czech": "Rád jím sušenky." },
+            { "german": "Wir brauchen Currypulver.", "czech": "Potřebujeme kari." },
+            { "german": "Eine Currywurst mit Pommes.", "czech": "Currywurst s hranolky." },
+            { "german": "Ich möchte Reis dazu.", "czech": "Chtěl bych k tomu rýži." },
+            { "german": "Das Brot ist geschnitten.", "czech": "Chléb je nakrájený." },
+            { "german": "Kalbfleisch ist teuer.", "czech": "Telecí maso je drahé." },
+            { "german": "Pommes mit Ketchup.", "czech": "Hranolky s kečupem." },
+            { "german": "Die Kirsche ist rot.", "czech": "Třešeň je červená." }
+          ]
+        },
+        {
+          "number": 19,
+          "sentences": [
+            { "german": "Wie macht man das?", "czech": "Jak se to dělá?" },
+            { "german": "Torte mit Schokoladenraspeln.", "czech": "Dort s čokoládovými hoblinami." },
+            { "german": "Hier ist das Trinkgeld.", "czech": "Tady je spropitné." },
+            { "german": "Das ist ein spezielles Gericht.", "czech": "To je speciální jídlo." },
+            { "german": "Wir verkaufen Eis.", "czech": "Prodáváme zmrzlinu." },
+            { "german": "Das Essen war wunderbar.", "czech": "Jídlo bylo báječné." },
+            { "german": "Man isst hier gut.", "czech": "Tady se jí dobře." },
+            { "german": "Das macht man so.", "czech": "Takhle se to dělá." },
+            { "german": "Vielen Dank für das Trinkgeld.", "czech": "Děkuji za spropitné." },
+            { "german": "Es schmeckt wunderbar.", "czech": "Chutná to báječně." }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "name": "Lekce 6",
+      "pages": [
+        {
+          "number": 20,
+          "sentences": [
+            { "german": "Er jobbt im Supermarkt.", "czech": "Má brigádu v supermarketu." },
+            { "german": "Das ist meine Pflicht.", "czech": "To je má povinnost." },
+            { "german": "Ich esse am liebsten Pizza.", "czech": "Nejraději jím pizzu." },
+            { "german": "Wann fängt die Schule an?", "czech": "Kdy začíná škola?" },
+            { "german": "Mach das Licht an.", "czech": "Rozsviť světlo." },
+            { "german": "Ruf mich bitte an.", "czech": "Zavolej mi prosím." },
+            { "german": "Ich ziehe mich an.", "czech": "Oblékám se." },
+            { "german": "Ich muss mein Zimmer aufräumen.", "czech": "Musím si uklidit pokoj." },
+            { "german": "Ich stehe um sieben Uhr auf.", "czech": "Vstávám v sedm hodin." },
+            { "german": "Wann wachst du auf?", "czech": "Kdy se budíš?" }
+          ]
+        },
+        {
+          "number": 21,
+          "sentences": [
+            { "german": "Leer den Mülleimer aus.", "czech": "Vysypej koš." },
+            { "german": "Räum die Spülmaschine aus.", "czech": "Vyliď myčku." },
+            { "german": "Du siehst gut aus.", "czech": "Vypadáš dobře." },
+            { "german": "Ich bin im Bad.", "czech": "Jsem v koupelně." },
+            { "german": "Das Badezimmer ist groß.", "czech": "Koupelna je velká." },
+            { "german": "Das Bild ist schön.", "czech": "Ten obraz je hezký." },
+            { "german": "Ich bin nicht dabei.", "czech": "Nejsem u toho." },
+            { "german": "Wir drehen einen Film.", "czech": "Natáčíme film." },
+            { "german": "Ich dusche morgens.", "czech": "Sprchuji se ráno." },
+            { "german": "Wir gehen einkaufen.", "czech": "Jdeme nakupovat." }
+          ]
+        },
+        {
+          "number": 22,
+          "sentences": [
+            { "german": "Ich schlafe schnell ein.", "czech": "Rychle usínám." },
+            { "german": "Der Film ist zu Ende.", "czech": "Film je u konce." },
+            { "german": "Endlich Wochenende!", "czech": "Konečně víkend!" },
+            { "german": "Ich sehe gern fern.", "czech": "Rád se dívám na televizi." },
+            { "german": "Bist du fertig?", "czech": "Jsi hotový?" },
+            { "german": "Es ist halb acht.", "czech": "Je půl osmé." },
+            { "german": "Ich mag Horrorfilme.", "czech": "Mám rád horory." },
+            { "german": "Hurra, Ferien!", "czech": "Hurá, prázdniny!" },
+            { "german": "Meine Kamera ist neu.", "czech": "Moje kamera je nová." },
+            { "german": "Das Telefon klingelt.", "czech": "Telefon zvoní." }
+          ]
+        },
+        {
+          "number": 23,
+          "sentences": [
+            { "german": "Mein Lieblingsfach ist Sport.", "czech": "Můj oblíbený předmět je tělocvik." },
+            { "german": "Ich nehme das Buch mit.", "czech": "Beru si tu knihu s sebou." },
+            { "german": "Ich bin müde.", "czech": "Jsem unavený." },
+            { "german": "Der Mülleimer ist voll.", "czech": "Odpadkový koš je plný." },
+            { "german": "Ich putze mir die Zähne.", "czech": "Čistím si zuby." },
+            { "german": "Ich muss Staub saugen.", "czech": "Musím vysát prach." },
+            { "german": "Ich gehe schlafen.", "czech": "Jdu spát." },
+            { "german": "Sie schminkt sich.", "czech": "Ona se líčí." },
+            { "german": "Die Spülmaschine läuft.", "czech": "Myčka běží." },
+            { "german": "Überall ist Staub.", "czech": "Všude je prach." }
+          ]
+        },
+        {
+          "number": 24,
+          "sentences": [
+            { "german": "Der Unterricht beginnt.", "czech": "Vyučování začíná." },
+            { "german": "Es ist Viertel nach drei.", "czech": "Je čtvrt na čtyři." },
+            { "german": "Er vloggt jeden Tag.", "czech": "Vloguje každý den." },
+            { "german": "Ich bereite mich vor.", "czech": "Připravuji se." },
+            { "german": "Der Wecker klingelt.", "czech": "Budík zvoní." },
+            { "german": "Zeig mir das Bild.", "czech": "Ukaž mi ten obrázek." },
+            { "german": "Ich bereite das Essen zu.", "czech": "Připravuji jídlo." },
+            { "german": "Wann kommst du zurück?", "czech": "Kdy se vrátíš?" },
+            { "german": "Schalte das Licht aus.", "czech": "Zhasni světlo." },
+            { "german": "Schalte den Fernseher ein.", "czech": "Zapni televizi." }
+          ]
+        },
+        {
+          "number": 25,
+          "sentences": [
+            { "german": "Wen suchst du?", "czech": "Koho hledáš?" },
+            { "german": "Wie ist die Uhrzeit?", "czech": "Kolik je hodin?" },
+            { "german": "Ich gehe ins Bett.", "czech": "Jdu do postele." },
+            { "german": "Er ist ein Blogger.", "czech": "On je bloger." },
+            { "german": "Wir entdecken die Stadt.", "czech": "Objevujeme město." },
+            { "german": "Ich entschuldige mich.", "czech": "Omlouvám se." },
+            { "german": "Erzähl mir von dir.", "czech": "Vyprávěj mi o sobě." },
+            { "german": "Kommentiere das Foto.", "czech": "Okomentuj tu fotku." },
+            { "german": "Ich like das Video.", "czech": "Likuju to video." },
+            { "german": "Er postet jeden Tag.", "czech": "Postuje každý den." }
+          ]
+        },
+        {
+          "number": 26,
+          "sentences": [
+            { "german": "Das ist ein neuer Trend.", "czech": "To je nový trend." },
+            { "german": "Wir verbringen Zeit zusammen.", "czech": "Trávíme čas spolu." },
+            { "german": "Vergiss das nicht.", "czech": "Nezapomeň na to." },
+            { "german": "Mach weiter.", "czech": "Pokračuj." },
+            { "german": "Ich weiß das nicht.", "czech": "To nevím." },
+            { "german": "Dienstags habe ich Training.", "czech": "V úterý mívám trénink." },
+            { "german": "Donnerstags lernen wir Englisch.", "czech": "Ve čtvrtek se učíme anglicky." },
+            { "german": "Freitags habe ich frei.", "czech": "V pátek mám volno." },
+            { "german": "Welcher Kanal ist das?", "czech": "Jaký je to kanál?" },
+            { "german": "Das ist mein Lieblingskanal.", "czech": "To je můj oblíbený kanál." }
+          ]
+        },
+        {
+          "number": 27,
+          "sentences": [
+            { "german": "Es ist Mitternacht.", "czech": "Je půlnoc." },
+            { "german": "Mittwochs gehen wir schwimmen.", "czech": "Ve středu chodíme plavat." },
+            { "german": "Montags beginnt die Woche.", "czech": "V pondělí začíná týden." },
+            { "german": "Morgens trinke ich Kaffee.", "czech": "Ráno piju kávu." },
+            { "german": "Am Nachmittag spiele ich.", "czech": "Odpoledne si hraju." },
+            { "german": "Nachmittags lernen wir.", "czech": "Odpoledne se učíme." },
+            { "german": "Samstags kaufen wir ein.", "czech": "V sobotu nakupujeme." },
+            { "german": "Sonntags schlafe ich lange.", "czech": "V neděli spím dlouho." },
+            { "german": "Das Training ist hart.", "czech": "Trénink je tvrdý." },
+            { "german": "Am Vormittag bin ich in der Schule.", "czech": "Dopoledne jsem ve škole." }
+          ]
+        },
+        {
+          "number": 28,
+          "sentences": [
+            { "german": "Vormittags lerne ich.", "czech": "Dopoledne se učím." },
+            { "german": "Ich sehe die Weltmeisterschaft.", "czech": "Dívám se na mistrovství světa." },
+            { "german": "Wir gehen durch den Park.", "czech": "Jdeme přes park." },
+            { "german": "Ich wohne um die Ecke.", "czech": "Bydlím za rohem." },
+            { "german": "Wir spielen gegen euch.", "czech": "Hrajeme proti vám." },
+            { "german": "Du bist sehr lieb.", "czech": "Jsi moc milý." },
+            { "german": "Das Mädchen ist nett.", "czech": "To děvče je milé." },
+            { "german": "Ohne dich ist es langweilig.", "czech": "Bez tebe je to nudné." },
+            { "german": "Der Park ist schön.", "czech": "Ten park je krásný." },
+            { "german": "Hallo, mein Schatz.", "czech": "Ahoj, moje zlatíčko." }
+          ]
+        },
+        {
+          "number": 29,
+          "sentences": [
+            { "german": "Ich habe keinen Stress.", "czech": "Nemám stres." },
+            { "german": "Er geht auf die Berufsschule.", "czech": "Chodí na učňovskou školu." },
+            { "german": "Das ist dumm.", "czech": "To je hloupé." },
+            { "german": "Die Fachschule ist schwer.", "czech": "Odborná škola je těžká." },
+            { "german": "Ich hole dich ab.", "czech": "Vyzvednu tě." },
+            { "german": "Das Kind ist im Kindergarten.", "czech": "Dítě je v mateřské školce." },
+            { "german": "Er liegt im Krankenhaus.", "czech": "Leží v nemocnici." },
+            { "german": "Wir treffen uns heute.", "czech": "Dnes se setkáme." },
+            { "german": "Holst du mich ab?", "czech": "Vyzvedneš mě?" },
+            { "german": "Kein Stress, bitte.", "czech": "Žádný stres, prosím." }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "name": "Lekce 7",
+      "pages": [
+        {
+          "number": 30,
+          "sentences": [
+            { "german": "Er ist arrogant.", "czech": "On je arogantní." },
+            { "german": "Wir besichtigen die Stadt.", "czech": "Prohlížíme si město." },
+            { "german": "Das ist doof.", "czech": "To je blbé." },
+            { "german": "Das ist echt cool.", "czech": "To je fakt hustý." },
+            { "german": "Sag das noch einmal.", "czech": "Řekni to ještě jednou." },
+            { "german": "Du bist auf meiner Freundesliste.", "czech": "Jsi na mém seznamu přátel." },
+            { "german": "Das gefällt mir.", "czech": "To se mi líbí." },
+            { "german": "Das gehört mir.", "czech": "To patří mně." },
+            { "german": "Kann ich dir helfen?", "czech": "Můžu ti pomoct?" },
+            { "german": "Er ist sehr hilfsbereit.", "czech": "On je velmi ochotný." }
+          ]
+        },
+        {
+          "number": 31,
+          "sentences": [
+            { "german": "Sie ist sehr hübsch.", "czech": "Ona je velmi hezká." },
+            { "german": "Er ist humorvoll.", "czech": "On je vtipný." },
+            { "german": "Klick auf den Link.", "czech": "Klikni na ten odkaz." },
+            { "german": "Wir lachen viel.", "czech": "Hodně se smějeme." },
+            { "german": "Ich laufe schnell.", "czech": "Běhám rychle." },
+            { "german": "Ich liebe dich.", "czech": "Miluji tě." },
+            { "german": "Der Film ist lustig.", "czech": "Ten film je vtipný." },
+            { "german": "Er studiert Medizin.", "czech": "Studuje medicínu." },
+            { "german": "Das ist originell.", "czech": "To je originální." },
+            { "german": "Schick es per E-Mail.", "czech": "Pošli to e-mailem." }
+          ]
+        },
+        {
+          "number": 32,
+          "sentences": [
+            { "german": "Reisen macht Spaß.", "czech": "Cestování je zábava." },
+            { "german": "Ich schenke dir ein Buch.", "czech": "Daruji ti knihu." },
+            { "german": "Ich schicke dir eine SMS.", "czech": "Pošlu ti SMS." },
+            { "german": "Ich mag Süßigkeiten.", "czech": "Mám rád sladkosti." },
+            { "german": "Er ist sympathisch.", "czech": "On je sympatický." },
+            { "german": "Das T-Shirt ist blau.", "czech": "To tričko je modré." },
+            { "german": "Warum bist du unzufrieden?", "czech": "Proč jsi nespokojený?" },
+            { "german": "Wir gehen in den Wald.", "czech": "Jdeme do lesa." },
+            { "german": "Der Witz war gut.", "czech": "Ten vtip byl dobrý." },
+            { "german": "Dein Aussehen ist toll.", "czech": "Tvůj vzhled je skvělý." }
+          ]
+        },
+        {
+          "number": 33,
+          "sentences": [
+            { "german": "Sei nicht böse.", "czech": "Nebuď zlý." },
+            { "german": "Er hat einen guten Charakter.", "czech": "Má dobrý charakter." },
+            { "german": "Die Katze ist dick.", "czech": "Ta kočka je tlustá." },
+            { "german": "Das Kind ist frech.", "czech": "To dítě je drzé." },
+            { "german": "Das finde ich hässlich.", "czech": "To mi přijde ošklivé." },
+            { "german": "Mein Zimmer ist klein.", "czech": "Můj pokoj je malý." },
+            { "german": "Sie ist eine Persönlichkeit.", "czech": "Ona je osobnost." },
+            { "german": "Er ist groß und schlank.", "czech": "On je velký a štíhlý." },
+            { "german": "Wir sind verschieden.", "czech": "Jsme různí." },
+            { "german": "Das ist kein Problem.", "czech": "To není problém." }
+          ]
+        },
+        {
+          "number": 34,
+          "sentences": [
+            { "german": "Das Abonnement kostet viel.", "czech": "To předplatné stojí hodně." },
+            { "german": "Das Armband ist aus Gold.", "czech": "Ten náramek je ze zlata." },
+            { "german": "Die Blume riecht gut.", "czech": "Ta květina voní hezky." },
+            { "german": "Hier ist ein Gutschein für dich.", "czech": "Tady je pro tebe poukaz." },
+            { "german": "Ich brauche eine Handyfolie.", "czech": "Potřebuji obal na mobil." },
+            { "german": "Der Kalender hängt an der Wand.", "czech": "Kalendář visí na zdi." },
+            { "german": "Deine Klamotten sind cool.", "czech": "Tvoje oblečení je cool." },
+            { "german": "Sie kauft Kosmetik.", "czech": "Ona kupuje kosmetiku." },
+            { "german": "Das ist ein Kosmetik-Set.", "czech": "To je kosmetický balíček." },
+            { "german": "Wo ist mein Ladegerät?", "czech": "Kde je moje nabíječka?" }
+          ]
+        },
+        {
+          "number": 35,
+          "sentences": [
+            { "german": "Der Lautsprecher ist laut.", "czech": "Ten reproduktor je hlasitý." },
+            { "german": "Die Flasche ist leer.", "czech": "Ta láhev je prázdná." },
+            { "german": "Morgen ist Muttertag.", "czech": "Zítra je Den matek." },
+            { "german": "Hast du eine Selfie-Stange?", "czech": "Máš selfie tyč?" },
+            { "german": "Ich habe ein Ticket.", "czech": "Mám vstupenku." },
+            { "german": "Frohe Weihnachten!", "czech": "Veselé Vánoce!" },
+            { "german": "Ich lese eine Zeitschrift.", "czech": "Čtu časopis." },
+            { "german": "Er ist ein Fußball-Fanatiker.", "czech": "Je to fotbalový fanatik." },
+            { "german": "Gib mir das Buch.", "czech": "Dej mi tu knihu." },
+            { "german": "Das macht insgesamt zehn Euro.", "czech": "Dělá to celkem deset eur." }
+          ]
+        },
+        {
+          "number": 36,
+          "sentences": [
+            { "german": "Hundert Prozent sicher.", "czech": "Stoprocentně jisté." },
+            { "german": "Das Schuljahr ist zu Ende.", "czech": "Školní rok je u konce." },
+            { "german": "Das ist witzig.", "czech": "To je vtipné." },
+            { "german": "Das Spiel war fair.", "czech": "Hra byla férová." },
+            { "german": "Der Lehrer ist streng.", "czech": "Učitel je přísný." },
+            { "german": "Das finde ich unfair.", "czech": "To mi přijde nespravedlivé." },
+            { "german": "Er ist mir unsympathisch.", "czech": "Je mi nesympatický." },
+            { "german": "Argentinien ist weit weg.", "czech": "Argentina je daleko." },
+            { "german": "Ich mag Märchen.", "czech": "Mám rád pohádky." },
+            { "german": "Wir fahren Rad.", "czech": "Jezdíme na kole." }
+          ]
+        },
+        {
+          "number": 37,
+          "sentences": [
+            { "german": "Ich habe eine Sofortbildkamera.", "czech": "Mám polaroid." },
+            { "german": "Wir spielen mit Spielkarten.", "czech": "Hrajeme s kartami." },
+            { "german": "Fotografieren ist mein Hobby.", "czech": "Fotografování je můj koníček." },
+            { "german": "Interessierst du dich für Mode?", "czech": "Zajímáš se o módu?" },
+            { "german": "Radfahren ist gesund.", "czech": "Jízda na kole je zdravá." },
+            { "german": "Das ist die neueste Mode.", "czech": "To je nejnovější móda." },
+            { "german": "Ich mag das Fotografieren.", "czech": "Mám rád fotografování." },
+            { "german": "Hast du Spielkarten?", "czech": "Máš hrací karty?" },
+            { "german": "Das Foto ist sofort fertig.", "czech": "Fotka je hned hotová." },
+            { "german": "Wir gehen Radfahren.", "czech": "Jdeme na kolo." }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "name": "Lekce 8",
+      "pages": [
+        {
+          "number": 38,
+          "sentences": [
+            { "german": "Ich bin heute allein.", "czech": "Jsem dnes sám." },
+            { "german": "Wir wohnen im Altbau.", "czech": "Bydlíme ve staré zástavbě." },
+            { "german": "Das Wetter ist besser.", "czech": "Počasí je lepší." },
+            { "german": "Der Blick ist schön.", "czech": "Výhled je krásný." },
+            { "german": "Wir wohnen im Dachgeschoss.", "czech": "Bydlíme v podkroví." },
+            { "german": "Endlich zu Hause.", "czech": "Konečně doma." },
+            { "german": "Das ist ein Fachwerkhaus.", "czech": "To je hrázděný dům." },
+            { "german": "Der Keller ist dunkel.", "czech": "Sklep je tmavý." },
+            { "german": "Die Küche ist klein.", "czech": "Kuchyně je malá." },
+            { "german": "Sie haben ein Landhaus.", "czech": "Mají venkovské stavení." }
+          ]
+        },
+        {
+          "number": 39,
+          "sentences": [
+            { "german": "Wir suchen eine Mietwohnung.", "czech": "Hledáme nájemní byt." },
+            { "german": "Das ist ein Neubau.", "czech": "To je novostavba." },
+            { "german": "Wir wohnen am Stadtrand.", "czech": "Bydlíme na okraji města." },
+            { "german": "Habt ihr einen Swimmingpool?", "czech": "Máte bazén?" },
+            { "german": "Ich wohne im ersten Stock.", "czech": "Bydlím v prvním patře." },
+            { "german": "Ist das wirklich wahr?", "czech": "Je to opravdu pravda?" },
+            { "german": "Wir wohnen im Wohnblock.", "czech": "Bydlíme v paneláku." },
+            { "german": "Wohnen ist teuer.", "czech": "Bydlení je drahé." },
+            { "german": "Das Wohnhaus ist groß.", "czech": "Obytný dům je velký." },
+            { "german": "Wir sitzen im Wohnzimmer.", "czech": "Sedíme v obýváku." }
+          ]
+        },
+        {
+          "number": 40,
+          "sentences": [
+            { "german": "Die Wohnung ist schön.", "czech": "Ten byt je pěkný." },
+            { "german": "Es ist ziemlich kalt.", "czech": "Je docela zima." },
+            { "german": "Ich habe eine Zwei-Zimmer-Wohnung.", "czech": "Mám dvoupokojový byt." },
+            { "german": "Du musst rechts abbiegen.", "czech": "Musíš zahnout doprava." },
+            { "german": "Ich schreibe einen Aufsatz.", "czech": "Píšu slohovou práci." },
+            { "german": "Ich spreche ein bisschen Deutsch.", "czech": "Mluvím trochu německy." },
+            { "german": "Das Bauernhaus ist alt.", "czech": "Ten statek je starý." },
+            { "german": "Wir gehen über die Brücke.", "czech": "Jdeme přes most." },
+            { "german": "Das Zimmer ist chaotisch.", "czech": "Pokoj je chaotický." },
+            { "german": "Wir wohnen im Einfamilienhaus.", "czech": "Bydlíme v rodinném domě." }
+          ]
+        },
+        {
+          "number": 41,
+          "sentences": [
+            { "german": "Geh den Fluss entlang.", "czech": "Jdi podél řeky." },
+            { "german": "Fahren Sie geradeaus.", "czech": "Jeďte rovně." },
+            { "german": "Das Hochhaus ist hoch.", "czech": "Ten věžák je vysoký." },
+            { "german": "Wir bauen ein Holzhaus.", "czech": "Stavíme dřevěný dům." },
+            { "german": "Die Kirche ist im Zentrum.", "czech": "Kostel je v centru." },
+            { "german": "Ich male ein Bild.", "czech": "Maluju obraz." },
+            { "german": "Wir wohnen im Mehrfamilienhaus.", "czech": "Bydlíme v bytovém domě." },
+            { "german": "Ich habe keine Orientierung.", "czech": "Nemám orientaci." },
+            { "german": "Er wohnt im Plattenbau.", "czech": "Bydlí v paneláku." },
+            { "german": "Der Platz ist groß.", "czech": "To náměstí je velké." }
+          ]
+        },
+        {
+          "number": 42,
+          "sentences": [
+            { "german": "Wo ist die Polizeidienststelle?", "czech": "Kde je policejní stanice?" },
+            { "german": "Wir kaufen ein Reihenhaus.", "czech": "Kupujeme řadový dům." },
+            { "german": "Die Siedlung ist neu.", "czech": "To sídliště je nové." },
+            { "german": "Hast du einen Stadtplan?", "czech": "Máš mapu města?" },
+            { "german": "Ich spiele Tennis.", "czech": "Hraju tenis." },
+            { "german": "Die Villa ist teuer.", "czech": "Ta vila je drahá." },
+            { "german": "Geh an der Post vorbei.", "czech": "Jdi kolem pošty." },
+            { "german": "Ich warte auf dich.", "czech": "Čekám na tebe." },
+            { "german": "Der Weg ist lang.", "czech": "Cesta je dlouhá." },
+            { "german": "Der Wolkenkratzer ist riesig.", "czech": "Ten mrakodrap je obrovský." }
+          ]
+        },
+        {
+          "number": 43,
+          "sentences": [
+            { "german": "Die Ampel ist rot.", "czech": "Semafor je červený." },
+            { "german": "Ich gehe zur Bank.", "czech": "Jdu do banky." },
+            { "german": "Der Fluss ist tief.", "czech": "Řeka je hluboká." },
+            { "german": "Das ist eine Fußgängerzone.", "czech": "To je pěší zóna." },
+            { "german": "Wo ist die Haltestelle?", "czech": "Kde je zastávka?" },
+            { "german": "An der Kreuzung links.", "czech": "Na křižovatce doleva." },
+            { "german": "Welche Linie fährt dort?", "czech": "Která linka tam jede?" },
+            { "german": "Das Rathaus ist alt.", "czech": "Radnice je stará." },
+            { "german": "Oma wohnt im Seniorenheim.", "czech": "Babička bydlí v domově důchodců." },
+            { "german": "Die Straßenbahn kommt.", "czech": "Tramvaj přijíždí." }
+          ]
+        },
+        {
+          "number": 44,
+          "sentences": [
+            { "german": "Studenten wohnen im Studentenwohnheim.", "czech": "Studenti bydlí na kolejích." },
+            { "german": "Ich rufe ein Taxi.", "czech": "Volám taxi." },
+            { "german": "Das Tor ist geschlossen.", "czech": "Brána je zavřená." },
+            { "german": "Wir fahren mit der U-Bahn.", "czech": "Jedeme metrem." },
+            { "german": "Geh durch die Unterführung.", "czech": "Jdi podchodem." },
+            { "german": "Das Wohnheim ist billig.", "czech": "Ubytovna je levná." },
+            { "german": "Das Appartement ist klein.", "czech": "Apartmá je malé." },
+            { "german": "Mein Vater ist im Arbeitszimmer.", "czech": "Můj otec je v pracovně." },
+            { "german": "Wir sitzen auf dem Balkon.", "czech": "Sedíme na balkoně." },
+            { "german": "Das Sofa ist bequem.", "czech": "Pohovka je pohodlná." }
+          ]
+        },
+        {
+          "number": 45,
+          "sentences": [
+            { "german": "Die Jacke hängt in der Diele.", "czech": "Bunda visí v předsíni." },
+            { "german": "Das kostet extra.", "czech": "To stojí extra." },
+            { "german": "Das Essen ist fantastisch.", "czech": "Jídlo je fantastické." },
+            { "german": "Das Kinderzimmer ist bunt.", "czech": "Dětský pokoj je barevný." },
+            { "german": "Wir haben eine Kochecke.", "czech": "Máme kuchyňský kout." },
+            { "german": "Wir wohnen im Mietshaus.", "czech": "Bydlíme v nájemním domě." },
+            { "german": "Das ist sehr praktisch.", "czech": "To je velmi praktické." },
+            { "german": "Das reicht mir.", "czech": "To mi stačí." },
+            { "german": "Wo sind meine Sachen?", "czech": "Kde jsou mé věci?" },
+            { "german": "Das Schlafzimmer ist ruhig.", "czech": "Ložnice je klidná." }
+          ]
+        },
+        {
+          "number": 46,
+          "sentences": [
+            { "german": "Wir wohnen zusammen.", "czech": "Bydlíme spolu." },
+            { "german": "Der Abstellraum ist voll.", "czech": "Komora je plná." },
+            { "german": "Das ist nicht erforderlich.", "czech": "To není nutné." },
+            { "german": "Wir essen in der Essecke.", "czech": "Jíme v jídelním koutě." },
+            { "german": "Das Gästezimmer ist frei.", "czech": "Pokoj pro hosty je volný." },
+            { "german": "Das Grundstück ist groß.", "czech": "Pozemek je velký." },
+            { "german": "Wie hoch ist die Kaltmiete?", "czech": "Jak vysoký je nájem bez energií?" },
+            { "german": "Die Miete ist teuer.", "czech": "Nájem je drahý." },
+            { "german": "Mein Nachbar ist nett.", "czech": "Můj soused je milý." },
+            { "german": "Der Preis ist gut.", "czech": "Cena je dobrá." }
+          ]
+        },
+        {
+          "number": 47,
+          "sentences": [
+            { "german": "Die Renovierung dauert lange.", "czech": "Renovace trvá dlouho." },
+            { "german": "Wir haben einen Stellplatz.", "czech": "Máme parkovací místo." },
+            { "german": "Die Treppe ist steil.", "czech": "Schody jsou strmé." },
+            { "german": "Wir vermieten ein Zimmer.", "czech": "Pronajímáme pokoj." },
+            { "german": "Die Wohnfläche ist klein.", "czech": "Obytná plocha je malá." },
+            { "german": "Wir nehmen den Aufzug.", "czech": "Jedeme výtahem." },
+            { "german": "Ich liege in der Badewanne.", "czech": "Ležím ve vaně." },
+            { "german": "Das Buch ist im Bücherschrank.", "czech": "Kniha je v knihovně." },
+            { "german": "Setz dich auf die Couch.", "czech": "Posaď se na gauč." },
+            { "german": "Du bist unser Ehrengast.", "czech": "Jsi náš čestný host." }
+          ]
+        },
+        {
+          "number": 48,
+          "sentences": [
+            { "german": "Was machst du eigentlich?", "czech": "Co vlastně děláš?" },
+            { "german": "Das ist ganz einfach.", "czech": "To je docela jednoduché." },
+            { "german": "Wir sitzen am Esstisch.", "czech": "Sedíme u jídelního stolu." },
+            { "german": "Der Fernseher ist kaputt.", "czech": "Televize je rozbitá." },
+            { "german": "Das stimmt gar nicht.", "czech": "To vůbec není pravda." },
+            { "german": "Gib mir deine Hand.", "czech": "Dej mi svou ruku." },
+            { "german": "Der Herd ist heiß.", "czech": "Sporák je horký." },
+            { "german": "Ich hole das Essen.", "czech": "Dojdu pro jídlo." },
+            { "german": "Sie ist noch jung.", "czech": "Je ještě mladá." },
+            { "german": "Das Kinderbett ist klein.", "czech": "Dětská postýlka je malá." }
+          ]
+        },
+        {
+          "number": 49,
+          "sentences": [
+            { "german": "Die Kommode ist aus Holz.", "czech": "Komoda je ze dřeva." },
+            { "german": "Der Kühlschrank ist leer.", "czech": "Lednice je prázdná." },
+            { "german": "Ich benutze die Mikrowelle.", "czech": "Používám mikrovlnku." },
+            { "german": "Die Wohnung ist modern.", "czech": "Byt je moderní." },
+            { "german": "Normalerweise schlafe ich lange.", "czech": "Obvykle spím dlouho." },
+            { "german": "Keine Panik!", "czech": "Žádnou paniku!" },
+            { "german": "Hier ist das Paradies.", "czech": "Tady je ráj." },
+            { "german": "Das Buch steht im Regal.", "czech": "Kniha je v polici." },
+            { "german": "Mein Schreibtisch ist voll.", "czech": "Můj psací stůl je plný." },
+            { "german": "Der Sessel ist bequem.", "czech": "Křeslo je pohodlné." }
+          ]
+        },
+        {
+          "number": 50,
+          "sentences": [
+            { "german": "Das Sofa ist neu.", "czech": "Pohovka je nová." },
+            { "german": "Der Teppich ist rot.", "czech": "Koberec je červený." },
+            { "german": "Was hast du vorher gemacht?", "czech": "Co jsi dělal předtím?" },
+            { "german": "Das Waschbecken ist sauber.", "czech": "Umyvadlo je čisté." },
+            { "german": "Ich muss Wäsche waschen.", "czech": "Musím prát prádlo." },
+            { "german": "Die Waschmaschine läuft.", "czech": "Pračka běží." },
+            { "german": "Das Bild hängt an der Wand.", "czech": "Obraz visí na zdi." },
+            { "german": "Geh hinter das Haus.", "czech": "Jdi za dům." },
+            { "german": "Meine Kleidung ist im Kleiderschrank.", "czech": "Mé oblečení je v šatní skříni." },
+            { "german": "Leg das Buch auf den Tisch.", "czech": "Polož knihu na stůl." }
+          ]
+        },
+        {
+          "number": 51,
+          "sentences": [
+            { "german": "Das Poster ist cool.", "czech": "Ten plakát je cool." },
+            { "german": "Setz dich bitte.", "czech": "Posaď se prosím." },
+            { "german": "Stell die Vase auf den Tisch.", "czech": "Postav vázu na stůl." },
+            { "german": "Die Lampe hängt über dem Tisch.", "czech": "Lampa visí nad stolem." },
+            { "german": "Die Katze ist unter dem Bett.", "czech": "Kočka je pod postelí." },
+            { "german": "Er sitzt zwischen uns.", "czech": "Sedí mezi námi." },
+            { "german": "Es ist schon dunkel.", "czech": "Už je tma." },
+            { "german": "Sie spielt Geige.", "czech": "Hraje na housle." },
+            { "german": "Der Stuhl ist unbequem.", "czech": "Ta židle je nepohodlná." },
+            { "german": "Es wird bald dunkel.", "czech": "Brzy bude tma." }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "name": "Lekce 9",
+      "pages": [
+        {
+          "number": 52,
+          "sentences": [
+            { "german": "Der Berg ist hoch.", "czech": "Ta hora je vysoká." },
+            { "german": "Bayern ist ein Bundesland.", "czech": "Bavorsko je spolková země." },
+            { "german": "Das Geschäft ist geschlossen.", "czech": "Obchod je zavřený." },
+            { "german": "Gestern war ich zu Hause.", "czech": "Včera jsem byl doma." },
+            { "german": "Die Grundschule ist klein.", "czech": "Základní škola je malá." },
+            { "german": "Ich habe gute Laune.", "czech": "Mám dobrou náladu." },
+            { "german": "Morgen habe ich frei.", "czech": "Zítra mám volno." },
+            { "german": "Warum bist du nervös?", "czech": "Proč jsi nervózní?" },
+            { "german": "Das ist prima.", "czech": "To je prima." },
+            { "german": "Das macht Spaß.", "czech": "To je zábava." }
+          ]
+        },
+        {
+          "number": 53,
+          "sentences": [
+            { "german": "Warum bist du traurig?", "czech": "Proč jsi smutný?" },
+            { "german": "Übermorgen fahren wir weg.", "czech": "Pozítří odjíždíme." },
+            { "german": "Vorgestern war Montag.", "czech": "Předevčírem bylo pondělí." },
+            { "german": "Wir treffen uns virtuell.", "czech": "Setkáme se virtuálně." },
+            { "german": "Deutsch ist die Amtssprache.", "czech": "Němčina je úřední jazyk." },
+            { "german": "Das ist der größte See.", "czech": "To je největší jezero." },
+            { "german": "Das ist der höchste Berg.", "czech": "To je nejvyšší hora." },
+            { "german": "Das ist der längste Fluss.", "czech": "To je nejdelší řeka." },
+            { "german": "Wie hoch ist die Einwohnerzahl?", "czech": "Jaký je počet obyvatel?" },
+            { "german": "Die Fläche ist groß.", "czech": "Plocha je velká." }
+          ]
+        },
+        {
+          "number": 54,
+          "sentences": [
+            { "german": "Deutschland grenzt an Polen.", "czech": "Německo hraničí s Polskem." },
+            { "german": "Berlin ist die Hauptstadt.", "czech": "Berlín je hlavní město." },
+            { "german": "Die Internet-TLD ist .de.", "czech": "Internetová doména je .de." },
+            { "german": "Ich habe ein neues Kfz.", "czech": "Mám nové auto." },
+            { "german": "Was ist dein Kfz-Kennzeichen?", "czech": "Jakou máš SPZ?" },
+            { "german": "Das Land hat viele Quadratkilometer.", "czech": "Ta země má mnoho čtverečních kilometrů." },
+            { "german": "Die Lage ist gut.", "czech": "Poloha je dobrá." },
+            { "german": "Polen liegt in Mitteleuropa.", "czech": "Polsko leží ve střední Evropě." },
+            { "german": "Hamburg liegt im Norden.", "czech": "Hamburk leží na severu." },
+            { "german": "Dresden liegt im Osten.", "czech": "Drážďany leží na východě." }
+          ]
+        },
+        {
+          "number": 55,
+          "sentences": [
+            { "german": "Wie ist die Telefonvorwahl?", "czech": "Jaká je telefonní předvolba?" },
+            { "german": "München liegt im Süden.", "czech": "Mnichov leží na jihu." },
+            { "german": "Die Währung ist der Euro.", "czech": "Měnou je euro." },
+            { "german": "Das Wappen ist alt.", "czech": "Erb je starý." },
+            { "german": "Köln liegt im Westen.", "czech": "Kolín leží na západě." },
+            { "german": "Am Anfang war es schwer.", "czech": "Na začátku to bylo těžké." },
+            { "german": "Schau dir das an.", "czech": "Prohlédni si to." },
+            { "german": "Er ist ein Fußball-Fan.", "czech": "Je to fotbalový fanoušek." },
+            { "german": "Früher war alles anders.", "czech": "Dříve bylo všechno jinak." },
+            { "german": "Zum Glück ist nichts passiert.", "czech": "Naštěstí se nic nestalo." }
+          ]
+        },
+        {
+          "number": 56,
+          "sentences": [
+            { "german": "Das war das letzte Mal.", "czech": "To bylo naposledy." },
+            { "german": "Was ist passiert?", "czech": "Co se stalo?" },
+            { "german": "Wir machen ein Quiz.", "czech": "Děláme kvíz." },
+            { "german": "Wir schaffen das.", "czech": "Zvládneme to." },
+            { "german": "Das ist eine Sehenswürdigkeit.", "czech": "To je pamětihodnost." },
+            { "german": "Der Taxifahrer wartet.", "czech": "Taxikář čeká." },
+            { "german": "Das ist ein gutes Angebot.", "czech": "To je dobrá nabídka." },
+            { "german": "Ich brauche Erholung.", "czech": "Potřebuji odpočinek." },
+            { "german": "Wir erleben viel.", "czech": "Zažíváme hodně." },
+            { "german": "Gibt es eine Ermäßigung?", "czech": "Je tam sleva?" }
+          ]
+        },
+        {
+          "number": 57,
+          "sentences": [
+            { "german": "Er ist ein Experte.", "czech": "On je expert." },
+            { "german": "Die Karte gilt heute.", "czech": "Lístek platí dnes." },
+            { "german": "Frag am Infostand.", "czech": "Zeptej se na infostánku." },
+            { "german": "Das ist nicht nötig.", "czech": "To není nutné." },
+            { "german": "Schließlich sind wir da.", "czech": "Konečně jsme tady." },
+            { "german": "Ich laufe Schlittschuh.", "czech": "Bruslím." },
+            { "german": "Ich spare Geld.", "czech": "Šetřím peníze." },
+            { "german": "Bis später!", "czech": "Na viděnou později!" },
+            { "german": "Das ist ein Symbol.", "czech": "To je symbol." },
+            { "german": "Das war nur ein Traum.", "czech": "To byl jen sen." }
+          ]
+        },
+        {
+          "number": 58,
+          "sentences": [
+            { "german": "Der Turm ist hoch.", "czech": "Ta věž je vysoká." },
+            { "german": "Eine Voranmeldung ist nötig.", "czech": "Je nutné předběžné přihlášení." },
+            { "german": "Zuerst essen wir.", "czech": "Nejprve jíme." },
+            { "german": "Zuletzt gehen wir schlafen.", "czech": "Nakonec jdeme spát." },
+            { "german": "Ich gehe gern bergsteigen.", "czech": "Rád chodím po horách." },
+            { "german": "Das ist billiger.", "czech": "To je levnější." },
+            { "german": "Wir fahren an den Bodensee.", "czech": "Jedeme k Bodamskému jezeru." },
+            { "german": "Das war der beste Tag.", "czech": "To byl nejlepší den." },
+            { "german": "Ich esse lieber Pizza.", "czech": "Raději jím pizzu." },
+            { "german": "Endlich Ferien!", "czech": "Konečně prázdniny!" }
+          ]
+        },
+        {
+          "number": 59,
+          "sentences": [
+            { "german": "Wir fliegen nach Berlin.", "czech": "Letíme do Berlína." },
+            { "german": "Das Flugzeug startet.", "czech": "Letadlo startuje." },
+            { "german": "Ich esse Germknödel.", "czech": "Jím kynutý knedlík." },
+            { "german": "Es klappt nicht.", "czech": "Nevychází to." },
+            { "german": "Wir planen eine Reise.", "czech": "Plánujeme cestu." },
+            { "german": "Ich schreibe eine Postkarte.", "czech": "Píšu pohlednici." },
+            { "german": "Ich verliere immer alles.", "czech": "Vždycky všechno ztratím." },
+            { "german": "Ich habe verschlafen.", "czech": "Zaspal jsem." },
+            { "german": "Der Zug hat Verspätung.", "czech": "Vlak má zpoždění." },
+            { "german": "Ich muss mich ausruhen.", "czech": "Musím si odpočinout." }
+          ]
+        },
+        {
+          "number": 60,
+          "sentences": [
+            { "german": "Wir gehen baden.", "czech": "Jdeme se koupat." },
+            { "german": "Wir spielen Beachvolleyball.", "czech": "Hrajeme plážový volejbal." },
+            { "german": "Die Bergsicht ist toll.", "czech": "Výhled na hory je skvělý." },
+            { "german": "Bobfahren macht Spaß.", "czech": "Jízda na bobech je zábava." },
+            { "german": "Wir sind auf dem Campingplatz.", "czech": "Jsme v kempu." },
+            { "german": "Ich spiele Eishockey.", "czech": "Hraju lední hokej." },
+            { "german": "Wir gehen zum Eislaufen.", "czech": "Jdeme bruslit." },
+            { "german": "Kannst du eislaufen?", "czech": "Umíš bruslit?" },
+            { "german": "Ich habe Ferien.", "czech": "Mám prázdniny." },
+            { "german": "Der Eintritt ist gratis.", "czech": "Vstup je zdarma." }
+          ]
+        },
+        {
+          "number": 61,
+          "sentences": [
+            { "german": "Das Wetter ist ideal.", "czech": "Počasí je ideální." },
+            { "german": "Wir klettern auf den Berg.", "czech": "Lezeme na horu." },
+            { "german": "Ich mache Langlauf.", "czech": "Jezdím na běžkách." },
+            { "german": "Er ist ein Kunstliebhaber.", "czech": "Je to milovník umění." },
+            { "german": "Ich liebe die Natur.", "czech": "Miluju přírodu." },
+            { "german": "Die Rodelbahn ist lang.", "czech": "Sáňkařská dráha je dlouhá." },
+            { "german": "Wir gehen rodeln.", "czech": "Jdeme sáňkovat." },
+            { "german": "Es ist hier sehr ruhig.", "czech": "Je tu velký klid." },
+            { "german": "Wir bauen einen Schneemann.", "czech": "Stavíme sněhuláka." },
+            { "german": "Ich fahre Ski.", "czech": "Lyžuju." }
+          ]
+        },
+        {
+          "number": 62,
+          "sentences": [
+            { "german": "Das Skigebiet ist groß.", "czech": "Lyžařský areál je velký." },
+            { "german": "Ich fahre Snowboard.", "czech": "Jezdím na snowboardu." },
+            { "german": "Er ist ein guter Sportler.", "czech": "Je to dobrý sportovec." },
+            { "german": "Wir machen Urlaub.", "czech": "Jsme na dovolené." },
+            { "german": "Du musst wählen.", "czech": "Musíš si vybrat." },
+            { "german": "Wir zelten am See.", "czech": "Stanujeme u jezera." },
+            { "german": "Deswegen bin ich hier.", "czech": "Proto jsem tady." },
+            { "german": "Das ist die Olympiahalle.", "czech": "To je olympijská hala." },
+            { "german": "Er ist ein Olympionike.", "czech": "Je to olympionik." },
+            { "german": "Der Schnee ist weiß.", "czech": "Sníh je bílý." }
+          ]
+        },
+        {
+          "number": 63,
+          "sentences": [
+            { "german": "Welche Sportart magst du?", "czech": "Jakou sportovní disciplínu máš rád?" },
+            { "german": "Überall liegt Schnee.", "czech": "Všude leží sníh." },
+            { "german": "Das dauert ungefähr eine Stunde.", "czech": "To trvá přibližně hodinu." },
+            { "german": "Das ist unmodern.", "czech": "To je nemoderní." },
+            { "german": "Sport macht überall Spaß.", "czech": "Sport je všude zábava." },
+            { "german": "Ungefähr zehn Leute.", "czech": "Přibližně deset lidí." },
+            { "german": "Diese Sportart ist neu.", "czech": "Tato disciplína je nová." },
+            { "german": "Überall sind Menschen.", "czech": "Všude jsou lidé." },
+            { "german": "Die Jacke ist unmodern.", "czech": "Ta bunda je nemoderní." },
+            { "german": "Ich sehe sie überall.", "czech": "Vídám ji všude." }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "name": "Lekce 10",
+      "pages": [
+        {
+          "number": 64,
+          "sentences": [
+            { "german": "Der Anrufbeantworter ist voll.", "czech": "Záznamník je plný." },
+            { "german": "Ich blättere im Buch.", "czech": "Listuji v knize." },
+            { "german": "Ich schreibe einen Brief.", "czech": "Píšu dopis." },
+            { "german": "Der Browser ist schnell.", "czech": "Ten prohlížeč je rychlý." },
+            { "german": "Der Buchdruck war wichtig.", "czech": "Knihtisk byl důležitý." },
+            { "german": "Ich höre eine CD.", "czech": "Poslouchám CD." },
+            { "german": "Der Drucker druckt nicht.", "czech": "Tiskárna netiskne." },
+            { "german": "Wir sehen eine DVD.", "czech": "Díváme se na DVD." },
+            { "german": "Er ist ein Erfinder.", "czech": "On je vynálezce." },
+            { "german": "Das ist eine tolle Erfindung.", "czech": "To je skvělý vynález." }
+          ]
+        },
+        {
+          "number": 65,
+          "sentences": [
+            { "german": "Das Gerät ist kaputt.", "czech": "Ten přístroj je rozbitý." },
+            { "german": "Der Goldschmied macht Schmuck.", "czech": "Zlatník dělá šperky." },
+            { "german": "Ich google das Wort.", "czech": "Googlím to slovo." },
+            { "german": "Wir stellen Autos her.", "czech": "Vyrábíme auta." },
+            { "german": "Hast du eine Kassette?", "czech": "Máš kazetu?" },
+            { "german": "Die Mailbox ist leer.", "czech": "Schránka je prázdná." },
+            { "german": "Das Internet ist ein Medium.", "czech": "Internet je médium." },
+            { "german": "Ich prüfe die Rechnung.", "czech": "Kontroluji účet." },
+            { "german": "Ich recherchiere im Internet.", "czech": "Hledám na internetu." },
+            { "german": "Ich brauche Ruhe.", "czech": "Potřebuji klid." }
+          ]
+        },
+        {
+          "number": 66,
+          "sentences": [
+            { "german": "Die Schallplatte ist alt.", "czech": "Ta deska je stará." },
+            { "german": "Ich habe ein Smartphone.", "czech": "Mám chytrý telefon." },
+            { "german": "Ich spiele am Tablet.", "czech": "Hraju na tabletu." },
+            { "german": "Das Telefon klingelt.", "czech": "Telefon zvoní." },
+            { "german": "Ich schicke ein Telegramm.", "czech": "Posílám telegram." },
+            { "german": "Das war ursprünglich anders.", "czech": "Původně to bylo jinak." },
+            { "german": "Er bekam eine Auszeichnung.", "czech": "Dostal vyznamenání." },
+            { "german": "Was bedeutet das?", "czech": "Co to znamená?" },
+            { "german": "Wir entwickeln eine App.", "czech": "Vyvíjíme aplikaci." },
+            { "german": "Wer hat das erfunden?", "czech": "Kdo to vynalezl?" }
+          ]
+        },
+        {
+          "number": 67,
+          "sentences": [
+            { "german": "Das ist ein altes Handwerk.", "czech": "To je staré řemeslo." },
+            { "german": "Das Produkt ist hochwertig.", "czech": "Ten výrobek je kvalitní." },
+            { "german": "Der Tisch ist aus Holz.", "czech": "Stůl je ze dřeva." },
+            { "german": "Ein neues Jahrtausend beginnt.", "czech": "Začíná nové tisíciletí." },
+            { "german": "Die Produktion ist teuer.", "czech": "Výroba je drahá." },
+            { "german": "Er schnitzt eine Figur.", "czech": "Vyřezává figurku." },
+            { "german": "Das war keine Absicht.", "czech": "To nebyl úmysl." },
+            { "german": "Ab und zu gehe ich ins Kino.", "czech": "Tu a tam jdu do kina." },
+            { "german": "Achtung, Auto!", "czech": "Pozor, auto!" },
+            { "german": "Die Bergwacht hilft.", "czech": "Horská služba pomáhá." }
+          ]
+        },
+        {
+          "number": 68,
+          "sentences": [
+            { "german": "Der Delfin schwimmt.", "czech": "Delfín plave." },
+            { "german": "Ich habe eine Eins.", "czech": "Mám jedničku." },
+            { "german": "Ich erinnere mich an dich.", "czech": "Vzpomínám si na tebe." },
+            { "german": "Das sind Fake News.", "czech": "To jsou fake news." },
+            { "german": "Das passiert häufig.", "czech": "To se stává často." },
+            { "german": "Der Hubschrauber fliegt.", "czech": "Vrtulník letí." },
+            { "german": "Ich kümmere mich darum.", "czech": "Postarám se o to." },
+            { "german": "Ich habe Pech.", "czech": "Mám smůlu." },
+            { "german": "Du hast Pech gehabt.", "czech": "Měl jsi smůlu." },
+            { "german": "Er ist ein Profi.", "czech": "On je profík." }
+          ]
+        },
+        {
+          "number": 69,
+          "sentences": [
+            { "german": "Du hast mich reingelegt!", "czech": "Tys mě napálil!" },
+            { "german": "Die Rettung kommt sofort.", "czech": "Záchranka přijede hned." },
+            { "german": "Das Zimmer ist sauber.", "czech": "Pokoj je čistý." },
+            { "german": "Deine Schuhe sind schmutzig.", "czech": "Tvé boty jsou špinavé." },
+            { "german": "Ist das tatsächlich wahr?", "czech": "Je to skutečně pravda?" },
+            { "german": "Das ist eine Überraschung.", "czech": "To je překvapení." },
+            { "german": "Ein Unglück ist passiert.", "czech": "Stalo se neštěstí." },
+            { "german": "Rede keinen Unsinn.", "czech": "Nemluv nesmysly." },
+            { "german": "Das kann vorkommen.", "czech": "To se může stát." },
+            { "german": "Er trägt ein Gedicht vor.", "czech": "Přednáší báseň." }
+          ]
+        },
+        {
+          "number": 70,
+          "sentences": [
+            { "german": "Ich habe eine Bitte.", "czech": "Mám prosbu." },
+            { "german": "Das steht in der Boulevardzeitung.", "czech": "To se píše v bulváru." },
+            { "german": "Das Buch ist gedruckt.", "czech": "Kniha je vytištěná." },
+            { "german": "Die Grafik ist gut.", "czech": "Grafika je dobrá." },
+            { "german": "Wir gründen eine Firma.", "czech": "Zakládáme firmu." },
+            { "german": "Er gibt ein Buch heraus.", "czech": "Vydává knihu." },
+            { "german": "Ich mache die Korrektur.", "czech": "Dělám korekturu." },
+            { "german": "Gib mir einen Ratschlag.", "czech": "Dej mi radu." },
+            { "german": "Der Redakteur schreibt.", "czech": "Redaktor píše." },
+            { "german": "Die Redakteurin ist nett.", "czech": "Redaktorka je milá." }
+          ]
+        },
+        {
+          "number": 71,
+          "sentences": [
+            { "german": "Wer hat hier das Sagen?", "czech": "Kdo tady má hlavní slovo?" },
+            { "german": "Die Werbung ist lustig.", "czech": "Ta reklama je vtipná." },
+            { "german": "Wir sind zu fünft.", "czech": "Je nás pět." },
+            { "german": "Ich stelle das Menü zusammen.", "czech": "Sestavuji menu." },
+            { "german": "Das Licht lockt Insekten an.", "czech": "Světlo láká hmyz." },
+            { "german": "Das ist eine Bedingung.", "czech": "To je podmínka." },
+            { "german": "Ich habe bestanden.", "czech": "Uspěl jsem." },
+            { "german": "Ich bin durchgefallen.", "czech": "Propadl jsem." },
+            { "german": "Der Durchschnitt ist gut.", "czech": "Průměr je dobrý." },
+            { "german": "Wir führen neue Regeln ein.", "czech": "Zavádíme nová pravidla." }
+          ]
+        },
+        {
+          "number": 72,
+          "sentences": [
+            { "german": "Ich eröffne das Geschäft.", "czech": "Otevírám obchod." },
+            { "german": "Das ist krass.", "czech": "To je hustý." },
+            { "german": "Schick mir den Link.", "czech": "Pošli mi odkaz." },
+            { "german": "Wir essen in der Mensa.", "czech": "Jíme v menze." },
+            { "german": "Die Note ist schlecht.", "czech": "Známka je špatná." },
+            { "german": "Er ist der Sieger.", "czech": "On je vítěz." },
+            { "german": "Ich habe den Überblick.", "czech": "Mám přehled." },
+            { "german": "Überprüfe die Antwort.", "czech": "Zkontroluj odpověď." },
+            { "german": "Lies die Überschrift.", "czech": "Přečti si nadpis." },
+            { "german": "Was ist der Unterschied?", "czech": "Jaký je rozdíl?" }
+          ]
+        },
+        {
+          "number": 73,
+          "sentences": [
+            { "german": "Die Sonne verschwindet.", "czech": "Slunce mizí." },
+            { "german": "Der Film ist vorbei.", "czech": "Film skončil." },
+            { "german": "Hier ist die Zusammenfassung.", "czech": "Tady je shrnutí." },
+            { "german": "Er ist derjenige, der lacht.", "czech": "On je ten, kdo se směje." },
+            { "german": "Das ist zu intim.", "czech": "To je příliš intimní." },
+            { "german": "Du bist sehr mutig.", "czech": "Jsi velmi odvážný." },
+            { "german": "Sei nicht neidisch.", "czech": "Nebuď závistivý." },
+            { "german": "Das ist mir peinlich.", "czech": "To je mi trapné." },
+            { "german": "Übrigens, ich heiße Tom.", "czech": "Mimochodem, jmenuji se Tom." },
+            { "german": "Der Bildschirm ist groß.", "czech": "Obrazovka je velká." }
+          ]
+        },
+        {
+          "number": 74,
+          "sentences": [
+            { "german": "Cybermobbing ist schlimm.", "czech": "Kyberšikana je zlá." },
+            { "german": "Ich folge dir auf Instagram.", "czech": "Sleduji tě na Instagramu." },
+            { "german": "Hinterlasse eine Nachricht.", "czech": "Zanech zprávu." },
+            { "german": "Er ist ein Influencer.", "czech": "Je to influencer." },
+            { "german": "Sie ist eine Influencerin.", "czech": "Ona je influencerka." },
+            { "german": "Man darf Daten nicht missbrauchen.", "czech": "Data se nesmí zneužívat." },
+            { "german": "Das ist ein Nachteil.", "czech": "To je nevýhoda." },
+            { "german": "Ich schäme mich.", "czech": "Stydím se." },
+            { "german": "Er ist sehr schüchtern.", "czech": "On je velmi plachý." },
+            { "german": "Das ist ein großer Vorteil.", "czech": "To je velká výhoda." }
+          ]
+        }
+      ]
+    }
+  ]
+}

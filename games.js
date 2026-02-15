@@ -35,7 +35,7 @@ class SnakeGameLogic {
         this.speedEl = speedEl;
         this.gameType = 'snake';
         this.GRID_SIZE = 16;
-        this.BASE_SPEED = 250; 
+        this.BASE_SPEED = 250;
         this.currentSpeed = this.BASE_SPEED;
         this.speedMultiplier = 1.0;
         this.wordsCollected = 0;
@@ -44,7 +44,7 @@ class SnakeGameLogic {
         this.snake = [];
         this.direction = { ...this.INITIAL_DIRECTION };
         this.nextDirection = { ...this.INITIAL_DIRECTION };
-        this.inputBuffer = []; 
+        this.inputBuffer = [];
         this.MAX_BUFFER_SIZE = 3;
         this.status = 'idle';
         this.score = 0;
@@ -348,7 +348,6 @@ class SnakeGameLogic {
             this.container.appendChild(el);
         });
         this.fieldWords.forEach(word => {
-            // 1. MARKER (Hitbox)
             const marker = document.createElement('div');
             marker.className = 'snake-grid-marker';
             marker.style.left = `${(word.position.x / this.GRID_SIZE) * 100}%`;
@@ -357,7 +356,6 @@ class SnakeGameLogic {
             marker.style.height = `${100 / this.GRID_SIZE}%`;
             this.container.appendChild(marker);
 
-            // 2. TEXT TAG
             const el = document.createElement('div');
             el.className = 'snake-word-item';
             el.style.left = `${(word.position.x / this.GRID_SIZE) * 100}%`;
@@ -369,7 +367,6 @@ class SnakeGameLogic {
             tag.innerText = word.text;
             tag.style.cssText = `opacity: 1; background-color: #151922; color: #ffffff; border: 1px solid rgba(16, 185, 129, 0.2); border-radius: 4px; font-size: 0.7rem; box-shadow: 0 2px 4px rgba(0,0,0,0.3); position: absolute; white-space: nowrap; z-index: 10; top: 50%;`;
             
-            // Smart positioning logic
             if (word.position.x < 2) { tag.style.left = '0'; tag.style.transform = 'translate(0, -50%)'; } 
             else if (word.position.x > this.GRID_SIZE - 3) { tag.style.right = '0'; tag.style.left = 'auto'; tag.style.transform = 'translate(0, -50%)'; } 
             else { tag.style.left = '50%'; tag.style.transform = 'translate(-50%, -50%)'; }
@@ -378,7 +375,7 @@ class SnakeGameLogic {
             this.container.appendChild(el);
         });
     }
-    
+
     handleTouchStart(e) { if (e.touches.length > 0) { this.touchStartX = e.touches[0].clientX; this.touchStartY = e.touches[0].clientY; } }
     handleTouchEnd(e) {
         if (this.status !== 'playing' || e.changedTouches.length === 0) return;
@@ -396,6 +393,7 @@ class SnakeGameLogic {
         if (newDir) this.inputBuffer.push(newDir);
     }
 }
+
 /* =========================================
    2. FLASHCARDS LOGIC
    ========================================= */
@@ -420,7 +418,6 @@ class FlashcardsGameLogic {
         nextBtn.addEventListener('click', this._nextHandler);
         prevBtn.addEventListener('click', this._prevHandler);
 
-        // Add speaker to Flashcard front
         this.speaker = document.createElement('button');
         this.speaker.innerHTML = '🔊';
         this.speaker.className = 'speaker-btn';
@@ -560,7 +557,7 @@ class QuizGameLogic {
         }
         setTimeout(() => this.nextQuestion(), 1500);
     }
-    
+
     destroy() {} 
 }
 
@@ -569,7 +566,7 @@ class QuizGameLogic {
    ========================================= */
 class MemoryGameLogic {
     constructor(words, container, boardEl, statusEl) {
-        this.words = words.slice(0, 8); 
+        this.words = words.slice(0, 8);
         this.boardEl = boardEl;
         this.statusEl = statusEl;
         this.flippedCards = [];
@@ -679,7 +676,7 @@ class TypingGameLogic {
         this.checkBtn = checkBtn;
         this.hintBtn = hintBtn;
         this.isReverse = isReverse;
-        
+
         const title = this.container.querySelector('h3');
         if (title) title.textContent = this.isReverse ? "Übersetze ins Tschechische:" : "Übersetze ins Deutsche:";
 
@@ -731,97 +728,43 @@ class TypingGameLogic {
             this.inputEl.focus();
         }
     }
-    
+
     destroy() {}
 }
 
 /* =========================================
-   6. SENTENCE BUILDER LOGIC (PERFECT EDITION - NO GUESSING)
+   6. SENTENCE BUILDER LOGIC (MANUAL MODE)
    ========================================= */
 class SentenceGameLogic {
-    constructor(words, container, promptEl, areaEl, bankEl, checkBtn, feedbackEl) {
-        this.rawWords = words;
+    constructor(sentences, container, promptEl, areaEl, bankEl, checkBtn, feedbackEl) {
+        // This class now expects 'sentences' to be an array of objects:
+        // { german: "Das ist ein Haus", czech: "To je dům" }
+        this.sentences = sentences || [];
         this.container = container;
         this.promptEl = promptEl;
         this.areaEl = areaEl;
         this.bankEl = bankEl;
         this.checkBtn = checkBtn;
         this.feedbackEl = feedbackEl;
-        
-        this.nouns = this.filterNouns(words);
-        this.adjectives = this.filterAdjectives(words);
-        
-        this.currentSentence = [];
-        this.builtSentence = [];
 
-        this.checkBtn.addEventListener('click', () => this.check());
+        this.currentSentence = null;
+        this.builtParts = [];
+        
+        // Remove algorithmic generation logic (filterNouns, etc.)
+        
+        this._checkHandler = () => this.check();
+        this.checkBtn.addEventListener('click', this._checkHandler);
+        
         this.nextRound();
     }
 
-    cleanCzech(text) {
+    clean(text) {
         return text.split(',')[0].replace(/\(.*\)/g, '').trim();
     }
 
-    // --- HARDCORE LOGIC: ONLY USE DATA THAT IS EXPLICITLY MARKED ---
-    filterNouns(words) {
-        return words.filter(w => {
-            const g = w.german.toLowerCase();
-            // 1. Must be a noun (der/die/das)
-            // 2. MUST have 'cz_gender' defined in JSON (m, f, n, pl)
-            const isNoun = g.startsWith("der ") || g.startsWith("die ") || g.startsWith("das ");
-            return isNoun && w.cz_gender; // HERE IS THE GUARD
-        }).map(w => {
-            const parts = w.german.split(" ");
-            const czClean = this.cleanCzech(w.czech);
-            return {
-                article: parts[0], 
-                noun: parts.slice(1).join(" "),
-                czech: czClean,
-                czGender: w.cz_gender // Use explicit data
-            };
-        });
-    }
-
-    filterAdjectives(words) {
-        // Blacklist for bad adjectives (pronouns etc.)
-        const blacklist = ["jeder", "jede", "jedes", "alle", "manche", "dieser", "diese", "dieses", "mein", "dein", "sein", "ihr", "unser", "euer", "kein", "hier", "dort", "da", "links", "rechts", "oben", "unten", "heute", "morgen", "gestern", "bald", "nie", "oft", "immer", "aber", "und", "oder", "denn"];
-
-        return words.filter(w => {
-            const g = w.german;
-            const cz = this.cleanCzech(w.czech);
-            const isCleanWord = !g.includes(',') && !g.includes('/');
-            const isNotBlacklisted = !blacklist.some(bad => g.toLowerCase().startsWith(bad));
-            const isAdjectiveLike = /^[a-zäöü]/.test(g) && !g.endsWith("en");
-            const isCzechInflectable = cz.endsWith('ý'); // Only use adjectives we can inflect!
-
-            return isCleanWord && isNotBlacklisted && isAdjectiveLike && isCzechInflectable;
-        }).map(w => ({ german: w.german, czech: this.cleanCzech(w.czech) }));
-    }
-
-    getDemonstrative(gender) {
-        if (gender === 'f') return 'Ta';
-        if (gender === 'n') return 'To';
-        if (gender === 'pl') return 'Ty';
-        return 'Ten';
-    }
-
-    inflectCzechAdj(adj, gender) {
-        if (!adj.endsWith('ý')) return adj; 
-        const root = adj.slice(0, -1);
-        if (gender === 'f') return root + 'á';
-        if (gender === 'n') return root + 'é';
-        if (gender === 'pl') return root + 'é'; 
-        return adj; 
-    }
-
     nextRound() {
-        if (this.nouns.length === 0) {
-            this.promptEl.innerHTML = "Daten fehlen! Du musst im JSON <code>\"cz_gender\": \"m\"</code> (oder f/n/pl) zu den Substantiven hinzufügen.";
-            this.bankEl.innerHTML = "";
-            return;
-        }
-        if (this.adjectives.length === 0) {
-            this.promptEl.textContent = "Du brauchst eine Lektion mit Adjektiven (die auf -ý enden).";
+        if (!this.sentences || this.sentences.length === 0) {
+            this.promptEl.innerHTML = "Keine Sätze gefunden. Bitte Datenbank laden.";
             this.bankEl.innerHTML = "";
             return;
         }
@@ -830,40 +773,34 @@ class SentenceGameLogic {
         this.areaEl.innerHTML = '';
         this.bankEl.innerHTML = '';
         this.areaEl.className = 'sentence-area';
-        this.builtSentence = [];
+        this.builtParts = [];
 
-        const noun = this.nouns[Math.floor(Math.random() * this.nouns.length)];
-        const adj = this.adjectives[Math.floor(Math.random() * this.adjectives.length)];
+        // Pick a random sentence from the provided list
+        const target = this.sentences[Math.floor(Math.random() * this.sentences.length)];
+        this.currentSentence = target;
+
+        // Display Czech prompt
+        this.promptEl.textContent = this.clean(target.czech);
+
+        // Split German sentence into words for scrambling
+        // Remove punctuation for easier matching or keep it attached to words?
+        // Let's keep it simple: split by spaces.
+        const parts = target.german.trim().split(/\s+/);
         
-        // "Ten pes je starý."
-        const czDemonstrative = this.getDemonstrative(noun.czGender);
-        const czAdj = this.inflectCzechAdj(adj.czech, noun.czGender);
-        
-        // Verb: je / jsou (for plural)
-        const verbCz = noun.czGender === 'pl' ? 'jsou' : 'je';
-        let verbDe = 'ist';
-        if (noun.czGender === 'pl') verbDe = 'sind'; 
+        // Store the correct order string for checking
+        this.correctString = parts.join(" ");
 
-        const czSentence = `${czDemonstrative} ${noun.czech} ${verbCz} ${czAdj}.`;
-        
-        const deParts = [
-            this.capitalize(noun.article), 
-            noun.noun, 
-            verbDe, 
-            adj.german, 
-            "."
-        ];
+        // Create a copy to shuffle
+        let shuffledParts = [...parts];
+        shuffledParts.sort(() => Math.random() - 0.5);
 
-        this.currentSentence = deParts;
-        this.promptEl.textContent = czSentence;
-
-        let partsForBank = [...deParts];
-        partsForBank.sort(() => Math.random() - 0.5);
-
-        partsForBank.forEach((word) => {
+        shuffledParts.forEach((word, index) => {
             const el = document.createElement('div');
             el.className = 'sentence-word';
             el.textContent = word;
+            // Use a unique ID to allow duplicate words (like "ist" appearing twice)
+            el.dataset.uuid = index + "_" + word; 
+            
             el.addEventListener('click', () => {
                 speakGerman(word);
                 this.moveToArea(el, word);
@@ -872,46 +809,57 @@ class SentenceGameLogic {
         });
     }
 
-    capitalize(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
-
     moveToArea(el, word) {
         if (el.classList.contains('used')) return;
         el.classList.add('used');
+
         const inArea = document.createElement('div');
         inArea.className = 'sentence-word';
         inArea.textContent = word;
+        
         inArea.addEventListener('click', () => {
             inArea.remove();
             el.classList.remove('used');
-            const index = this.builtSentence.indexOf(word);
-            if (index > -1) this.builtSentence.splice(index, 1);
+            const idx = this.builtParts.indexOf(word);
+            if (idx > -1) this.builtParts.splice(idx, 1);
         });
+
         this.areaEl.appendChild(inArea);
-        this.builtSentence.push(word);
+        this.builtParts.push(word);
     }
 
     check() {
-        const attempt = this.builtSentence.join(" ");
-        const correct = this.currentSentence.join(" ");
+        if (!this.currentSentence) return;
+        
+        const attempt = this.builtParts.join(" ");
+        // Normalize spaces and basic punctuation for flexible checking
+        const cleanAttempt = attempt.replace(/[.,!?]/g, "").trim();
+        const cleanCorrect = this.correctString.replace(/[.,!?]/g, "").trim();
 
-        if (attempt === correct) {
+        // Exact match check (or loose punctuation check)
+        if (attempt === this.correctString || cleanAttempt === cleanCorrect) {
             this.feedbackEl.textContent = "Perfekt!";
             this.feedbackEl.style.color = '#10b981';
             this.areaEl.classList.add('correct-flash');
-            speakGerman(correct);
-            setTimeout(() => this.nextRound(), 2500);
+            speakGerman(this.currentSentence.german);
+            setTimeout(() => this.nextRound(), 2000);
         } else {
-            this.feedbackEl.textContent = "Versuch es nochmal.";
+            this.feedbackEl.textContent = "Nicht ganz. Versuch es nochmal.";
             this.feedbackEl.style.color = '#ef4444';
             this.areaEl.classList.add('wrong-flash');
             setTimeout(() => this.areaEl.classList.remove('wrong-flash'), 500);
         }
     }
-    destroy() {}
+
+    destroy() {
+        if (this.checkBtn && this._checkHandler) {
+            this.checkBtn.removeEventListener('click', this._checkHandler);
+        }
+    }
 }
 
 /* =========================================
-   9. GAME MANAGER (UPDATED)
+   7. GAME MANAGER (UPDATED)
    ========================================= */
 class GameManager {
     constructor() {
@@ -921,8 +869,9 @@ class GameManager {
         this.backBtn = document.querySelector('#activeGameContainer .back-btn');
         this.restartBtn = document.querySelector('.restart-btn');
         this.words = [];
+        this.sentences = []; // NEW: Store sentences separately
         this.activeGame = null;
-        this.currentGameId = null; 
+        this.currentGameId = null;
         this.options = { reverse: false };
 
         this.setupListeners();
@@ -941,14 +890,28 @@ class GameManager {
         console.log("GameManager received words:", this.words.length);
     }
 
+    // NEW: Method to set sentences specifically
+    setSentences(sentences) {
+        this.sentences = sentences || [];
+        console.log("GameManager received sentences:", this.sentences.length);
+    }
+
     setOptions(options) {
         this.options = { ...this.options, ...options };
     }
 
     openGame(gameId) {
-        if (this.words.length === 0) {
-            alert("Wähle zuerst eine Lektion und Seiten im Bereich 'Lernen' aus!");
-            return;
+        // Validation logic depends on game type
+        if (gameId === 'sentences') {
+            if (this.sentences.length === 0) {
+                alert("Keine Sätze für die ausgewählte Lektion gefunden!");
+                return;
+            }
+        } else {
+            if (this.words.length === 0) {
+                alert("Wähle zuerst eine Lektion und Seiten im Bereich 'Lernen' aus!");
+                return;
+            }
         }
 
         this.currentGameId = gameId; 
@@ -979,7 +942,8 @@ class GameManager {
         } else if (gameId === 'sentences') {
             const ui = this._createSentenceUI();
             this.gameViewport.appendChild(ui.container);
-            this.activeGame = new SentenceGameLogic(this.words, ui.container, ui.promptEl, ui.areaEl, ui.bankEl, ui.checkBtn, ui.feedbackEl);
+            // Pass this.sentences instead of this.words
+            this.activeGame = new SentenceGameLogic(this.sentences, ui.container, ui.promptEl, ui.areaEl, ui.bankEl, ui.checkBtn, ui.feedbackEl);
         }
     }
 
@@ -1042,11 +1006,11 @@ class GameManager {
         const container = document.createElement('div');
         container.className = 'sentence-container';
         container.innerHTML = `
-            <div id="sent-prompt" class="sentence-prompt"></div>
+            <div id="sent-prompt" class="sentence-prompt" style="font-size:1.5rem; color:#fff; margin-bottom:1rem; text-align:center;"></div>
             <div id="sent-area" class="sentence-area"></div>
             <div id="sent-bank" class="word-bank"></div>
-            <div style="display:flex; justify-content:center;"><button class="game-btn" id="sent-check">Prüfen</button></div>
-            <div id="sent-feedback" style="text-align:center; font-weight:bold; font-size:1.2rem; min-height:30px;"></div>
+            <div style="display:flex; justify-content:center; margin-top:10px;"><button class="game-btn" id="sent-check">Prüfen</button></div>
+            <div id="sent-feedback" style="text-align:center; font-weight:bold; font-size:1.2rem; min-height:30px; margin-top:10px;"></div>
         `;
         return {
             container,
