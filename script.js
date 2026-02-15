@@ -44,7 +44,7 @@ class App {
             'sentences 1-4.json',
             'sentences 5-10.json',
             'sentences 11-14.json',
-            'sentences 15-18.json'
+            'sentences 14-18.json'
         ];
 
         await this.loadData();
