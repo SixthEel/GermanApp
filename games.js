@@ -1,15 +1,41 @@
 /* =========================================
-   GLOBAL HELPER: TEXT TO SPEECH
+   GLOBAL HELPER: TEXT TO SPEECH (ROBUST)
    ========================================= */
+let germanVoice = null;
+
+// Function to load voices (browsers load them asynchronously)
+function loadVoices() {
+    const voices = window.speechSynthesis.getVoices();
+    // Try to find a specific German voice
+    germanVoice = voices.find(v => v.lang === 'de-DE') || 
+                  voices.find(v => v.lang.startsWith('de'));
+}
+
+// Trigger load immediately and on change
+if (window.speechSynthesis) {
+    loadVoices();
+    if (window.speechSynthesis.onvoiceschanged !== undefined) {
+        window.speechSynthesis.onvoiceschanged = loadVoices;
+    }
+}
+
 function speakGerman(text) {
-    if (!text) return;
+    if (!text || !window.speechSynthesis) return;
+    
+    // Ensure voices are loaded if called early
+    if (!germanVoice) loadVoices();
+
+    // If we still don't have a German voice, DO NOT speak (prevents Czech accent)
+    if (!germanVoice) {
+        console.warn("Keine deutsche Stimme gefunden. Sprachausgabe deaktiviert.");
+        return; 
+    }
+
     window.speechSynthesis.cancel();
     const utterance = new SpeechSynthesisUtterance(text);
+    utterance.voice = germanVoice;
     utterance.lang = 'de-DE';
     utterance.rate = 0.9;
-    const voices = window.speechSynthesis.getVoices();
-    const germanVoice = voices.find(v => v.lang.includes('de'));
-    if (germanVoice) utterance.voice = germanVoice;
     window.speechSynthesis.speak(utterance);
 }
 
@@ -733,13 +759,12 @@ class TypingGameLogic {
 }
 
 /* =========================================
-   6. SENTENCE BUILDER LOGIC (MANUAL MODE)
+   6. SENTENCE BUILDER LOGIC (FIXED)
    ========================================= */
 class SentenceGameLogic {
     constructor(sentences, container, promptEl, areaEl, bankEl, checkBtn, feedbackEl) {
-        // This class now expects 'sentences' to be an array of objects:
-        // { german: "Das ist ein Haus", czech: "To je dům" }
-        this.sentences = sentences || [];
+        // Ensure we handle only valid sentence objects
+        this.sentences = (sentences || []).filter(s => s && s.german && s.czech);
         this.container = container;
         this.promptEl = promptEl;
         this.areaEl = areaEl;
@@ -749,8 +774,7 @@ class SentenceGameLogic {
 
         this.currentSentence = null;
         this.builtParts = [];
-        
-        // Remove algorithmic generation logic (filterNouns, etc.)
+        this.correctString = "";
         
         this._checkHandler = () => this.check();
         this.checkBtn.addEventListener('click', this._checkHandler);
@@ -759,13 +783,14 @@ class SentenceGameLogic {
     }
 
     clean(text) {
-        return text.split(',')[0].replace(/\(.*\)/g, '').trim();
+        return text ? text.split(',')[0].replace(/\(.*\)/g, '').trim() : "";
     }
 
     nextRound() {
         if (!this.sentences || this.sentences.length === 0) {
             this.promptEl.innerHTML = "Keine Sätze gefunden. Bitte Datenbank laden.";
             this.bankEl.innerHTML = "";
+            this.areaEl.innerHTML = "";
             return;
         }
 
@@ -775,22 +800,18 @@ class SentenceGameLogic {
         this.areaEl.className = 'sentence-area';
         this.builtParts = [];
 
-        // Pick a random sentence from the provided list
+        // Pick a random sentence
         const target = this.sentences[Math.floor(Math.random() * this.sentences.length)];
         this.currentSentence = target;
 
         // Display Czech prompt
         this.promptEl.textContent = this.clean(target.czech);
 
-        // Split German sentence into words for scrambling
-        // Remove punctuation for easier matching or keep it attached to words?
-        // Let's keep it simple: split by spaces.
+        // Split German sentence into words
         const parts = target.german.trim().split(/\s+/);
-        
-        // Store the correct order string for checking
         this.correctString = parts.join(" ");
 
-        // Create a copy to shuffle
+        // Create shuffled copy
         let shuffledParts = [...parts];
         shuffledParts.sort(() => Math.random() - 0.5);
 
@@ -798,9 +819,7 @@ class SentenceGameLogic {
             const el = document.createElement('div');
             el.className = 'sentence-word';
             el.textContent = word;
-            // Use a unique ID to allow duplicate words (like "ist" appearing twice)
-            el.dataset.uuid = index + "_" + word; 
-            
+            // Only speak if it is german text (it is, coming from german prop)
             el.addEventListener('click', () => {
                 speakGerman(word);
                 this.moveToArea(el, word);
@@ -832,11 +851,9 @@ class SentenceGameLogic {
         if (!this.currentSentence) return;
         
         const attempt = this.builtParts.join(" ");
-        // Normalize spaces and basic punctuation for flexible checking
         const cleanAttempt = attempt.replace(/[.,!?]/g, "").trim();
         const cleanCorrect = this.correctString.replace(/[.,!?]/g, "").trim();
 
-        // Exact match check (or loose punctuation check)
         if (attempt === this.correctString || cleanAttempt === cleanCorrect) {
             this.feedbackEl.textContent = "Perfekt!";
             this.feedbackEl.style.color = '#10b981';
@@ -869,6 +886,7 @@ class GameManager {
         this.backBtn = document.querySelector('#activeGameContainer .back-btn');
         this.restartBtn = document.querySelector('.restart-btn');
         this.words = [];
+        this.sentences = []; 
         this.activeGame = null;
         this.currentGameId = null;
         this.options = { reverse: false };
@@ -886,9 +904,10 @@ class GameManager {
 
     setWords(words) {
         this.words = words || [];
-        // Note: For 'sentences', we assume this.words will eventually contain
-        // sentence objects from the database you provide next.
-        console.log("GameManager received data items:", this.words.length);
+    }
+
+    setSentences(sentences) {
+        this.sentences = sentences || [];
     }
 
     setOptions(options) {
@@ -896,15 +915,28 @@ class GameManager {
     }
 
     openGame(gameId) {
-        if (this.words.length === 0) {
-            alert("Wähle zuerst eine Lektion und Seiten im Bereich 'Lernen' aus!");
-            return;
-        }
-
         this.currentGameId = gameId; 
         this.activeContainer.classList.remove('hidden');
         this.gameViewport.innerHTML = '';
         const isReverse = this.options.reverse;
+
+        if (gameId === 'sentences') {
+            if (!this.sentences || this.sentences.length === 0) {
+                alert("Keine Sätze für die ausgewählte Lektion gefunden!");
+                this.closeActiveGame();
+                return;
+            }
+            const ui = this._createSentenceUI();
+            this.gameViewport.appendChild(ui.container);
+            this.activeGame = new SentenceGameLogic(this.sentences, ui.container, ui.promptEl, ui.areaEl, ui.bankEl, ui.checkBtn, ui.feedbackEl);
+            return;
+        }
+
+        if (this.words.length === 0) {
+            alert("Wähle zuerst eine Lektion und Seiten im Bereich 'Lernen' aus!");
+            this.closeActiveGame();
+            return;
+        }
 
         if (gameId === 'snake') {
             const ui = this._createSnakeUI();
@@ -926,12 +958,6 @@ class GameManager {
             const ui = this._createTypingUI();
             this.gameViewport.appendChild(ui.container);
             this.activeGame = new TypingGameLogic(this.words, ui.container, ui.promptEl, ui.inputEl, ui.checkBtn, ui.hintBtn, ui.feedbackEl, ui.nextBtn, isReverse);
-        } else if (gameId === 'sentences') {
-            const ui = this._createSentenceUI();
-            this.gameViewport.appendChild(ui.container);
-            // We pass this.words. If the user loaded words, we hope they loaded sentences
-            // or that the array contains objects compatible with { german: "", czech: "" }
-            this.activeGame = new SentenceGameLogic(this.words, ui.container, ui.promptEl, ui.areaEl, ui.bankEl, ui.checkBtn, ui.feedbackEl);
         }
     }
 
