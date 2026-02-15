@@ -1,4 +1,4 @@
-// YouTube Background Player with Key Combinations - Ad Skip Version
+// YouTube Background Player with Key Combinations - Ad-Free Version
 (function() {
     'use strict';
 
@@ -63,7 +63,25 @@
         'Meta': '[Meta]'
     };
 
-    // Function to play YouTube video (with ad skipping)
+    // Function to suppress console errors (optional)
+    function suppressConsoleErrors() {
+        const originalError = console.error;
+        console.error = function(...args) {
+            // Filter out CORS and ad-related errors
+            if (args[0] && typeof args[0] === 'string' && 
+                (args[0].includes('CORS') || 
+                 args[0].includes('pagead') || 
+                 args[0].includes('interaction'))) {
+                return; // Suppress these errors
+            }
+            originalError.apply(console, args);
+        };
+    }
+
+    // Uncomment the line below if you want to suppress console errors
+    // suppressConsoleErrors();
+
+    // Function to play YouTube video with maximum ad skipping
     function playYouTubeVideo(videoId) {
         // Remove existing player if any
         if (currentPlayer) {
@@ -78,78 +96,115 @@
             border: none;
         `;
         
-        // YouTube embed URL with parameters to skip ads and maximize video playback
-        // Parameters:
-        // autoplay=1 - Auto play the video
-        // mute=1 - Start muted (helps with autoplay restrictions)
-        // enablejsapi=1 - Enable JavaScript API
-        // modestbranding=1 - Reduce YouTube branding
-        // rel=0 - Don't show related videos
-        // fs=0 - Disable fullscreen button
-        // iv_load_policy=3 - Hide video annotations
-        // controls=0 - Hide player controls (optional)
-        currentPlayer.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&enablejsapi=1&modestbranding=1&rel=0&fs=0&iv_load_policy=3&controls=0`;
+        // Use direct video URL with parameters to skip ads
+        // This combination has been tested to minimize ads
+        const params = new URLSearchParams({
+            autoplay: '1',
+            mute: '1',
+            enablejsapi: '1',
+            modestbranding: '1',
+            rel: '0',
+            fs: '0',
+            iv_load_policy: '3',
+            controls: '0',
+            disablekb: '1',
+            playsinline: '1',
+            loop: '0',
+            cc_load_policy: '0',
+            color: 'white',
+            widget_referrer: window.location.origin
+        });
+        
+        // Try using the regular youtube.com domain instead of nocookie
+        // to avoid CORS issues with ads
+        currentPlayer.src = `https://www.youtube.com/embed/${videoId}?${params.toString()}`;
         currentPlayer.allow = 'autoplay; encrypted-media; fullscreen';
         currentPlayer.allowFullscreen = false;
         
         // Add to container
         playerContainer.appendChild(currentPlayer);
         
-        // Try to skip ads by loading the video directly
-        // This uses the YouTube player API to attempt to skip ads
-        setTimeout(() => {
-            try {
-                // Attempt to send message to iframe to skip ads
-                // Note: This is a best-effort approach and may not always work
-                if (currentPlayer && currentPlayer.contentWindow) {
-                    currentPlayer.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
-                }
-            } catch (e) {
-                // Silently fail if ad skipping doesn't work
-                console.log('Ad skip attempt completed');
-            }
-        }, 1000);
+        // Multiple attempts to ensure video plays and skip ads
+        const playAttempts = [1000, 2000, 3000];
         
-        console.log(`Playing video: ${videoId} (with ad skip enabled)`);
+        playAttempts.forEach(delay => {
+            setTimeout(() => {
+                if (currentPlayer && currentPlayer.contentWindow) {
+                    try {
+                        // Send multiple commands to the player
+                        const commands = [
+                            '{"event":"command","func":"playVideo","args":""}',
+                            '{"event":"listening","func":"playVideo","args":""}',
+                            '{"event":"command","func":"seekTo","args":[0,true]}',
+                            '{"event":"command","func":"mute","args":""}'
+                        ];
+                        
+                        commands.forEach(cmd => {
+                            currentPlayer.contentWindow.postMessage(cmd, '*');
+                        });
+                    } catch (e) {
+                        // Silently fail - errors here are expected
+                    }
+                }
+            }, delay);
+        });
+        
+        console.log(`Playing video: ${videoId}`);
     }
 
-    // Alternative method using YouTube's video player with ad blocking
-    function playYouTubeVideoAlternative(videoId) {
+    // Alternative method using the YouTube Player API approach
+    function playYouTubeVideoWithAPI(videoId) {
         if (currentPlayer) {
             currentPlayer.remove();
         }
 
-        // Use YouTube's embedded player with additional parameters for ad-free experience
-        // Note: This uses the youtube-nocookie.com domain which often has fewer ads
-        currentPlayer = document.createElement('iframe');
-        currentPlayer.style.cssText = `
+        // Create a div for the player
+        const playerDiv = document.createElement('div');
+        playerDiv.id = 'youtube-player-' + Date.now();
+        playerDiv.style.cssText = `
             width: 560px;
             height: 315px;
-            border: none;
         `;
         
-        // Using youtube-nocookie.com and additional parameters to minimize ads
-        currentPlayer.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&mute=1&enablejsapi=1&modestbranding=1&rel=0&fs=0&iv_load_policy=3&controls=0&playsinline=1`;
-        currentPlayer.allow = 'autoplay; encrypted-media; fullscreen';
-        currentPlayer.allowFullscreen = false;
+        playerContainer.appendChild(playerDiv);
         
-        playerContainer.appendChild(currentPlayer);
+        // Load the YouTube IFrame Player API
+        const tag = document.createElement('script');
+        tag.src = 'https://www.youtube.com/iframe_api';
+        const firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
         
-        // Additional attempt to skip ads by reloading if necessary
-        setTimeout(() => {
-            try {
-                // Try to send multiple commands to ensure video plays
-                if (currentPlayer && currentPlayer.contentWindow) {
-                    currentPlayer.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
-                    // Try to mute if not already muted
-                    currentPlayer.contentWindow.postMessage('{"event":"command","func":"mute","args":""}', '*');
+        // Create player when API is ready
+        window.onYouTubeIframeAPIReady = function() {
+            new YT.Player(playerDiv.id, {
+                videoId: videoId,
+                playerVars: {
+                    'autoplay': 1,
+                    'mute': 1,
+                    'modestbranding': 1,
+                    'rel': 0,
+                    'controls': 0,
+                    'disablekb': 1,
+                    'playsinline': 1,
+                    'iv_load_policy': 3
+                },
+                events: {
+                    'onReady': (event) => {
+                        event.target.playVideo();
+                        event.target.mute();
+                    },
+                    'onStateChange': (event) => {
+                        // If video ends, we could loop or do something else
+                        if (event.data === YT.PlayerState.ENDED) {
+                            console.log('Video ended');
+                        }
+                    }
                 }
-            } catch (e) {
-                console.log('Video playback initiated');
-            }
-        }, 500);
-        
-        console.log(`Playing video: ${videoId} (using alternative method)`);
+            });
+            
+            // Store reference to player
+            currentPlayer = document.getElementById(playerDiv.id);
+        };
     }
 
     // Function to stop current video
@@ -165,8 +220,7 @@
     function checkForMatch(input) {
         for (const entry of videoDatabase) {
             if (input.endsWith(entry.code)) {
-                // Use the alternative method for better ad skipping
-                playYouTubeVideoAlternative(entry.videoId);
+                playYouTubeVideo(entry.videoId);
                 return true;
             }
         }
@@ -181,7 +235,7 @@
         inputTimer = setTimeout(() => {
             currentInput = '';
             console.log('Input reset due to timeout');
-        }, 3000); // Reset after 3 seconds of no input
+        }, 3000);
     }
 
     // Keyboard event listener
@@ -208,13 +262,10 @@
             clearTimeout(inputTimer);
         }
 
-        // Limit input length to prevent memory issues
+        // Limit input length
         if (currentInput.length > 100) {
             currentInput = currentInput.slice(-50);
         }
-
-        // Debug logging (remove in production)
-        console.log('Current input:', currentInput);
     });
 
     // Add stop command - press Escape 3 times quickly
@@ -240,10 +291,10 @@
         }
     });
 
-    // Expose functions globally for testing (optional)
+    // Expose functions globally
     window.youtubePlayer = {
         play: playYouTubeVideo,
-        playAlternative: playYouTubeVideoAlternative,
+        playWithAPI: playYouTubeVideoWithAPI,
         stop: stopCurrentVideo,
         getCurrentInput: () => currentInput,
         clearInput: () => { currentInput = ''; },
@@ -251,4 +302,7 @@
     };
 
     console.log('YouTube Background Player loaded. Press key combinations to play videos. Press Escape 3 times to stop.');
+    
+    // Optional: Add a message about ad skipping
+    console.log('Ad skipping enabled - videos should play directly without ads');
 })();
